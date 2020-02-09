@@ -1,0 +1,24 @@
+<page>
+  <view class="mainView">
+      <view class="flex-row line inputLine">
+        <text>手机号</text>
+        <input type="number" maxlength="11" id="1" placeholder="请输入手机号" placeholder-style="color:#e5e5e5" bindtap="setFocus" focus="{{focusID==1}}" bindinput="setPhone" />
+      </view>
+      <view class="line inputLine">
+        <text>输入密码</text>
+        <input type="text" password placeholder="请输入8~20位字母或数字" placeholder-style="color:#e5e5e5" maxlength="20" bindtap="setFocus" focus="{{focusID==2}}"  id="2" bindinput="setPassword"/>
+      </view>
+      <view class="line inputLine">
+        <text>确认密码</text>
+        <input type="text" password placeholder="请输入8~20位字母或数字" placeholder-style="color:#e5e5e5" maxlength="20" bindtap="setFocus" focus="{{focusID==3}}"  id="3" bindinput="setPasswords"/>
+      </view>
+      <view class="line inputLine">
+        <text>验证码</text>
+        <input type="number" maxlength="8" bindtap="setFocus" placeholder-style="color:#e5e5e5" placeholder="请输入验证码" focus="{{focusID==4}}" id="4" bindinput="setCode"/>
+        <button bindtap="getCode" class="miniBtn" type="{{disabled?'default':''}}" disabled="{{disabled}}">{{validationBtnText}}</button>
+      </view>
+      <view class="line submitLine">
+        <button bindtap="send" class="submit">保存</button>
+      </view>
+  </view>
+</page>

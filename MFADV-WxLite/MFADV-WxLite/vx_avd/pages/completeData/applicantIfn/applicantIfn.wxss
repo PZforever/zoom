@@ -1,0 +1,165 @@
+/* pages/completeData/applicantIfn/applicantIfn.wxss */
+page{
+  height: 100%;
+  background-color: #F7F6F6;
+  padding-top: 20rpx;
+}
+.aplt-ifn{
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #F7F6F6;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+image.edit{
+  display: inline-block;
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 12rpx;
+}
+.aplt-title{
+  padding-left: 3%;
+}
+.ifn-item{
+  padding-left: 8%;
+  padding-right: 6%;
+  border-top: 3rpx solid #F7F6F6;
+  background: #fff;
+}
+.area{
+  display: inline-block;
+  width: 70%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  vertical-align: top;
+  text-align: left;
+}
+picker{
+  display: inline-block;
+  width: 70%;
+}
+.ifn-item text{
+  color: #333;
+}
+.ifn-item .item-title{
+  color: #999;
+  width:19%;
+  display:inline-block;
+  margin-right: 6%;
+}
+.ifn-item .spe{
+  line-height:36rpx;
+  vertical-align:middle;
+}
+input{
+  width: 73%;
+  vertical-align:middle;
+  display: inline-block;
+  height:100rpx;
+  line-height:100rpx;
+}
+.placeholder{
+  color: #999;
+}
+.subBtn{
+  margin: 30rpx auto;
+}
+.rsn{
+  display: inline-block;
+  width: 70%;
+  height: 100rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: top;
+}
+/*施暴原因  */
+.maskLayer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.chooseReason {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  font-size: 26rpx;
+}
+.tit{
+  width: 88%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #999;
+  border-bottom:1rpx solid #e1e1e1; 
+  margin-bottom: 10rpx;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+.tit view:nth-child(1){
+  float: left;
+  width: 10%;
+  text-align: left;
+}
+.tit view:nth-child(2){
+  float: left;
+  width: 80%;
+}
+.tit view:nth-child(3){
+  float: left;
+  width: 10%;
+  text-align: right;
+  color: #f9812b;
+}
+.reasons{
+  width: 88%;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #666;
+  padding-left: 6%;
+}
+.radio-group{   
+  display: flex;  
+  flex-direction: column;  
+  padding-bottom: 10rpx;
+}  
+.select{  
+  width: 100rpx;  
+  height: 50rpx;  
+}  
+.labelId{
+    border-radius:4px;
+    position: relative;
+    color: #f9812b;
+}
+.labelId:after {
+    content: '\00a0';
+    color: red;
+    display: inline-block;
+    border: 2rpx solid #f9812b;
+    border-top-width: 0;
+    border-right-width: 0; 
+    width: 28rpx;
+    height: 16rpx;
+    transform: rotate(-50deg);
+    position: absolute;
+    top:6px;
+    right:4px;
+}
+/* 右箭头 */
+.personalArrowRight{
+  display:inline-block;
+  padding-bottom:12rpx;
+}

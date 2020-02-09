@@ -1,0 +1,58 @@
+<form bindsubmit="formSubmit">
+  <view class='panel'>
+    <view class='panel-title'>
+      <image class='edit' src='/img/edit.png'></image>事件类型
+    </view>
+    <view class='panel-item'>
+      <text class='item-title'>类型</text>
+      <picker class='picker' range="{{violentTypes}}" value="{{violentIndex}}" range-key="name" bindchange='violenceTypePickerSelected'>
+        <view class="pickerValue">
+          <text>{{violentTypes[violentIndex].name}} </text>
+          <image src='/img/arrow.png' class='arrow'></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-title'>
+      <image class='edit' src='/img/edit.png'></image>发生地点
+    </view>
+    <view class='panel-item' bindtap="openAddress">
+      <view class="pickerValue">
+        <input class='region' value='{{region}}' placeholder='请选择' disabled></input>
+        <image src='/img/arrow.png' class='arrow'></image>
+      </view>
+    </view>
+    <view class='panel-item'>
+      <input name='address' value='{{residenceDetail}}' placeholder='请输入详细地址' placeholder-style='color:#999;'></input>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-title'>
+      <image class='edit' src='/img/edit.png'></image>事件描述
+    </view>
+    <view class='panel-item'>
+      <textarea name="remarks" placeholder='请描述详细内容' wx:if="{{textareaShow}}" placeholder-style='color:#999;' maxlength='-1'></textarea>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-title'>
+      <image class='edit' src='/img/edit.png'></image>申请人诉求
+    </view>
+    <view class='panel-item'>
+      <textarea name="appeal" placeholder='请描述申请诉求详细内容' wx:if="{{textareaShow}}" placeholder-style='color:#999;' value="{{appealsString}}" bindinput='handleAppealInput' maxlength='-1'></textarea>
+    </view>
+    <view class='panel-item'>
+      <checkbox-group class="appeals">
+        <label class="appeal" wx:for="{{appealList}}" wx:key bindtap='handleExpectEffectsClick' data-effect="{{item}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+          <text>{{item.name}}</text>
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+
+  <button formType="submit">下一步</button>
+</form>
+<!-- 引入自定义地址组件 -->
+<area-select id="areaSelect" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent"></area-select>

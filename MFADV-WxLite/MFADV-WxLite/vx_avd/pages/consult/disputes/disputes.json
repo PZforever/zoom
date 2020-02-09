@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "事件信息",
+  "usingComponents": {
+    "area-select": "/components/area-select/area-select"
+  }
+}

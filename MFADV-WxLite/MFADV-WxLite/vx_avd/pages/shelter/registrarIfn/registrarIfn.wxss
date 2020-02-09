@@ -1,0 +1,68 @@
+/* pages/shelter/registrarIfn/registrarIfn.wxss */
+page{
+  background-color: #F7F6F6;
+}
+.aplt-ifn{
+  margin-top: 20rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f4f4f4;
+  background: #fff;
+  line-height: 100rpx;
+  font-size: 26rpx;
+}
+image.edit{
+  display: inline-block;
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 12rpx;
+}
+.aplt-title{
+  padding-left: 3%;
+  color: #333;
+}
+.ifn-item{
+  padding-left: 8%;
+  padding-right: 6%;
+  border-top: 3rpx solid #F7F6F6;
+}
+picker{
+  display: inline-block;
+  width: 70%;
+}
+.ifn-item input{
+  color: #333;
+}
+.ifn-item .item-title{
+  color: #999;
+  width:24%;
+  display:inline-block;
+}
+input{
+  vertical-align:middle;
+  display: inline-block;
+  width: 70%;
+}
+.placeholder{
+  color: #999;
+}
+image.arrow{
+  width: 12rpx;
+  height: 20rpx;
+}
+.subBtn{
+  position: fixed;
+  bottom: 60rpx;
+  left:75rpx;
+}
+.star{
+  color: #fa822b;
+}
+.idNum{
+  padding-left:6%;
+}
+.hint{
+  color: #fa822b;
+  line-height: 66rpx;
+  font-size: 20rpx;
+  padding-left: 8%;
+}

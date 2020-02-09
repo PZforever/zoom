@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class='tab_header'>
+  <view class="{{select?'':'tab_active'}}" bindtap='selectBtn' id="1">申请人信息</view>
+  <view class="{{select?'tab_active':''}}" bindtap='selectBtn' id="2">申请庇护选择</view>
+</view>
+<view class='list_bg' wx:if="{{!select}}">
+<view class='list_box'>
+  <view class='item_name'>姓名</view>
+  <view class="item_content">{{personal.actualName}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>性别</view>
+  <view class="item_content">{{personal.sex}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>手机号</view>
+  <view class="item_content">{{personal.phone}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>身份证号</view>
+  <view class="item_content">{{personal.idCard}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>户籍地址</view>
+  <view class="item_content">{{personal.registration}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>现居住地</view>
+  <view class="item_content">{{personal.residenceAreaName}}{{personal.residenceDetail}}</view>
+</view>
+</view>
+<view wx:if="{{select}}">
+  <view class='address_img'>
+    <image src='/img/mapAdd.png'></image>当前庇护所
+  </view>
+  <view class='address_content'>{{message.sanctuaryApplication.name}}</view>
+</view>

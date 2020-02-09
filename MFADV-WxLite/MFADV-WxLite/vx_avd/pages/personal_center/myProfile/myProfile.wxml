@@ -1,0 +1,47 @@
+<scroll-view scroll-y class="myProfileContainer">
+  <view class="myProfileBody">
+    <view class="myProfileItem">
+      <view class="myProfileHeadImg clearfix" bindtap="modifyAvatar">
+        <text class="myProfileDepict">我的头像</text>
+        <image src="{{myProfileData.headPortrait}}" class="headPortrait"></image>
+        <view class="weui-cell__ft_in-access personalArrowRight"></view>
+      </view>
+      <view class="myProfileContant clearfix">
+        <text class="myProfileItemDepict">姓名</text>
+        <!-- <text class="myProfileInput">{{myProfileData.actualName}}</text> -->
+        <input type="text" class="myProfileInput" disabled="{{verifiedFlag}}" bindinput="getActualName" value="{{myProfileData.actualName}}"></input>
+      </view>
+      <view class="myProfileContant clearfix">
+        <text class="myProfileItemDepict">性别</text>
+        <picker class="myProfileInput" bindchange="changeGender" disabled="{{verifiedFlag}}" value="{{genderIndex}}" range="{{genderArray}}">
+          <view class="picker">
+            {{genderArray[genderIndex]}}
+          </view>
+        </picker>
+        <!-- <text class="myProfileInput">{{myProfileData.sex}}</text> -->
+      </view>
+      <view class="myProfileContant clearfix">
+        <text class="myProfileItemDepict">年龄</text>
+        <input type="number" class="myProfileInput" maxlength="3" disabled="{{verifiedFlag}}" bindblur="bindKeyAge" value="{{myProfileData.age}}" />
+      </view>
+      <view class="myProfileContant clearfix">
+        <text class="myProfileItemDepict">身份证号</text>
+        <!-- <text class="myProfileInput">{{myProfileData.idCard}}</text> -->
+        <input type="text" class="myProfileInput" bindblur="getIdCard" disabled="{{verifiedFlag}}" value="{{myProfileData.idCard}}"></input>
+      </view>
+      <view class="myProfileContant">
+        <navigator url="/pages/personal_center/myProfile/modifyPhone/modifyPhone" hover-class="navigator-hover" class="clearfix">
+          <text class="myProfileItemDepict">手机号</text>
+          <text class="myProfileInput" style="margin-right:28rpx;">{{myProfileData.phone}}</text>
+          
+          <view class="weui-cell__ft_in-access personalArrowRight" style="margin-top:25rpx;"></view>
+        </navigator>
+      </view>
+
+    </view>
+    <view class="myProfileBtn" wx:if="{{!verifiedFlag}}">
+       <button bindtap="savePersonalInfo">保存</button> 
+    </view>
+  </view>
+
+</scroll-view>

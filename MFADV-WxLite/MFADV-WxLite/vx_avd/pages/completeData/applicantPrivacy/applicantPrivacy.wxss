@@ -1,0 +1,92 @@
+/* pages/completeData/applicantPrivacy/applicantPrivacy.wxss */
+page{
+  background-color: #F7F6F6;
+}
+.aplt-privacy{
+  margin-top: 20rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #F7F6F6;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+.priv-item{
+  padding-left: 8%;
+  padding-right: 6%;
+  border-top: 3rpx solid #F7F6F6;
+  background: #fff;
+}
+.item-title{
+  color:#999;
+  width:19%;
+  display:inline-block;
+  margin-right:6%;
+}
+.spe{
+  line-height:36rpx;
+  vertical-align:middle;
+}
+picker{
+  display:inline-block;
+  width:70%;
+}
+image.arrow{
+  width: 12rpx;
+  height: 20rpx;
+}
+.priv-slt .item-title{
+  color: #f9812b;
+}
+/*swtich样式-start*/
+/*swtich整体大小*/
+.wx-switch-input{
+  width:84rpx !important;
+  height:42rpx !important;
+  margin-right:4.4%;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+  margin-top: 0rpx;
+  width:82rpx !important;
+  height: 38rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+  width: 41rpx !important;
+  height: 38rpx !important;
+}
+/*swtich样式end*/
+.disease-detail{
+  padding-left: 0%;
+  padding-right: 0%;
+  margin-top: 12rpx;
+  margin-bottom: 12rpx;
+}
+.disease-detail text{
+  display: block;
+  width: 86%;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 3rpx solid #F7F6F6;
+  padding-left: 8%;
+  padding-right: 6%;
+}
+.disease-detail textarea{
+  display: block;
+  width: 86%;
+  height: 220rpx;
+  line-height: 50rpx;
+  border-bottom: 3rpx solid #F7F6F6;
+  padding-left: 8%;
+  padding-right: 6%;
+  padding-top: 10rpx;
+}
+.placeh{
+  color:#999;
+  line-height: 50rpx;
+}
+/* 右箭头 */
+.personalArrowRight{
+  display:inline-block;
+  padding-bottom:12rpx;
+}

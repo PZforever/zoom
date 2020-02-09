@@ -1,0 +1,40 @@
+<!--pages/push/push.wxml-->
+<view style="width:100%;height: 100%; background-color: white;">
+  <view style="width:100px;height:500px">
+    <live-pusher
+      style="width:100%; height: 100px;"
+      id="push1"
+      mode="RTC"     waiting-image="https://mc.qcloudimg.com/static/img/daeed8616ac5df256c0591c22a65c4d3/pause_publish.jpg"
+      background-mute="{{backgroundMute}}"
+      url="{{pushUrl1}}" 
+      autopush
+      bindstatechange="onPushEvent">
+</live-pusher> 
+ <live-player
+      style="width:100%;height:100px; position:relative;left:105px"
+      id="play1"
+      mode="RTC"
+      min-cache="1"
+      max-cache="3"
+      src="{{playUrl1}}" 
+      autoplay
+      debug="false"
+      bindstatechange="onPlayEvent"
+      bindfullscreenchange="onFullScreenChange">   
+</live-player>
+<live-player
+      style="width:100%;height:100px; position:relative;left:200px"
+      id="play2"
+      mode="RTC"
+      min-cache="1"
+      max-cache="3"
+      autoplay
+      src="{{playUrl2}}" 
+      debug="false"
+      bindstatechange="onPlayEvent"
+      bindfullscreenchange="onFullScreenChange">   
+ </live-player>
+  </view>
+
+<view bindtap='clickkk'>iiii</view>
+</view>

@@ -1,0 +1,34 @@
+<!--pages/shelter/disclaimer/disclaimer.wxml-->
+<page>
+  <view class="mainView">
+    <form bindsubmit="formSubmit">
+      <view class="flex-row agreement">
+        <view class="agreementTitle">
+          <text class="">家庭暴力庇护者进站须知</text>
+        </view>
+        <view class="agreementContent">
+          <text class="">您好，请先认真阅读以下内容:<br/>
+1.请提供你所在基层组织出具的家庭暴力侵害证明或妇联组织出具的介绍信，并出示杭州市居民身份证(户籍证)或暂住证(居住证),配合工作人员办理进站手续;<br/>
+  2.进站前请接受安全检查，不得携带管制刀具、打火机、不明液体等危险物品进站;<br/>
+  3.携带有贵重物品、重要资料的，请如实告知工作人员并予以寄存，没有及时告知和没有寄存的物品、资料在救助管理站内发生毁损、遗失的，救助管理站不承担(任何) 责任;<br/>
+  4.携带未成年人入站的，应履行好监护职责，未成年人在站内发生意外的，由其监护人承担责任;<br/>
+  5.在站期间应遵纪守法，在规定的庇护区域内活动，遵守救助站的作息、卫生等管理制度; 中心将提供符合基本条件和卫生条件的食宿，如有其它需要可向工作人员询问。<br/>
+  6.不得辱骂、殴打工作人员，不得破坏救助管理站的设施、设备，不得无理取闹、扰乱救助管理站工作秩序;<br/>
+  7.在站期间需要外出的，需向工作人员告知，办理出站手续,出站时须将寄存物品取回;<br/>
+  8.根据《杭州市反家暴庇护救助工作实施办法》申请庇护人有下列情况之一的，不予庇护: 生活不能自理的; 有精神疾病的; 人民法院已作出有罪判决，或被有关部门确定收容教养、劳动教养尚在监外执行或保外就医的。救助站对符合庇护条件的家庭暴力受害人的庇护时间最长不超过一周(七天),如受害人被发现隐瞒自己及携带的被监护人患有重大疾病、传染病、精神病等，救助站可立即终止对其的庇护。
+</text>
+        </view>
+      </view>
+      <view class="read">
+      <checkbox-group  bindchange="checkboxChange">
+          <label class="checkbox">
+              <checkbox checked="{{item.checked}}" value="agree"/>已阅读
+          </label>
+      </checkbox-group>
+      </view>
+      <view class="submitLine">
+          <button bindtap="submit" style="background-color:{{!checked?'ff9344':'#fa822b'}};color:{{!checked?'':'white'}}" disabled="{{!checked}}" class="submit">下一步</button>
+      </view>
+    </form>
+  </view>
+</page>

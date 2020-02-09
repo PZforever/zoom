@@ -1,0 +1,51 @@
+/* pages/call_police/call_police.wxss */
+page{
+  height: 100%;
+  background-color: #FCFCFC;
+}
+.title{
+  display: inline-flex;
+  width: 100%;
+  margin-top: 10px;
+  background: white;
+}
+.title .title_bar{
+  width: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background: #F9812B;  
+}
+.title .title_word{
+  width: 100%;
+  color: #F9812B;
+}
+.input{
+  display: inline-flex;
+  height: 50px;
+  width: 100%;
+  margin-top: 2px;
+  background: white;
+}
+.input .input_title{
+  margin-left: 25px;
+  text-align: center;
+}
+.input .section{
+  margin-left: 100px;
+}
+.submit{
+  margin-top: 20px;
+  height: 70px;
+  background: white;
+}
+.submit button{
+  height: 50px;
+  width: 80%;
+  position: relative;
+  text-align: center;
+  top: 10px;
+  color: white;
+  background: #F9812B;
+} 

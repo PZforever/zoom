@@ -1,0 +1,26 @@
+<scroll-view scroll-y class="myProfileContainer" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+  <view class="uploadContainer">
+    <!-- 身份证明 -->
+    <view class="uploadItem" wx:for="{{attachments}}" wx:for-item="typeItem" wx:for-index="attachmentIndex" wx:key="attachmentIndex">
+      <view class='head'>
+        <!-- 全选按钮  -->
+        <view class="head_left">
+          <checkbox bindtap="selectAll" data-index='{{attachmentIndex}}' checked='{{typeItem.selected}}'></checkbox>
+          <view class="head_title">{{typeItem.name}}</view>
+        </view>
+        <view class='expandArrow' bindtap='flodFn' data-index='{{attachmentIndex}}' wx:if="{{typeItem.children.length>0}}">
+          <image src="/img/arrowUp.png" class="{{typeItem.isFold==0 ? '' :'outRotate'}}"></image>
+        </view>
+      </view>
+      <view class="uploadChild clearfix {{typeItem.isFold ? 'fold' : 'expand'}} " wx:for="{{typeItem.children}}" wx:for-item="childItem" wx:for-index="childIndex" wx:key="childIndex" data-index='{{childIndex}}' data-child-item='{{childItem}}'>
+        <!-- 单选按钮  -->        
+        <checkbox class="page_check" bindtap='checkItem' data-id='{{childItem.id}}' data-type-index='{{attachmentIndex}}' data-item-index='{{childIndex}}' checked='{{childItem.selected}}'> </checkbox>
+        <view class="uploadChildTitle fl">{{childItem.name}}</view>
+      </view>
+      <view class='hint' wx:if='{{typeItem.children.length == 0}}'>暂无可选择上传记录</view>
+    </view>
+  </view>
+</scroll-view>
+<view class="bottom">
+  <view class='btn' bindtap='saveDatabaseSelect'>保存</view>
+</view>

@@ -1,0 +1,47 @@
+<!--pages/push/push.wxml-->
+ <view class="mainUI"> 
+  <view class='guide-box'>  
+      <live-pusher class="guide" 
+        id="push1"
+        mode="RTC"     waiting-image="https://mc.qcloudimg.com/static/img/daeed8616ac5df256c0591c22a65c4d3/pause_publish.jpg"
+        background-mute="{{backgroundMute}}"
+        url="rtmp://3891.livepush.myqcloud.com/live/3891_user_5e90c716_3e12?bizid=3891&txSecret=8a3b78924592332aaca659ca7b8c139f&txTime=5A59716E" 
+        autopush
+        bindstatechange="onPushEvent">
+      </live-pusher>  
+      <live-player class="guide" 
+            id="play1"
+            mode="RTC"
+            min-cache="1"
+            max-cache="3"
+            src="rtmp://3891.liveplay.myqcloud.com/live/3891_user_af2834fa_5e7e" 
+            autoplay
+            bindstatechange="onPlayEvent"
+            bindfullscreenchange="onFullScreenChange">   
+      </live-player> 
+      <live-player class="guide" 
+        id="play2"
+        mode="RTC"
+        min-cache="1"
+        max-cache="3"
+        autoplay
+        src="rtmp://3891.liveplay.myqcloud.com/live/3891_user_f3d0e119_6465" 
+        bindstatechange="onPlayEvent"
+        bindfullscreenchange="onFullScreenChange">   
+      </live-player>
+   
+  </view> 
+
+  <view class='select-show'>
+    <view wx:for="{{msgs}}">
+      {{item}} 
+    </view>
+  </view>
+
+  <view class='logo-box'> 
+    <input style='background-color: #FFFFE0; height: 100rpx' bindinput='getValue'>{{inputTxt}}</input>  
+    <button bindtap='send'>发送</button> 
+  </view>
+
+<!--<view bindtap='clickkk'>iiii</view> -->
+</view>

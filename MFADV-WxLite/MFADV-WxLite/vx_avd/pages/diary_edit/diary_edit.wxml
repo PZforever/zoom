@@ -1,0 +1,66 @@
+
+  <view class='body'>
+    <!-- <view bindtap='chu'>123456</view> -->
+    <view class='title'>
+      <view class='title_text'>日记标题：</view>
+      <view class='title_input'><input placeholder='请输入日记标题' bindinput='title' maxlength='10'></input></view>
+    </view> 
+    <view class='content'>
+      <view class='text_body'>
+        <textarea class='content_text' placeholder='请输入日记内容' maxlength='-1' bindinput='remark'></textarea>
+        <view class='content_foot'>   
+            <view class='foot_left'>
+              <image src='/img/d_location.png'></image>  
+              <text>{{address}}</text>
+            </view>
+            <view class='foot_right'>
+              <text>{{state}}</text>
+              <switch bindchange='open' color='#f5a623'/>
+            </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='mark'>
+        <image src='/img/d_mark.png'></image> 
+          <view class='markText'>标记</view>
+          <view class="mark_navbar">
+            <block wx:for="{{tabs}}" wx:key="*this">
+              <view id="{{index+1}}" class="navbar_item {{tagType == index+1 ? 'bg_on' : ''}}" bindtap="tabClick">
+                  <view class='win'>
+                    <view class='wText'>{{item}}</view>
+                  </view>
+              </view>
+            </block>
+        </view>
+    </view>
+  </view>
+
+    <view class='upLoad'>
+     <view class='upOne'></view>
+     <view class='upText'>上传证据</view>
+     <view class='upBtn'><navigator url='upLoad/upLoad'> + 上传 </navigator></view>
+  </view>  
+ 
+<view class="uploadItem {{typeItem.children.length>0 ? 'expand':'fold'}}" wx:for="{{attachements}}" wx:for-item="typeItem" wx:for-index="attachmentIndex" wx:key>
+      <view class="uploadTitle">{{typeItem.name}}</view>
+     <view class="tit clearfix " data-index="{{attachementsIndex}}" bindtap="flodFn" data-index='{{attachmentIndex}}'>
+      <view class='uploadArrow' wx:if="{{typeItem.children.length>0}}">
+        <view class='textNum'>{{typeItem.children.length}}</view>
+        <image wx:if='{{typeItem.isFold}}' src="../../img/arrowUp.png"></image>
+        <image wx:else src="../../img/arrowDown.png"></image> 
+      </view>  
+    </view>
+    <view class="uploadChild clearfix {{typeItem.isFold ? 'expand' : 'fold'}} " wx:for="{{typeItem.children}}" wx:for-item="childItem" wx:for-index="childIndex" wx:key="childIndex">
+      <view class="uploadChildTitle fl">{{childItem.name}}</view>
+      <view class='uploadDelete fr' bindtap='imgClose' data-attachmentIndex="{{attachmentIndex}}" data-childIndex="{{childIndex}}">
+         <image src="../../img/deleteIcon.png"></image> 
+      </view>
+    </view>
+</view>
+ <view style='height:170rpx'></view>
+  <view class='submit'>
+    <button class="weui-btn" type="primary" bindtap='submit'>保存</button>
+  </view>
+ <!-- open-type='navigateBack' -->
+ 

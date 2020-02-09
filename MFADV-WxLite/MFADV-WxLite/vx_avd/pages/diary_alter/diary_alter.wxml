@@ -1,0 +1,11 @@
+<view class='box'>
+<view class='text'>组名</view>
+ <input class='inp' value='{{groupsName}}' bindinput='intext' maxlength='12'></input> 
+</view>
+<navigator class='nav' open-type='navigateBack'>
+   <view class='btn' bindtap='click'>确认</view> 
+</navigator>
+ 
+
+
+

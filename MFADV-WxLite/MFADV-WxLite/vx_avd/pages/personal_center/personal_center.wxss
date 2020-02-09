@@ -1,0 +1,160 @@
+view,image,text,scroll-view,navigator{
+  margin: 0;
+  padding: 0;
+}
+page,scroll-view{
+  background-color: #F7F6F6;
+}
+.clearfix:after, .clearfix:before {
+    content: " ";
+    display: table;
+}
+.clearfix:after{
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+.noBorder{
+  border:none !important;
+}
+.personalCenterBox{
+    width:100%;
+    background-color: #F7F6F6;
+}
+.personalTopImg{
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+.personalTopImg .personalTopBg{
+  width: 100%;
+  height: 365rpx;
+}
+.personalTopImg .personalTitle{
+  position: absolute;
+  left: 50%;
+  color: #fff;
+  font-size: 40rpx;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  margin-left: -50%;
+  line-height: 70rpx;
+}
+.personalCenterBox .infoCard{
+  width:90%;
+  border-radius:20rpx;
+  box-shadow: 0 1px 10px #fc9e42;
+  background-color: #fff;
+  position: absolute;
+  left:45%;
+  margin-left: -40%;
+  text-align: center;
+  top:170rpx;
+  min-height: 260rpx;
+}
+.headPortrait{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  position: absolute;
+  top:-75rpx;
+  left: 50%;
+  margin-left:-75rpx;
+  box-shadow: 0 1px 10px #fc9e42;
+}
+.personalName{
+  width: 100%;
+  text-align: center;
+  line-height: 76rpx;
+  color:#666666;
+  font-weight:600;
+  margin-top:95rpx;
+  margin-bottom:10rpx;
+  font-size: 40rpx;
+}
+.personalLabel{
+  width:160rpx;
+  color: #fa832d;
+  font-size: 30rpx;
+  border-radius: 50rpx;
+  border: 1px solid #fdb050;
+  text-align: center;
+  margin:0 auto;
+  margin-bottom:30rpx;
+}
+.personalId{
+  font-size: 40rpx;
+  text-align: center;
+  width: 100%;
+  color:#b8b8cc;
+  line-height: 76rpx;
+}
+.personalListBox{
+  width: 100%;
+  background-color: #fff;
+  padding-top: 85rpx;
+}
+.personalListContent{
+  width: 100%;
+  border-bottom: 1px solid #efefef;
+}
+.personalContain{
+  width: 86%;
+  padding: 20rpx 0;
+  line-height: 60rpx;
+  margin: 0 auto; 
+}
+.personalListIcon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top:14rpx;
+  float:left;
+}
+.personalListWord{
+  max-width: 80%;
+  font-size: 30rpx;
+  color:#666666;
+  margin-left: 25rpx;
+  float: left;
+  letter-spacing:3rpx;
+}
+.personalArrowRight{
+  margin-top:25rpx;
+}
+
+/*底部弹框样式*/
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fafafa;
+}
+.modalBtn{
+  font-size: 40rpx ;
+  color: #999999 ;
+  background: #ffffff ;
+  line-height: 100rpx ;
+  text-align: center;
+}
+.dropOutBtn{
+  margin-bottom: 10rpx;
+  color: #f9812b;
+}

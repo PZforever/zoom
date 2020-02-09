@@ -1,0 +1,65 @@
+/* pages/completeData/evidenceUpload/uploadDetail/uploadDetail.wxss */
+/*可共用表单样式  start*/
+.uploadDetail{
+  margin-top: 20rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #F7F6F6;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+.up-item{
+  padding-left: 8%;
+  padding-right: 6%;
+  border-top: 3rpx solid #F7F6F6;
+  background: #fff;
+}
+.item-title{
+  color:#999;
+  width:19%;
+  display:inline-block;
+  margin-right:6%;
+  font-size: 30rpx;
+}
+picker{
+  display:inline-block;
+  width:70%;
+}
+image.arrow{
+  width: 12rpx;
+  height: 20rpx;
+}
+/*可共用表单样式  end*/
+.upload{
+  width: 100%;
+  background-color:#ffffff;
+  margin:40rpx auto 10rpx auto;
+  padding: 20rpx 0;
+}
+.uploadBtn{
+  width: 80%;
+  height:80rpx;
+  margin:0 auto;
+  line-height:80rpx;
+  text-align:center;
+  color:#fff;
+  font-size:30rpx;
+  background-color:#fa822b;
+  border-radius: 10rpx;
+}
+.remarks{
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+}
+.sub{
+  border-top: 1rpx solid #efefef;
+  border-bottom: 1rpx solid #efefef;
+  background: #fff;
+}
+.subBtn{
+  margin: 20rpx auto;
+}
+modal{
+  position: relative;
+}

@@ -1,0 +1,318 @@
+<scroll-view scroll-y class="{{off==2 ? 'disnone': ''}}">
+  <view>
+    <view class='banner'>
+      <image src='/img/banner.png'></image>
+    </view>
+    <view class="header_box">
+      <view class="header_item" bindtap="open" data-url="/pages/psychological_counseling/disclaimer/disclaimer?fill_info_type=心理咨询">
+        <view class="header_item_title" >心理咨询</view>
+        <image src='/img/consult_mind.png'></image>
+      </view>
+      <view class='split_line_2'></view>
+       <navigator class='jump' url='/pages/consult/m_o_i/m_o_i'> 
+        <view class="header_item">         
+          <view  class="header_item_title">法律咨询</view>
+          <image src='/img/consult_law.png'></image>
+        </view>
+       </navigator>  
+    </view> 
+  </view>
+  <!--  申请框 -->
+  <view class="sq_box">
+    <view class="sq_box_title">
+      <view>
+        <image src='/img/on_line.png'></image>在线申请
+      </view>
+      <view class="sq_btn" bindtap="showDialogBtn">
+        <text>一键申请</text>
+        <image src='/img/next.png'/>
+      </view> 
+    </view>
+    <view class='split_line_1'></view>  
+    <view class="sq_box_list">
+       <view  class="sq_box_list_item"> 
+        <view bindtap="openPhone" class="sq_box_list_item_bg"
+        data-url="/pages/injury_identification/description/description"><image src='/img/on_police.png'></image></view>
+        <view bindtap="message" class="sq_box_list_item_bg" data-url="/pages/fill_info/apply?fill_info_type=伤情鉴定"><image src='/img/on_injury.png'></image></view>
+        <!-- <navigator wx:if="{{is_login}}" url='/pages/fill_info/apply?fill_info_type=庇护所'>
+          <view class="sq_box_list_item_bg"><image src='/img/on_shelter.png'></image></view>
+        </navigator>
+        <navigator wx:else="{{is_login}}" url='/pages/login/login'>
+          <view class="sq_box_list_item_bg"><image src='/img/on_shelter.png'></image></view>
+        </navigator>
+        <navigator wx:if="{{is_login}}" url='/pages/fill_info/apply?fill_info_type=人身安全保护令'>
+          <view class="sq_box_list_item_bg"><image src='/img/on_order.png'></image></view>
+        </navigator>
+        <navigator wx:else="{{is_login}}" url='/pages/login/login'>
+          <view class="sq_box_list_item_bg"><image src='/img/on_order.png'></image></view>
+        </navigator>   -->
+        <view bindtap="open" class="sq_box_list_item_bg" data-url="/pages/shelter/disclaimer/disclaimer?fill_info_type=庇护所"><image src='/img/on_shelter.png'></image></view>
+        <view bindtap="open" class="sq_box_list_item_bg" data-url="/pages/fill_info/apply?fill_info_type=人身安全保护令"><image src='/img/on_order.png'></image></view>       
+      </view> 
+    </view>
+    <view class="sq_box_list_item_title">
+      <view bindtap="openPhone">在线报警</view>
+      <view bindtap="message">伤情鉴定</view>
+      <view bindtap="open" data-url="/pages/shelter/disclaimer/disclaimer?fill_info_type=庇护所">庇护所</view>
+      <view bindtap="open" data-url="/pages/fill_info/apply?fill_info_type=人身安全保护令">人身安全保护令</view>
+    </view>
+  </view>
+  <view class="sq_box">
+    <view class="sq_box_title">
+      <view>
+        <image src='/img/on_line.png'></image>其他服务
+        <text class="versionInfo">{{mottoVersionInfo}}</text>
+      </view>
+    </view>
+    <view class="other_service_list" style="flex-direction:row;">
+      <view  class="other_service_item flex-item">
+        <view bindtap='otherServicePoint'>
+          <image src='/img/other_service_1.png'></image>
+          <text>评估</text>
+        </view>      
+      </view>
+      <view  class="other_service_item flex-item" bindtap="toOdrPro">
+        <view bindtap='otherServicePoint'>
+          <image src='/img/other_service_2.png'></image>
+          <text>调解</text>
+        </view>      
+      </view>
+      <view  class="other_service_item flex-item" bindtap="toOdrPro">
+        <view bindtap='otherServicePoint'>
+          <image src='/img/other_service_3.png'></image>
+          <text>诉讼</text>
+        </view>  
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}">
+    <view class="modal-dialog">
+      <view class='modal-content'>
+        <view class='title'>
+          <text>个人申请</text>
+          <image bindtap='onCancel' src='/img/modal_back.png' class='modal_back'></image>
+        </view>
+        <view class='split_line'></view>
+        <checkbox-group bindchange="checkboxChange" class='group'>
+          <label class="checkbox" wx:for="{{items}}" wx:key='{{item.value}}'>
+            <view class='checked' wx:if="{{item.checked}}">
+              <checkbox hidden='true' value="{{item.name}}" checked="{{item.checked}}"/>
+              <view class='item_content'>
+                <image src='{{item.image}}'></image>
+                <view>{{item.name}}</view>
+                <view class='tip'>{{item.tip}}</view>
+              </view>
+            </view>
+            <view class='unchecked' wx:else="{{item.checked}}">
+              <checkbox hidden='true' value="{{item.name}}" checked="{{item.checked}}"/>
+              <view class='item_content'>
+                <image src='{{item.image}}'></image>
+                <view>{{item.name}}</view>
+                <view class='tip'>{{item.tip}}</view>
+              </view>
+            </view>
+          </label>
+        </checkbox-group>
+      </view>
+      <view class='select_all_area'>
+        <checkbox-group bindchange="bindAgreeChange">
+          <label class="weui-agree" for="weuiAgree">
+            <view class="weui-agree__text">
+              <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+               <view class="weui-agree__checkbox-icon">
+                <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+              </view> 
+              <text class='select_all'>全选</text>
+              
+            </view>
+          </label>
+        </checkbox-group>
+      </view>
+      <view class='checked_number' disabled>
+        <text class='title'>申请数量：  </text>
+        <text class='number'>{{checked_number}}</text>
+      </view>
+      <view class="click_apply_white" bindtap="submit" data-url='{{apply_url}}'><image src='/img/on_apply_white.png' ></image>  一键申请</view>
+    </view>
+  </view>
+ 
+<view class="modal-mask {{cameraNone ? '':'disnone'}}" catchtouchmove="preventTouchMove" wx:if="{{off==0}}">  
+  <view class="modalDialog">
+    <view class='modalContent'>
+      <view class='contentX_f'> 
+        <view class='contentX' bindtap='deteleBox'>
+          <image src='/img/modal_back.png'></image>
+        </view>
+      </view>
+      <view class='contentPolice' bindtap="openPhone">
+          <view class='contentImg'><image src='/img/on_pilice.png'></image></view>
+          <view class='contentText' >
+            <view class='textTitle'>一键报警</view>
+            <view class='textNotes'>即拨电话至110报警热线</view>
+          </view> 
+      </view> 
+      <view class='contentPolice proof' bindtap="openProof">
+          <view class='contentImg'><image src='/img/on_camera.png'></image></view>
+          <view class='contentText'>
+            <view class='textTitle'>固定证据</view>
+            <view class='textNotes'>手机拍照一键取证保存</view>
+          </view> 
+      </view> 
+      <view class='contentPolice proof' bindtap="openRegister">
+          <view class='contentImg'><image src='/img/on_register.png'></image></view>
+          <view class='contentText' >
+            <view class='textTitle'>用户注册</view>
+            <view class='textNotes'>注册新用户,更多功能展示</view>
+          </view> 
+      </view>
+    </view>
+  </view>  
+</view> 
+
+<view class="modal-mask" wx:elif="{{off==3}}">
+  <view class="modalDialog selects">
+    <!-- <text class="close" bindtap="closeProofModal">×</text> -->
+    <view class='contentX' bindtap='closeProofModal'>
+      <image src='/img/modal_back.png'></image>
+    </view>
+    <view class="modalTitle">请选择</view>
+    <view class="items">
+      <text bindtap="openCamera">拍照</text>
+      <text bindtap="openRecord">录音</text>
+    </view>
+  </view>
+</view>
+
+<view class="cameraBox" wx:elif="{{off==1}}" >
+  <camera 
+    device-position="{{cameraSwitch ? 'back':'front'}}" 
+    flash="off" 
+    binderror="error" 
+    class='openCamera'>
+  <cover-image src='/img/modal_back1.png' bindtap='cameraClose'></cover-image><cover-view wx:if="{{Dark}}"></cover-view></camera>
+  <view class='cameraFoot'>
+     <view class='cameraSwitch' bindtap='cameraSwitch'><image src='/img/photoTurn.png' ></image></view>
+     <view class="cameraBtn" bindtap='cameraBtn'><image src='/img/photoBtn.png' class="{{turnBtn ? 'turnBtn':''}}"></image></view>
+     <!-- <view class='cameraReturn' bindtap='cameraReturn'><image src='/img/photoFalse.png' ></image></view> -->
+     <view class='cameraReturn' bindtap='cameraReturn'><image src="{{cameraUrl}}"></image></view>
+  </view>
+</view> 
+
+<view class="recordBox" wx:elif="{{off==2}}">
+  <view class='contentX' bindtap='closeProofModal'>
+    <!-- <image src='/img/chaw.png'></image> -->
+    退出录音
+  </view>
+
+  <view class="record {{showRecordTop ? '' : 'halfScreen'}}">
+    <view class="recordTop" wx:if="{{showRecordTop}}">
+      <view class="duration">
+        <text class="recordText">{{time.minute < 10 ? '0'+time.minute : time.minute}}</text>
+        <text class="recordTextMark">:</text>
+        <text class="recordText">{{time.second < 10 ? '0'+time.second : time.second}}</text>
+        <text class="recordTextMark">:</text>
+        <text class="recordText">{{time.millisecond < 10 ? '0'+time.millisecond : time.millisecond}}</text>
+      </view>
+
+      <view class="timeunit" style="max-width:{{unitPx}}*600px;left:-{{displace}}px;">
+        <view class="lengthtime" style="width:{{lunitPx}}px"></view>
+        <block wx:for="{{timeList}}" wx:key="index" wx:for-item="item">
+          <view class="unititem" style="width:{{unitPx}}px">
+            {{item.minute < 10 ? '0' + item.minute : item.minute}}:{{item.second < 10 ? '0'+item.second : item.second}}
+            <text class="bordermark"></text>
+          </view>
+        </block>
+      </view> 
+
+    </view> 
+    <view class="recordBottom {{showRecordTop ? '' : 'fullScreen'}}">
+       <view class="btn-del">
+         <image wx:if="{{showRecordTop && isRecording}}" src="/img/cha.png"></image>
+         <image wx:if="{{showRecordTop && !isRecording && (time.minute>0||time.second>0||time.millisecond>0)}}" src="/img/chaw.png" bindtap="deleteRecord"></image>
+         <!-- <text wx:if="{{!showRecordTop && !checkAll}}" bindtap="checkAll"></text>
+         <text wx:if="{{!showRecordTop && checkAll}}" bindtap="checkAll">√</text> -->
+       </view>
+       <view class="btn-start">
+         <view class="btn-bcir">          
+           <view wx:if="{{isRecording}}" class="btn-squre" bindtap="pauseRecord"></view>
+           <view wx:else class="btn-scir" bindtap="startRecord"></view>
+         </view>
+       </view>
+       <view class="btn-save">
+         <image wx:if="{{showRecordTop && isRecording}}" src="/img/dui.png"></image>
+         <image wx:if="{{showRecordTop && !isRecording && (time.minute>0||time.second>0||time.millisecond>0)}}" src="/img/duiw.png" bindtap="overRecord"></image>
+         <!-- <image wx:if="{{!showRecordTop}}" src="/img/upload.png" bindtap="uploadAudio"></image> -->
+         
+       </view>
+    </view> 
+  </view>
+  <view class="list {{showRecordTop ? '' : 'mainScreen'}}">
+    <block wx:for="{{list}}" wx:key="index" wx:for-item="item">
+       <view class="item {{editIndex == index ? 'activeItem' : ''}}" bindtap="editAudio" data-index="{{index}}">
+        <view class="item-name">{{item.audioName}}
+          <!-- <view class="check" wx:if="{{(showCheck == index) || editAll}}">
+            <text wx:if="{{(item.check == 1) || checkAll}}" class="ischecked" catchtap="checkdEdit" data-index="{{index}}">√</text>
+            <text wx:if="{{(item.check == 0) && !checkAll}}" catchtap="checkdEdit" data-index="{{index}}"></text>
+          </view> -->
+        </view>
+        <view class="item-info">
+          <text>{{item.createTime}}</text>
+          <text>{{item.length.minute < 10 ? "0"+item.length.minute : item.length.minute}}:{{item.length.second < 10 ? "0"+item.length.second : item.length.second}}:{{item.length.millisecond < 10 ? "0"+item.length.millisecond : item.length.millisecond}}</text>
+        </view>  
+        <view class="item-edit" wx:if="{{editIndex == index}}">
+          <view class="audio">
+            <view class="handle" catchtap="pausePlay" data-index="{{index}}" wx:if="{{item.play}}"> 
+              <text class="stop"></text>
+            </view>
+            <view class="handle" catchtap="startPlay" data-index="{{index}}" wx:else> 
+              <text class="play"></text>
+            </view>
+            <view class="process">
+              <text>{{item.time.minute < 10 ? '0'+item.time.minute : item.time.minute}}:{{item.time.second < 10 ? '0'+item.time.second : item.time.second}}:{{item.time.millisecond < 10 ? '0'+item.time.millisecond : item.time.millisecond}}
+              </text>
+              <!-- <text class="length" style="width: {{unitPx}}*3px">
+                <text class="bar" style="width: {{playBar}}px"></text>
+              </text> -->
+              <!-- <progress percent="{{item.process}}" activeColor="#ec6100" stroke-width="12" /> -->
+              <slider 
+                bindchange="changeProcess" 
+                bindchanging="changeingProcess"
+                value="{{item.process}}"
+                activeColor="#ec6100"
+                block-color="{{item.isDisabled?'#e9e9e9':'#ec6100'}}"
+                disabled = "{{item.isDisabled}}"
+                block-size="12"/>
+              <text>{{item.length.minute < 10 ? "0"+item.length.minute : item.length.minute}}:{{item.length.second < 10 ? "0"+item.length.second : item.length.second}}:{{item.length.millisecond < 10 ? "0"+item.length.millisecond : item.length.millisecond}}
+                <!-- {{audioContext.duration}} -->
+              </text>
+            </view>
+          </view>
+          <view class="upload">
+            <text catchtap="edit" data-index="{{index}}">编辑</text>
+            <text catchtap="deleteAudio" data-index="{{index}}">删除</text>
+          </view>
+        </view>
+       </view>
+    </block>
+  </view>
+</view>
+
+<view wx:else></view>
+
+<view class="modal-mask" wx:if="{{off==2 && showSave}}">
+  <view class="modalDialog saveRecord">
+      <view class="modalTitle">{{saveRecord ? '存储语音备忘录' : '编辑音频'}}</view>
+      <view class="input">
+        <input type="text" bindinput="editAudioName" value="{{audioName}}" auto-focus/> 
+      </view>
+      <view class="items">
+        <text bindtap="deleteAudio" wx:if="{{saveRecord}}">删除</text>
+        <text bindtap="cancleEdit" wx:else>取消</text>
+        <text bindtap="saveRecord">存储</text>
+      </view> 
+  </view>
+</view>
+
+

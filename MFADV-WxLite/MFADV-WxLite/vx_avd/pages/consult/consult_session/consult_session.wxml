@@ -1,0 +1,2 @@
+<!-- <view class='closeBtn' bindtap='closeBtn'>咨询已结束，请点击此处返回</view> -->
+<web-view src="{{url}}"></web-view>

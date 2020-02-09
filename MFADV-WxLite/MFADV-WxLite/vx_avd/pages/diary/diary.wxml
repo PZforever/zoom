@@ -1,0 +1,81 @@
+<view class='nav'>
+   <view class='choose'>
+     <view class="phone_one" bindtap="clickPerson">
+     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="phone_personal">
+         <view class="select_one">{{array[index]}}</view>
+      </picker>
+       <image src="/img/d_arrow.png" class="personal_image {{outRotate ? 'outRotate' :''}}"></image>
+    </view>
+   </view> 
+   <navigator class='edit' url='addone/addone'>
+      <image src="/img/d_group.png"></image>
+      添加分组
+   </navigator>
+</view>
+  <!-- <view bindtap="qwe">qwer</view> -->
+ <scroll-view scroll-y="true" style="height:100%;" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad" bindscroll="scroll">  
+<view class="body"  wx:for="{{groups}}" wx:key>
+  <view class='head'>
+    <view class='head_left'>
+        <!-- 全选按钮  -->
+      <checkbox bindtap="selectAll"  data-id='{{item.id}}' data-index='{{index}}' checked='{{item.isDeleteGroup}}'></checkbox>
+       <!-- 分组名称 -->
+      <view class='head_title'>
+         <text>{{item.groupName}}</text>
+      </view>
+      <!-- 修改组名传值 -->
+      <navigator class='head_img' url='/pages/diary_alter/diary_alter?groupsName={{item.groupName}}&groupid={{item.id}}'>
+      <image src='/img/d_newly1.png'></image></navigator>
+    </view>
+    <!-- 添加日记 -->
+    <view class='rightFath'>
+      <navigator class='head_right' url='/pages/diary_edit/diary_edit?groupId={{item.id}}' bindtap='title' data-index='{{index}}'>
+        <image src='/img/d_add.png'></image>
+        <text>添加日记</text>
+    </navigator>
+      <view class='cutOut' bindtap='cutOut' data-index='{{index}}'><view>{{groups[index].orangeDiaryList.length}}</view><image src="../../img/arrowDown.png" class="{{groups[index].isDelete==0 ? '' :'outRotate'}}"></image></view>
+    </view>
+  </view>
+
+  <view class="page__bd">
+    <view class="content {{groups[index].isDelete==0?'hidden':''}}" wx:for-item="item2" wx:for-index="idx" wx:for="{{item.orangeDiaryList}}" wx:key>
+        <!-- 单选按钮  -->
+        <!-- <view class='content_box'> -->
+          <checkbox wx:if="{{item.isDeleteGroup}}" class="page_check" bindtap='checklist' data-id='{{item2.id}}' data-groupid='{{item.id}}'  data-index='{{index}}' data-idx='{{idx}}' checked='{{item.isDeleteGroup ? true:false}}'> </checkbox>
+          <checkbox wx:else class="page_check" bindtap='checklist' data-id='{{item2.id}}' data-groupid='{{item.id}}'  data-index='{{index}}' data-idx='{{idx}}' checked='{{item2.selected}}'> </checkbox>
+        <!-- </view> -->
+      <navigator class='cent_nav' url='/pages/diary_article/diary_article?id={{item2.id}}&groupid={{item.id}}' bindtap='title' data-index='{{index}}'>
+        <view class="cont_text">
+          <text>{{item2.title}}</text>
+          <image wx:if="{{item2.tagType==1}}" class='markUrl' src="{{markUrl01}}"></image>
+          <image wx:if="{{item2.tagType==2}}" class='markUrl' src="{{markUrl02}}"></image>
+          <image wx:if="{{item2.tagType==3}}" class='markUrl' src="{{markUrl03}}"></image>
+          <image wx:if="{{item2.tagType==4}}" class='markUrl' src="{{markUrl04}}"></image>
+          <image wx:if="{{item2.isApply}}" class="cont_submit {{item2.isApply==0 ? 'contHover':''}}" src='/img/d_submit.png'></image>
+        </view>
+        <view class="cont_time">{{item2.createTime}}</view> 
+            <!-- <view class="weui-cell__ft_in-access pic"></view> -->
+      </navigator>
+    </view>
+
+    <view class='out'>
+        <view class='out_left'>已选中记录： <text>{{item.checkNums}}</text> 条</view> 
+        <view class='outBtn'>
+          <view>
+            <button wx:if="{{item.selected}}" class="outSub" bindtap='diaries' data-groupid='{{item.id}}' data-index='{{index}}'>提交</button>
+            <button wx:else></button>
+          </view>
+          
+          <view wx:if="{{item.resultText==0}}">
+            <button wx:if="{{item.isDeleteGroup}}" bindtap="{{item.isDeleteGroup ? 'openConfirm' :''}}" class="out_right {{item.isDeleteGroup ? 'right_change' :''}}" data-groupid='{{item.id}}' data-index='{{index}}'>删除列表</button>
+            <button wx:else bindtap="{{item.selected ? 'openConfirm' :''}}"  data-groupid='{{item.id}}' data-index='{{index}}' class="out_right {{item.selected ? 'right_change' :''}}">删除日记</button>
+          </view> 
+           <text class='promptBox' wx:elif="{{item.resultText>0}}">已提交日记无法删除!</text> 
+        </view> 
+    </view>
+  </view> 
+</view>
+<!-- <view wx:if="{{isMore}}"></view> -->
+<!-- <view class='isMore' wx:else>已无更多数据...</view> -->
+
+</scroll-view> 

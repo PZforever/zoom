@@ -1,0 +1,53 @@
+/* pages/form/apply.wxss */
+page{
+  background-color: #F7F6F6;
+}
+.options{
+  width: 700rpx;
+  margin: 25rpx;
+  height: 120rpx;
+  background: white;
+}
+.checked{
+  height: 120rpx;
+  color: #F9812B;
+  border-radius: 6rpx;
+  border: 2rpx solid;
+  border-color: #FCEFE6;
+}
+.unchecked{
+  height: 120rpx;
+}
+.circle{
+  display: inline-block;
+  margin-top: 35rpx;
+  margin-left: 120rpx; 
+  width: 100rpx;
+  height: 120rpx;
+}
+.circle image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.self{
+  display: inline-block;
+  font-size: 40rpx;
+  height: 120rpx;
+}
+.others{
+  display: inline-block;
+  font-size: 40rpx;
+  height: 120rpx;
+}
+navigator{
+  height: 100rpx;
+}
+button{
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: white;
+  background-color: #F9812B;
+}

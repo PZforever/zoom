@@ -1,0 +1,67 @@
+page{background:white}
+.mainView {
+  font-size: 30rpx;
+}
+
+.header {
+  height: 440rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header image {
+  width:178rpx;
+  height:142rpx;
+}
+
+.submit {
+  font-size: 32rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  background-color:#fa822b !important;
+  color: white !important;
+}
+
+.left-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 55rpx;
+  margin-right: 55rpx;
+  color:#fa822b;
+  margin-top: 30rpx;
+}
+
+.guessView {
+  position: fixed;
+  height: 237rpx;
+  width: 100%;
+  bottom: 0rpx;
+  _position: absolute;
+}
+
+.guessView image {
+  width: 100%;
+  height: inherit;
+}
+
+.form-field {
+  position: relative;
+}
+.form-field image {
+  position: absolute;
+  left: 68rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28rpx;
+  height:32rpx;
+}
+
+.form-field input {
+  margin-left: 68rpx;
+  margin-right: 68rpx;
+  padding: 16rpx 0rpx 16rpx 70rpx;
+  border-bottom: 1rpx solid #efefef;
+  margin-bottom: 45rpx;
+}

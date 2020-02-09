@@ -1,0 +1,83 @@
+<!--pages/diary_article/diary_article.wxml-->
+ 
+<view class='title'>
+  <view class='title_text'>日记标题：</view>
+  <view class='title_input'><input disabled="{{isApply==1 ? 'disabled':''}}" value='{{title}}' bindinput='title' maxlength='10'></input></view>
+</view> 
+<view class='content'>
+    <view class='text_body'>
+      <textarea class='content_text' maxlength='-1' value='{{remark}}'  bindinput='remark' disabled="{{isApply==1 ? 'disabled':''}}">
+      </textarea> 
+      <view class='content_foot'>
+          <view class='foot_left'>
+             <image src='/img/d_location.png'></image> 
+            <text>{{address}}</text>
+          </view>
+          <view class='foot_right'>
+            <text>{{state}}</text>
+            <switch bindchange='open' checked='{{stated}}'color='#f5a623' disabled="{{isApply==1 ? 'disabled':''}}"/> 
+          </view>
+      </view>
+    </view>
+  </view>
+   
+  <view class="mark {{imgList.length==0&isApply==0 ? 'marginTop':''}}">
+      <image src='/img/d_mark.png'></image> 
+        <view class='markText'>标记</view>
+        <view class="mark_navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+              <view id="{{index+1}}" class="navbar_item {{activeIndex == index+1 ? 'bg_on' : ''}}" bindtap="{{isApply==1 ? '':'tabClick'}}"> 
+                 <view class='win'>
+                    <view class='wText'>{{item}}</view>
+                 </view>
+              </view>
+          </block>
+      </view>
+  </view>
+  <view class="notice {{isApply==0 ? 'disnone':''}}">此日记状态为提交状态，无法操作</view>
+
+<view class='upLoad'>
+    <view class='upOne'></view>
+    <view class='upText'>上传证据</view>
+    <view class="upBtn {{isApply==1 ? 'fold':''}}" bindtap="articleUpload"> + 上传 </view>
+</view> 
+<!-- url='articleUpload/articleUpload'<view bindtap='qwe'>qwerty</view> -->
+  
+<view class="uploadItem" wx:for="{{showList}}" wx:for-index="listindex" wx:key>
+     <view class="uploadTitle">{{item.name}} <text class='originText'>(已上传文件)</text></view>
+     <view class="tit clearfix ">
+      <view class='uploadArrow' data-index="{{listindex}}" bindtap="oldFlodFn">
+        <view class='textNum'>{{showList[listindex].url.length}}</view>
+        <image wx:if='{{item.isHidden}}' src="../../img/arrowUp.png"></image>
+        <image wx:else src="../../img/arrowDown.png"></image> 
+      </view>
+    </view>
+    <view class="uploadChild clearfix {{item.isHidden ? 'expand':'fold'}}" wx:for="{{item.url}}"  wx:for-item="urlItem" wx:for-index="urlindex" wx:key>
+      <view class="uploadChildTitle fl">{{urlItem.url}}</view>
+       <view class="uploadDelete fr {{isApply==1 ? 'fold':''}}" bindtap="deleteUploadHistory" data-list="{{listindex}}" data-urlindex="{{urlindex}}" data-id="{{urlItem.id}}">
+         <image src="../../img/deleteIcon.png"></image> 
+      </view> 
+    </view>
+</view>
+
+<view class="uploadItem {{typeItem.children.length>0 ? 'expand':'fold'}}" wx:for="{{attachements}}" wx:for-item="typeItem" wx:for-index="attachmentIndex" wx:key>
+      <view class="uploadTitle">{{typeItem.name}} <text class='originText'>(新文件)</text></view>
+     <view class="tit clearfix " data-index="{{attachementsIndex}}" bindtap="flodFn" data-index='{{attachmentIndex}}'>
+      <view class='uploadArrow' wx:if="{{typeItem.children.length>0}}">
+        <view class='textNum'>{{typeItem.children.length}}</view>
+        <image wx:if='{{typeItem.isFold}}' src="../../img/arrowDown.png"></image>
+        <image wx:else src="../../img/arrowUp.png"></image> 
+      </view>   
+    </view>
+    <view class="uploadChild clearfix  {{typeItem.isFold ? 'expand' : 'fold'}} " wx:for="{{typeItem.children}}" wx:for-item="childItem" wx:for-index="childIndex" wx:key="childIndex">
+      <view class="uploadChildTitle fl">{{childItem.name}}</view>
+       <view class='uploadDelete fr'  bindtap='imgClose' data-attachmentIndex="{{attachmentIndex}}" data-childIndex="{{childIndex}}">
+         <image src="../../img/deleteIcon.png"></image> 
+      </view> 
+    </view>
+</view>
+ <view style='height:170rpx'></view>
+
+  <view class="submit {{isApply==1 ? 'disnone':''}}">
+    <button class="weui-btn" type="primary" bindtap='submit'>保存</button>
+  </view> 

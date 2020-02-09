@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/main/main",
+    
+    "pages/push/push",
+    "pages/play/play",
+    "pages/vodplay/vodplay",
+    "pages/rtplay/rtplay",
+    "pages/multiroom/room/room",
+    "pages/multiroom/roomlist/roomlist",
+    "pages/multiroom/roomname/roomname",
+    "pages/doubleroom/roomlist/roomlist",
+    "pages/doubleroom/room/room",
+    "pages/doubleroom/roomname/roomname",
+    "pages/liveroom/room/room",
+    "pages/liveroom/roomlist/roomlist",
+    "pages/liveroom/roomname/roomname",
+    "pages/wawaplayer/wawaroomlist/wawaroomlist",
+    "pages/wawaplayer/wawaroom/wawaroom",
+    "pages/RTC/rtc",
+    "pages/RTCTwo/two",
+    "pages/ROLE2",
+    "pages/ROLE4",
+    "pages/ROLE5",
+    "pages/ROLE1/ROLE1",
+    "pages/ROLE3/ROLE3",
+    "pages/ROLE6/ROLE6",
+    "pages/useinfo/useinfo"
+  ],
+  "networkTimeout": {
+    "request": 60000
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "ODR",
+    "navigationBarTextStyle": "#fff"
+  }
+}

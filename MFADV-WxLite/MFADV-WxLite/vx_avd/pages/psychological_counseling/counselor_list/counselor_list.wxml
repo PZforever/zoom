@@ -1,0 +1,51 @@
+<!--pages/psychological_counseling/counselor_list/counselor_list.wxml-->
+<template name='counselorInfo'>
+  <view class='aplt-ifn'>
+    <view class='counselor-item'>
+      <view class='avatar'>
+        <image wx:if="{{item.imgPhoto.length >= 10}}" src="{{'https://fjbt.odrcloud.cn/counselorAndMediators/' + item.imgPhoto}}" err-src="/img/psyWoman.png"></image>
+        <image wx:if="{{item.imgPhoto && item.imgPhoto.length < 10}}" src="{{item.sex == '男'? '/img/psyMan.png' : '/img/psyWoman.png'}}"></image>
+        <image wx:if="{{!item.imgPhoto}}" src="{{item.sex == '男'? '/img/psyMan.png' : '/img/psyWoman.png'}}"></image>   
+      </view>
+      <view class='content'>
+        <view class='counselor-info'>
+          <view class='flex-item title'>
+            <view class='name'>
+              <text>{{item.actualName
+    }}</text>
+            </view>
+            <view class='jobstart'>
+            </view>  
+            <view class="section order" wx:if="{{item.schedulesArray.length > 0}}">
+              <picker bindchange="bindschedulesPickerChange" value="{{item.schedulesIndex}}" range="{{item.schedulesArray}}" data-index='{{item.index}}' data-id='{{item.id}}'>
+                 <text class="{{item.status==item.index ? 'checked' : 'select'}}">预约</text>  
+              </picker> 
+            </view>
+            <view class="section order" wx:if="{{item.schedulesArray.length == 0}}">
+              <text class="busy">排期已满</text>  
+            </view>
+          </view>
+          <view class='flex-item role'>
+            <text>{{item.role}}</text>
+            <view class='jobstart'>
+              <text>{{item.mechWork}}</text>
+            </view>
+          </view>
+          <view class='flex-item introduction'>
+            <text>擅长领域：{{item.ability}}</text>
+          </view>
+        </view> 
+      </view>   
+    </view> 
+  </view>
+</template>
+
+<scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+  <block wx:for='{{counselorItems}}' wx:key='checked' wx:if='{{counselorItems.length > 0}}'>
+    <template is='counselorInfo' data='{{item}}'></template>
+  </block>
+  <block wx:if='{{counselorItems.length == 0}}'>
+    <view class='tips'>该机构暂无咨询师，请返回选择其他机构</view>
+  </block>
+</scroll-view>
+<button bindtap='submit' class="submitBtn">下一步</button>

@@ -1,0 +1,124 @@
+view, image, text, scroll-view, navigator, input {
+  margin: 0;
+  padding: 0;
+}
+
+page {
+  background-color: #f7f6f6;
+}
+
+scroll-view {
+  padding-top: 10rpx;
+}
+
+.head {
+  line-height: 100rpx;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.head_left {
+  overflow: hidden;
+  margin-left: 50rpx;
+  width: 50%;
+}
+
+.head checkbox {
+  zoom: 70%;
+}
+
+.head checkbox, .head_title, .head_img {
+  float: left;
+}
+
+.head .head_title {
+  display: block;
+  font-size: 30rpx;
+  max-width: 60%;
+  margin-left: 16rpx;
+  line-height: 106rpx;
+}
+
+.head .head_title text {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.uploadChild {
+  width: 90%;
+  line-height: 100rpx;
+  border-top: 1rpx solid #f6f6f6;
+  border-bottom: 1rpx solid #f6f6f6;
+  padding: 0rpx 50rpx 1rpx 80rpx;
+  background: #fff;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.uploadChildTitle {
+  width: 70%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.page_check {
+  zoom: 70%;
+  float: left;
+  margin-left: 40rpx;
+  margin-right: 10rpx;
+}
+
+.bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 120rpx;
+  background: #fff;
+}
+
+.btn {
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f9812b;
+  color: #fff;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 20rpx auto !important;
+}
+
+.expandArrow {
+  margin-right: 0rpx;
+  width: 300rpx;
+  text-align:right;
+}
+
+.expandArrow image {
+  width: 26rpx;
+  height: 16rpx;
+  margin-right: 50rpx;
+}
+
+.fold {
+  display: none;
+}
+
+.expand {
+  display: block;
+}
+
+.outRotate {
+  transform: rotate(180deg);
+}
+.hint{
+  font-size:26rpx;
+  text-align:center;
+  line-height:100rpx;
+  color:#666;
+}

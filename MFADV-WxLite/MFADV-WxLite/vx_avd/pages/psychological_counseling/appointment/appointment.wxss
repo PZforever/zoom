@@ -1,0 +1,113 @@
+/* pages/psychological_counseling/appointment/appointment.wxss */
+page{
+  height: 100%;
+  background-color: #f7f6f6;
+}
+.aplt-ifn{
+  margin-top: 10rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f4f4f4;
+  background: #fff;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+image.edit{
+  display: inline-block;
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 12rpx;
+}
+.aplt-title{
+  padding-left: 3%;
+}
+.ifn-item{
+  padding-left: 8%;
+  padding-right: 6%;
+  width: 86%;
+  border-top: 3rpx solid #fafafa;
+}
+.ifn-item .item-text{
+  width: 70%;
+  color: #333;
+  display:inline-block;
+}
+.ifn-item .last-text{
+  width: 60%;
+  color: #999;
+  display:inline-block;
+} 
+.ifn-item .psychologist-name{
+  width: 60%;
+  color: #333;
+  display:inline-block;
+}
+.ifn-item .input{
+  width: 94%;
+  display:inline-block;
+}
+.ifn-item image{
+  width: 20rpx;
+  height: 20rpx;
+  display:inline-block;
+}
+.ifn-item .item-title{
+  color: #999;
+  width: 24%;
+  display: inline-block;
+}
+.radio{
+  width: 70%;
+  display: inline-block;
+}
+.checked{
+  display: inline-block; 
+  margin-right: 30rpx;
+  width: 180rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #F9812B;
+  text-align: center;
+  align-content: center;
+  border: 1rpx solid #F9812B;
+  border-radius: 6rpx;
+} 
+.unchecked{
+  display: inline-block; 
+  margin-right: 30rpx;  
+  width: 180rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  align-content: center;
+}
+.name1{ 
+  height: 40rpx;
+  text-align: center;
+}
+.name2{
+  font-size: 20rpx;
+  height: 30rpx;
+  text-align: center;
+}
+picker{
+  display: inline-block;
+  width: 70%;
+} 
+button{
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  width: 80%;
+  color: white;
+  background-color: #F9812B;
+}
+.ifn-item .choice{
+  width: 16%;
+  display: inline-block;
+}
+.ifn-item .choice text{
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  color: #F9812B;
+  border: 2rpx solid #F9812B;
+}

@@ -1,0 +1,43 @@
+<!--pages/push/push.wxml-->
+
+<view style="width:100%;height: 100%; background-color: white;">
+  <view style="width:100px;height:500px">
+    <live-pusher
+      style="width:100%; height: 100px;"
+      id="push1"
+      mode="RTC"     waiting-image="https://mc.qcloudimg.com/static/img/daeed8616ac5df256c0591c22a65c4d3/pause_publish.jpg"
+      background-mute="{{backgroundMute}}"
+      url="rtmp://3891.livepush.myqcloud.com/live/3891_user_af2834fa_5e7e?bizid=3891&txSecret=e9962c5e1eee85f0251f9a43633c3e12&txTime=5A59713D" 
+      autopush
+      bindstatechange="onPushEvent">
+</live-pusher> 
+
+ <live-player
+      style="width:100%;height:100px; position:relative;left:105px"
+      id="play1"
+      mode="RTC"
+      min-cache="1"
+      max-cache="3"
+      src="rtmp://3891.liveplay.myqcloud.com/live/3891_user_f3d0e119_6465" 
+      autoplay
+      debug="false">   
+</live-player>
+
+<live-player
+      style="width:100%;height:100px; position:relative;left:200px"
+      id="play2"
+      mode="RTC"
+      min-cache="1"
+      max-cache="3"
+      autoplay
+      src="rtmp://3891.liveplay.myqcloud.com/live/3891_user_5e90c716_3e12" 
+      debug="false">   
+ </live-player>
+  </view>
+<view>
+<view wx:for="{{msgs}}" >{{item}}</view>
+</view>
+<view><input bindinput='getValue'>{{inputTxt}}</input><button bindtap='send'>发送</button></view>
+
+<!-- <view bindtap='clickkk'>iiii</view> -->
+</view>

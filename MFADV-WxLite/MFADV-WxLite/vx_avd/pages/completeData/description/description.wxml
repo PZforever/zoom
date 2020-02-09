@@ -1,0 +1,157 @@
+<!--pages/completeData/description/description.wxml-->
+<view class="description {{posShow?'pos':''}}">
+<form  bindsubmit="formSubmit">
+  <view class='des-item'  bindtap='openAddress'>
+    <text class='item-title' >发生地址</text>
+    <input class='input' disabled='true' value='{{region}}' placeholder='点击选择地址'></input>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+
+  <view class='des-item'>
+    <text class='item-title'>详细地址</text>
+    <input class='input' placeholder='请输入详细地址' bindblur='getAddress' value='{{address}}'></input>
+  </view>
+  <view class='des-item disease-detail'>
+    <text class='item-title'>事件描述</text>
+    <textarea wx:if="{{textareaShow}}" name='remarks' value='{{remarks}}' placeholder='请描述事件详细内容' maxlength='-1' placeholder-class='placeh'></textarea>
+    <view class='con case'>   
+      <view class='means'>{{against_type}}：</view>
+      <view class='container'>
+        <text wx:for="{{recommendCase}}" bindtap='choseTxtColor' wx:for-item="cs" wx:key='cs' class="flex-item chose-txt {{cs.checked==true ? 'active' : ''}}"  data-id="{{index}}" data-checked="{{cs.checked}}">{{cs.name}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='des-item disease-detail'> 
+    <text class='item-title'>申请诉求</text>
+    <textarea wx:if="{{textareaShow}}" name='appeal' value='{{appeal}}' placeholder='请描述申请诉求详细内容' placeholder-class='placeh'></textarea>
+  </view> -->
+  <view class='des-item'>
+    <text class='item-title spe'>受害人期望目的</text>
+    <picker mode="selector" range="{{expect_purpose}}" value="{{index1}}" bindchange="aimPickerSelected">
+      <text>{{expect_purpose[index1]}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>残疾</text>
+    <picker mode="selector" range="{{disability}}" value="{{index2}}" bindchange="disabilityPickerSelected">
+      <text>{{disability[index2]}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>怀孕（哺乳期）</text>
+    <picker mode="selector" range="{{pregnant}}" value="{{index3}}" bindchange="pregnantPickerSelected">
+      <text>{{pregnant[index3]}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>事件发生时间</text>
+    <picker mode="selector"  range="{{advTime}}" value="{{index4}}" bindchange="advTimePickerSelected">
+      <text>{{advTime[index4]}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>事件类型</text>
+    <picker mode="selector" range="{{violent_type}}" value="{{index5}}" bindchange="advTypePickerSelected">
+      <text>{{violent_type[index5]}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item' bindtap='showModal'>
+    <text class='item-title spe'>施暴原因</text>
+    <view class='rsn'>
+        <text wx:for='{{violentReasons}}' wx:for-item='reason' wx:key='id'>{{reason.name}} </text>
+    </view>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>是否受伤</text>
+    <picker mode="selector" range="{{whetherInjured}}" value="{{index9}}" bindchange="whetherInjuredPickerSelected">
+      <text>{{whetherInjured[index9]}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>是否验伤</text>
+    <picker mode="selector" range="{{whetherInjury}}" value="{{index10}}" bindchange="whetherInjuryPickerSelected">
+      <text>{{whetherInjury[index10]}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item' wx:if='{{whetherInjuryIdentify}}'>
+    <text class='item-title spe'>伤情鉴定地点</text>
+    <input name='injuryIdentifyPlace' value='{{injuryIdentifyPlace}}' placeholder='请输入伤情鉴定地点' placeholder-style='color:#999;'></input>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>是否报警</text>
+    <picker mode="selector" range="{{whetherCall}}" value="{{index11}}" bindchange="whetherCallPickerSelected">
+      <text>{{whetherCall[index11]}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item' wx:if='{{whetherAlarm}}'>
+    <text class='item-title spe'>报警时间</text>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="{{nowDate}}" bindchange="bindDateChange">
+      <text>{{alarmTime}}</text> 
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item' wx:if='{{whetherAlarm}}'>
+    <text class='item-title spe'>报警次数</text>
+    <input name='alarmNumber' type='number' value='{{alarmNumber}}' placeholder='请输入报警次数' placeholder-style='color:#999;' maxlength='8' min='1'></input>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>首次家暴时间</text>
+    <picker mode="date" value="{{date2}}" start="2015-09-01" end="{{nowDate}}" bindchange="bindDateChange2">
+      <text>{{firstViolentTime}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>施暴次数</text>
+    <input name='violentNumber' type='number' value='{{violentNumber}}' placeholder='请输入施暴次数' placeholder-style='color:#999;' maxlength='8' min='1'></input>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>受害人当前心理状态</text>
+    <picker mode="selector" range="{{mentality_shou}}" value="{{index6}}" bindchange="victimStatePickerSelected">
+      <text>{{mentality_shou[index6]}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>施暴人当前心理状态</text>
+    <picker mode="selector" range="{{mentality_shi}}" value="{{index7}}" bindchange="perpetratorStatePickerSelected">
+      <text>{{mentality_shi[index7]}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view class='des-item'>
+    <text class='item-title spe'>施暴人对家暴态度</text>
+    <picker mode="selector" range="{{violent_attitude}}" value="{{index8}}" bindchange="perpetratorAdvPickerSelected">
+      <text>{{violent_attitude[index8]}}</text>
+    </picker>
+    <view class="weui-cell__ft_in-access personalArrowRight"></view>
+  </view>
+  <view>
+    <button formType='submit' class='subBtn'>保存</button>
+  </view>
+</form>
+</view>
+<!--隐藏区域  -->
+  <view class='maskLayer' catchtouchmove='true' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <view class='chooseReason' animation="{{animationData}}" wx:if="{{showModalStatus}}">
+    <view class='tit'>
+      <view bindtap='cancelReason'>取消</view>
+      <view>施暴原因（多选）</view>
+      <view bindtap='confirmReason'>确定</view>
+    </view>
+    <view class="radio-group" wx:for="{{violent_reason}}" wx:for-item='itemReason' wx:key="id">
+      <view class="checkbox reasons {{itemReason.isChecked?'labelId':''}}" data-param="{{index}}" bindtap="chooseReason">
+        {{itemReason.name}}
+      </view>
+    </view>
+  </view>
+  <area-select id="areaSelect" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent"></area-select>

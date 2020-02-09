@@ -1,0 +1,227 @@
+/* pages/completeData/description/description.wxss */
+page{
+  background-color: #F7F6F6;
+}
+.description{
+  margin-top: 12rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #F7F6F6;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+.des-item{
+  padding-left: 8%;
+  padding-right: 6%;
+  border-top: 3rpx solid #F7F6F6;
+  background: #fff;
+}
+.item-title{
+  color:#999;
+  width:30%;
+  display:inline-block;
+  margin-right:6%;
+}
+.spe{
+  line-height:36rpx;
+  vertical-align:middle;
+}
+picker{
+  display:inline-block;
+  width:59%;
+}
+image.arrow{
+  width: 12rpx;
+  height: 20rpx;
+}
+.priv-slt .item-title{
+  color: #f9812b;
+}
+/*swtich样式-start*/
+/*swtich整体大小*/
+.wx-switch-input{
+  width:84rpx !important;
+  height:42rpx !important;
+  margin-right:4.4%;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+  margin-top: 0rpx;
+  width:82rpx !important;
+  height: 38rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+  width: 41rpx !important;
+  height: 38rpx !important;
+}
+/*swtich样式end*/
+.disease-detail{
+  padding-left: 0%;
+  padding-right: 0%;
+  margin-bottom: 12rpx;
+}
+.disease-detail text{
+  display: block;
+  width: 86%;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 3rpx solid #F7F6F6;
+  padding-left: 8%;
+  padding-right: 6%;
+}
+.disease-detail textarea{
+  display: block;
+  width: 86%;
+  height: 220rpx;
+  line-height: 50rpx;
+  border-bottom: 3rpx solid #F7F6F6;
+  padding-left: 8%;
+  padding-right: 6%;
+  padding-top: 10rpx;
+}
+.placeh{
+  color:#999;
+  line-height: 50rpx;
+}
+input{
+  display:inline-block;
+  line-height:100rpx;
+  height:100rpx;
+  vertical-align:middle;
+  width:59%;
+}
+/*施暴原因  */
+.maskLayer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.chooseReason {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  font-size: 26rpx;
+}
+.tit{
+  width: 88%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #999;
+  border-bottom:1rpx solid #e1e1e1; 
+  margin-bottom: 10rpx;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+.tit view:nth-child(1){
+  float: left;
+  width: 10%;
+  text-align: left;
+}
+.tit view:nth-child(2){
+  float: left;
+  width: 80%;
+}
+.tit view:nth-child(3){
+  float: left;
+  width: 10%;
+  text-align: right;
+  color: #f9812b;
+}
+.reasons{
+  width: 88%;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #666;
+  padding-left: 6%;
+}
+.radio-group{   
+  display: flex;  
+  flex-direction: column;  
+  padding-bottom: 10rpx;
+}  
+.select{  
+  width: 100rpx;  
+  height: 50rpx;  
+}  
+.labelId{
+    border-radius:4px;
+    position: relative;
+    color: #f9812b;
+}
+.labelId:after {
+    content: '\00a0';
+    color: red;
+    display: inline-block;
+    border: 2rpx solid #f9812b;
+    border-top-width: 0;
+    border-right-width: 0; 
+    width: 28rpx;
+    height: 16rpx;
+    transform: rotate(-50deg);
+    position: absolute;
+    top:6px;
+    right:4px;
+}
+.rsn{
+  display: inline-block;
+  width: 59%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: top;
+}
+.pos{
+  position:fixed;
+  left:0;
+  top:-1000rpx;
+  width:100%;
+}
+/* 右箭头 */
+.personalArrowRight{
+  display:inline-block;
+  padding-bottom:12rpx;
+}
+
+.case text{
+  display: inline-block;
+  width:28%;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  text-align: center;
+  height: 48rpx;
+  line-height: 48rpx;
+  border: 1px solid #f7f6f6;
+  border-radius: 6rpx;
+  color: #cdcdcd;
+  margin-bottom: 20rpx;
+}
+.case text.active{
+  border: 1px solid #fa822b;
+  color: #fa822b;
+}
+.means{
+  width: 86%;
+  padding-left:8%;
+  padding-right:6%;
+}
+.container{
+  flex-wrap:wrap;
+  padding:10rpx 2%;
+  flex-direction:row;
+}
+.flex-item{
+  width:28%;
+}

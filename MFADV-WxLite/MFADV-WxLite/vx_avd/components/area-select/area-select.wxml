@@ -1,0 +1,56 @@
+<!--components/area-select.wxmlby:张涛20180308-->
+<view class="area-select-bg" wx:if="{{isShow}}">
+	<view class="area-select-box">
+		<view class="area-select-title">
+			<view catchtap='_cancelEvent' class="select-off">取消</view>
+			地址选择
+			<view catchtap='_confirmEvent' class="select-on">确认</view>
+		</view>
+		<view class="area-select-btn">
+			<view class="area-select-btn-item" wx:if="{{selectNum>0}}" id="1" bindtap="tabBtn">{{provinceName}}</view>
+			<view class="area-select-btn-item" wx:if="{{selectNum>1}}" id="2" bindtap="tabBtn">{{cityName}}</view>
+			<view class="area-select-btn-item" wx:if="{{selectNum>2}}" id="3" bindtap="tabBtn">{{areaName}}</view>
+			<view class="area-select-btn-item" wx:if="{{selectNum>3}}" id="4" bindtap="tabBtn">{{addressName}}</view>
+			<view class="area-select-btn-item" wx:if="{{selectNum>=4}}" id="5" bindtap="tabBtn">{{communityName}}</view>
+			<view class="area-select-btn-active area-select-btn-item" wx:if="{{isHaveSubset}}">请选择</view>
+		</view>
+		<view class="area-select-show">
+			<scroll-view scroll-y style="height:660rpx;">
+				<block wx:for="{{list}}" wx:key="">
+					<view class="area-select-show-item" data-item="{{item}}" bindtap="selectBtn">
+						<view class="area-select-show-item-name" style="color:{{item.checked?'#ea8842':''}}">{{item.name}}</view>
+						<image class="area-select-show-item-checked" wx:if="{{item.checked}}" src="/img/select-on.png"></image>
+					</view>
+				</block>
+			</scroll-view>
+		</view>
+	</view>
+</view>
+
+<view class="registration-area-select-bg" wx:if="{{isRegistrationShow}}">
+	<view class="registration-area-select-box">
+		<view class="registration-area-select-title">
+			<view catchtap='registrationCancelEvent' class="select-off">取消</view>
+			地址选择
+			<view catchtap='registrationConfirmEvent' class="select-on">确认</view>
+		</view>
+		<view class="registration-area-select-btn">
+			<view class="registration-area-select-btn-item" wx:if="{{selectNum>0}}" id="1" bindtap="tabBtn">{{provinceName}}</view>
+			<view class="registration-area-select-btn-item" wx:if="{{selectNum>1}}" id="2" bindtap="tabBtn">{{cityName}}</view>
+			<view class="registration-area-select-btn-item" wx:if="{{selectNum>2}}" id="3" bindtap="tabBtn">{{areaName}}</view>
+			<view class="registration-area-select-btn-item" wx:if="{{selectNum>3}}" id="4" bindtap="tabBtn">{{addressName}}</view>
+			<view class="registration-area-select-btn-item" wx:if="{{selectNum>=4}}" id="5" bindtap="tabBtn">{{communityName}}</view>
+			<view class="registration-area-select-btn-active registration-area-select-btn-item" wx:if="{{isHaveSubset}}">请选择</view>
+		</view>
+		<view class="registration-area-select-show">
+			<scroll-view scroll-y style="height:660rpx;">
+				<block wx:for="{{list}}" wx:key="">
+					<view class="registration-area-select-show-item" data-item="{{item}}" bindtap="selectBtn">
+						<view class="registration-area-select-show-item-name" style="color:{{item.checked?'#ea8842':''}}">{{item.name}}</view>
+						<image class="registration-area-select-show-item-checked" wx:if="{{item.checked}}" src="/img/select-on.png"></image>
+					</view>
+				</block>
+			</scroll-view>
+		</view>
+	</view>
+</view>

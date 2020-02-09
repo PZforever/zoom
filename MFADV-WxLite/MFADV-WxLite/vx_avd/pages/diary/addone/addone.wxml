@@ -1,0 +1,9 @@
+<!--pages/diary/addOne/addone.wxml-->
+<view class='box'>
+<view class='text'>组名</view>
+ <input class='inp' bindinput='intext' maxlength='12'></input> 
+</view> 
+<view class='nav'>
+   <view class='btn' bindtap='saveDiary'>确认</view> 
+</view>
+<!-- open-type='navigateBack' -->

@@ -1,0 +1,51 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #f7f6f6;
+  font-size: 30rpx;
+}
+
+.mainView {
+  margin-top: 15rpx;
+  color: #a7a7a7;
+  border-top: 1rpx solid #ecedee;
+  border-bottom: 1rpx solid #ecedee;
+}
+
+.line {
+  background-color: #ffffff;
+}
+
+.inputLine {
+  display: flex;
+  padding: 35rpx 35rpx 35rpx 45rpx;
+  border-bottom: 1rpx solid #f7f6f6;
+}
+
+input {
+  color: #333;
+}
+
+.submitLine {
+  padding: 22rpx 77rpx 22rpx 77rpx;
+  border-top: 50rpx solid #fafafa;
+}
+
+.submit {
+  background-color: #fa822b;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+text {
+  width: 150rpx;
+}
+
+.miniBtn {
+  width:240rpx;
+  color:#fa822b;
+  font-size: 24rpx;
+  background:white;
+  padding:0;
+  border:2rpx solid #fa822b;
+}

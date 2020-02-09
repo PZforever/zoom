@@ -1,0 +1,85 @@
+view,image,text,scroll-view,navigator,input{
+  margin: 0;
+  padding: 0;
+}
+page{
+  background-color: #F7F6F6;
+}
+.clearfix:after, .clearfix:before {
+    content: " ";
+    display: table;
+}
+.clearfix:after{
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+.myMessageContainer,.myMessageBody{
+  width: 100%;
+  background-color: #F7F6F6;
+}
+.myMessageItem{
+  margin-top:10rpx;
+  background-color: #fff;
+}
+.myMessageContant{
+  border-top:2rpx solid #eeeeee;
+  border-bottom: 2rpx solid #eeeeee;
+  padding: 25rpx 15rpx 25rpx 30rpx;
+}
+.myMessageContainer .messageIcon{
+  width:34rpx;
+  height: 28rpx;
+  margin-top:38rpx;
+}
+.messageIconBox{
+  position: relative;
+  float: left;
+}
+.myMessageContainer .messageDot{
+  width:15rpx;
+  height: 15rpx;
+  background: #ff0000;
+  border-radius: 50%;
+  position: absolute;
+  top:34rpx;
+  left:30rpx;
+}
+.myMessageContainer .messageBox{
+  float: left;
+  width: 90%;
+  margin-left:25rpx;
+}
+.myMessageItemDepict{
+  color:#999999;
+  font-size: 30rpx;
+  line-height:50rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.messageItemTitle{
+  width: 56%;
+  float:left;
+  font-size: 30rpx;
+  line-height:50rpx;
+  color:#333333;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.messageItemTime{
+  float: right;
+  font-size: 26rpx;
+  line-height:50rpx;
+  color:#999999;
+}
+.myMessageBottomInfo{
+  font-size: 20rpx;
+  color: #999999;
+  line-height: 40rpx;
+  text-align: center;
+  margin: 10rpx 0 20rpx 0;
+}

@@ -1,0 +1,47 @@
+/* pages/diary_add/diary_add.wxss */
+page{
+  background-color: #f6f7f7;
+}
+.box{
+  margin-top:20rpx;
+  height: 100rpx;
+  line-height: 100rpx; 
+  background: #fff;
+  font-size: 36rpx;
+  color: #333;
+  overflow: hidden;
+}
+.box .text{
+  display: inline-block;
+  color: #b8b8b8;
+  margin-left: 60rpx;
+}
+.inp{
+  width: 78%;
+  height: 100%;
+  float: right;
+}
+.nav{
+position: fixed;
+  bottom: 60rpx;
+  left: 75rpx;
+}
+.btn{
+  width: 600rpx;
+  height: 100rpx;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 100rpx;
+  background: #fa822b;
+  /* position: fixed;
+  bottom: 60rpx;
+  left: 75rpx; */
+}
+
+
+
+
+
+

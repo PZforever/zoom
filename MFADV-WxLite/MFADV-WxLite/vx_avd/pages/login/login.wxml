@@ -1,0 +1,22 @@
+<view class="mainView">
+  <view class="header">
+    <view class="">
+      <image mode='widthFix' src='/img/logo.png'></image>
+    </view>
+  </view>
+  <view class="form-field">
+    <image mode='widthFix' src='/img/login_userid.png'></image>
+    <input type="number" placeholder="请输入手机号" maxlength="11" id="1" bindtap="setFocus" focus="{{focusID==1}}" bindinput="setPhone" value=""/>
+  </view>
+  <view class="form-field">
+    <image mode='widthFix' src='/img/login_password.png'></image>
+    <input type="text" password placeholder="请输入密码"  bindtap="setFocus" focus="{{focusID==2}}" id="2" bindinput="setPassword" maxlength="20" value=''/>
+  </view>
+  <view>
+    <button bindtap="submit" disabled="{{disabled}}" class="submit">登录</button>
+  </view>
+  <view class="left-right">
+    <navigator url='signon/signon?type=1'>忘记密码?</navigator>
+    <navigator url='disclaimer/disclaimer?type=2'>注册账号</navigator>
+  </view>
+</view>

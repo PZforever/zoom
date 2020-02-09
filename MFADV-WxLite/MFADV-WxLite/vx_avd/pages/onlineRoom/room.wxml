@@ -1,0 +1,136 @@
+<!--pages/onlineRoom/room.wxml-->
+<view class='container'>
+  
+  <view class='rtcbox' style="height:{{isMessageHide?'80vh':'60vh'}}">
+    <live-pusher
+      id="pusher"
+      autopush
+      mode="RTC"
+      url="{{pusher.push.pushURL}}"
+      aspect="{{config.aspect}}"
+      min-bitrate="{{config.minBitrate}}"
+      max-bitrate="{{config.maxBitrate}}"
+      beauty="{{config.beauty}}"
+      muted="{{pusher.muted}}"  
+      background-mute="{{backgroundMute}}"
+      debug="{{config.debug}}"
+      bindstatechange="onPush"
+      binderror="onError"
+      enable-camera="{{pusher.enableCamera}}"
+      class="{{role=='consultant'?'consultant':num<=1?'player':pusher.role.code==10?'player1':'player2'}}"
+      style="height:{{isMessageHide||pusher.role.code==50?'40vh':'20vh'}}"
+      >
+      <cover-view class='character'>
+            <cover-view class='name'>{{pusher.role.role}}：{{pusher.actualName}}</cover-view>
+            <!-- <cover-view class='muteIcon' bindtap='changeMute'> -->
+              <cover-image src="{{pusher.muted?'../../img/muted.png':'../../img/mute.png'}}" class='voice' bindtap='changeMute'></cover-image>
+            <!-- </cover-view> -->
+            <!-- <cover-view class='cameraIcon' bindtap='closeCamera'> -->
+              <cover-image src="{{!pusher.enableCamera?'../../img/noCamera.png':'../../img/camera.png'}}" class='camera' bindtap='closeCamera'></cover-image>
+            <!-- </cover-view>          -->
+      </cover-view>
+      <block wx:if="{{!pusher.enableCamera}}" >
+               <cover-image src='../../img/onlyVoice.png' class='waitImg'></cover-image>  
+               <!-- <cover-view class='cover'></cover-view> -->
+            </block>
+    </live-pusher>  
+    <block wx:for="{{player}}" wx:if="{{player.length==2}}" class="{{item.role.code==50?'consultant':num<=1?'player':item.role.code==10?'player1':'player2'}}">
+    
+      <live-player
+              id="{{item.role.code}}"
+              autoplay
+              mode="RTC"
+              object-fit="fillCrop"
+              min-cache="0.1"
+              max-cache="0.3"
+              wx:if="{{item.role.code==50||item.push.accelerateURL||num==0}}"
+              src="{{item.push.accelerateURL}}" 
+              debug="{{config.debug}}"
+              background-mute="{{true}}"
+              bindstatechange="onPlay"
+              class="{{item.role.code==50?'consultant':num==1?'player':item.role.code==10?'player1':'player2'}}"
+              style="height:{{isMessageHide||item.role.code==50?'40vh':'20vh'}}"
+              >
+            <cover-view class='character'>
+              <cover-view class='name'>{{item.role.role}}：{{item.actualName}}</cover-view>
+              <!-- <cover-view class='muteIcon'> -->
+                <cover-image src="{{item.muted?'../../img/muted.png':'../../img/mute.png'}}" class='voice' 
+                bindtap='changeVoice' data-id='{{item.id}}'></cover-image>
+              <!-- </cover-view>
+              <cover-view class='cameraIcon'> -->
+                <cover-image src="{{!item.enableCamera?'../../img/noCamera.png':'../../img/camera.png'}}" class='camera'
+                 bindtap='changeCamera'  data-id='{{item.id}}'></cover-image> 
+              <!-- </cover-view> -->
+            </cover-view>
+            <block  wx:if="{{(item.role.code==50&&!item.push.accelerateURL)||(!item.push.accelerateURL&&num==0)}}">
+              <cover-image  src='../../img/offline.png' class='waitImg' ></cover-image>
+              <cover-view class='loading'>等待加入</cover-view>
+            </block>
+            <block wx:if="{{!item.enableCamera}}" >
+               <cover-image src='../../img/onlyVoice.png' class='waitImg'></cover-image>  
+               <!-- <cover-view class='cover'></cover-view> -->
+            </block> 
+      </live-player> 
+      
+    </block> 
+    <block wx:for="{{player}}" wx:if="{{player.length==1}}" class="{{item.role.code==50?'consultant':'player'}}">
+    
+      <live-player
+              id="{{item.role.code}}"
+              autoplay
+              mode="RTC"
+              object-fit="fillCrop"
+              min-cache="0.1"
+              max-cache="0.3"
+              src="{{item.push.accelerateURL}}" 
+              debug="{{config.debug}}"
+              background-mute="{{true}}"
+              bindstatechange="onPlay"
+              class="{{item.role.code==50?'consultant':'player'}}"
+              style="height:{{isMessageHide||item.role.code==50?'40vh':'20vh'}}"
+              >
+            <cover-view class='character'>
+              <cover-view class='name'>{{item.role.role}}：{{item.actualName}}</cover-view>
+              <!-- <cover-view class='muteIcon'> -->
+                <cover-image src="{{item.muted?'../../img/muted.png':'../../img/mute.png'}}" class='voice'
+                 bindtap='changeVoice' data-id='{{item.id}}'></cover-image>
+              <!-- </cover-view>
+              <cover-view class='cameraIcon'> -->
+                <cover-image src="{{!item.enableCamera?'../../img/noCamera.png':'../../img/camera.png'}}" class='camera'
+                bindtap='changeCamera'  data-id='{{item.id}}'></cover-image> 
+              <!-- </cover-view> -->
+            </cover-view>
+            <block  wx:if="{{(item.role.code==50&&!item.push.accelerateURL)||(!item.push.accelerateURL&&num==0)}}">
+              <cover-image  src='../../img/offline.png' class='waitImg' ></cover-image>
+              <cover-view class='loading'>等待加入</cover-view>
+            </block>
+            <block wx:if="{{!item.enableCamera}}" >
+               <cover-image src='../../img/onlyVoice.png' class='waitImg'></cover-image>  
+               <!-- <cover-view class='cover'></cover-view> -->
+            </block> 
+      </live-player> 
+      
+    </block> 
+  </view>
+  <view class='msgBox' bindtap='toggleHide' style="height:{{isMessageHide?'10vh':'30vh'}}">
+    <scroll-view scroll-with-animation="true" scroll-into-view="msg{{toView}}" scroll-y="true" class="scrollMsg" bindscrolltoupper="getHistoryMsg">
+      <view wx:for="{{msgList}}" wx:for-item="i" id="msg{{i.id}}" class='msgItem'>
+        <!-- <view class='headImg'><image src='{{i.}}'></image></view> -->
+        <!-- <view class='senderInfo'></view> -->
+        <view class='msgInfo'>
+          <view class="time">
+            <text class="{{i.violentPersonnel.role.code==10?'applyerTime':i.violentPersonnel.role.code==50?'consoultantTime':'beapplyerTime'}}"> {{i.create_time+" "}} {{i.sender}}</text> <text class="msgContent">{{i.content}}</text>
+          </view>
+          <!-- <view class='msgContent'>{{i.content}}</view> -->
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='inputBox'>
+    <!-- <view class='translateVoice'><image src='../../img/voice.png' class='recode'></image></view>  -->
+    <view class='inputForm'>
+      <input placeholder='请输入内容' class='input' bindinput='inputMsg' value='{{content}}'></input>
+      <button class='sendBtn' bindtap="sendMessage" disabled='{{btnDisabled}}'>发送</button>
+    </view>
+  </view>
+</view>

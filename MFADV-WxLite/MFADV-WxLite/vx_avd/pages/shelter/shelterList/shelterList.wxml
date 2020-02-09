@@ -1,0 +1,47 @@
+<!--pages/shelter/shelterList/shelterList.wxml-->
+<view class="radio-group">
+  <view class='title-outer'>
+    <view class='shelter-selected clearfix'>
+      <view class='tip'>
+         <image src='/img/mapAdd.png'></image> 
+        <text>当前庇护所</text>
+      </view>
+      <view class='shelter-name'>
+        <text>{{shelter_selected_name}}</text>
+        <image src='/img/arrow.png'></image> 
+      </view>
+    </view>  
+    <view class='list-title clearfix'>
+      <!-- <view class='where' bindtap="openAddress">{{cityName}}</view> -->
+      <view class='where'>杭州</view>
+      <view class='search clearfix'>
+        <input bindinput='searchIpt' name='searchKey' placeholder='搜索您想要去的庇护所'></input>
+        <!-- <navigator url='/pages/shelter/shelterDetail/shelterDetail'> -->
+          <view bindtap='searchShelter'>搜索</view>
+        <!-- </navigator> -->
+      </view>
+    </view>
+  </view>
+  
+  <scroll-view scroll-y bindscrolltolower="lower">
+    <view class="item clearfix" wx:for="{{sanctuariesList}}" wx:key="distance" wx:for-index="idx" bindtap='selectShelter' data-address="{{item}}" data-shelterId="{{item.id}}" data-code="{{item.code}}">
+      <image class='shelter-img' src="../../../img/shelter.png"></image> 
+      <view class='center'>
+        <text class='shelter-title'>{{item.name}}</text>
+        <!-- <text class='shortest' wx:if='{{idx==0}}'>距离最近</text><text>\n</text> -->
+        <view class='location'>
+          <image src='/img/location.png'></image>
+          <!-- <text decode="{{true}}" space="{{true}}">{{item.distance}}米&nbsp;&nbsp;{{item.address}}</text> -->
+          <text decode="{{true}}" space="{{true}}">{{item.address}}</text>
+        </view> 
+        <view class='phone'>
+          <image src='/img/phone.png'></image>
+          <text>{{item.contractNumber}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='hint' wx:if='{{sanctuariesList.length == 0}}'>暂无庇护所</view>
+</view>
+<!-- 引入自定义地址组件 -->
+<area id="area" bind:cancelEvent="_cancelEvent"  bind:confirmEvent="_confirmEvent"></area>

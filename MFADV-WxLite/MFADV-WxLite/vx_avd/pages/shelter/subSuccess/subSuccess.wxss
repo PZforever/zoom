@@ -1,0 +1,12 @@
+/* pages/shelter/subSuccess/subSuccess.wxss */
+image{
+  display: block;
+  width: 204rpx;
+  height: 275rpx;
+  margin: 320rpx auto 60rpx;
+}
+view{
+  font-size: 30rpx;
+  color: #f9822b;
+  text-align: center;
+}

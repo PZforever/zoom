@@ -1,0 +1,18 @@
+<view class='uploadDetail'>
+  <view class='up-item'>
+    <text class='item-title spe'>证据分类</text>
+    <picker mode="selector" bindchange="uploadPickerSelected" range="{{evidenceType}}" range-key="{{'name'}}" value="{{index}}" >
+      <text>{{evidenceType[index].name}}</text>
+    </picker>
+    <image class='arrow' src='/img/arrow.png'></image>
+  </view>
+  <view class='upload'>
+     <button class='uploadBtn' bindtap="uploadFile">上传文件</button>
+  </view>
+  <view class='remarks'>备注：文件格式为jpg、bmg、png、jepg、mp4等</view>
+    <view class='sub'>
+      <!-- <button class='subBtn'>提交</button> -->
+    </view>
+</view>
+
+

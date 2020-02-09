@@ -1,0 +1,43 @@
+<!--pages/form/respondent/respondent.wxml-->
+<view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>被申请人信息
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>姓名</text>
+    <input value='{{name}}' placeholder='请输入姓名' placeholder-style='color:#999;' bindblur='getName'></input> 
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>民族</text>
+    <picker mode="selector" range="{{nation}}" value="{{nationIndex}}" bindchange="nationPickerSelected">
+       <text>{{nation[nationIndex]}}</text> 
+    </picker>
+    <image src='/img/arrow.png'></image> 
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>性别</text>
+    <picker mode="selector" range="{{gender}}" value="{{index}}" bindchange="genderPickerSelected">
+       <text>{{gender[index]}}</text> 
+    </picker>
+    <image src='/img/arrow.png'></image> 
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>手机号</text>
+    <input value='{{phone}}' placeholder='请输入手机号' placeholder-style='color:#999;' bindblur='getPhone'></input>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>身份证号</text>
+    <input value='{{id_num}}' placeholder='请输入身份证号' placeholder-style='color:#999;' bindblur='getIdCard'></input> 
+  </view>
+  <view class='ifn-item' bindtap="openAddress">
+    <text class='item-title'>现居住地</text>
+    <input value='{{region}}' disabled placeholder='点击选择地址'></input>
+    <image src='/img/arrow.png' class='allow'></image> 
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>具体地址</text>
+    <input value='{{residenceDetail}}' placeholder='请输入具体地址' placeholder-style='color:#999;' bindblur='getSpecificAddress'></input>
+  </view>
+</view>
+<area-select id="areaSelect" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent"></area-select>
+<button bindtap='submit'>下一步</button>

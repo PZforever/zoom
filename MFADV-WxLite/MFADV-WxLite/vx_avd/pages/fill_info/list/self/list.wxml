@@ -1,0 +1,194 @@
+<!--pages/form/list/self/list.wxml-->
+<view class='.items-bg'>
+  <view class='items'>
+    <image src='/img/item.png' class='img-bg'></image>
+  </view>
+  <view class='items'>
+    <image src='/img/item.png' class='img-bg'></image>
+  </view>
+  <view class='items'  wx:if="{{type != '心理咨询'}}">
+    <image src='/img/item.png' class='img-bg'></image>
+  </view>
+  <view wx:for='{{services}}' wx:key='index'>
+    <view class='items'>
+      <image src='/img/item.png' class='img-bg'></image>
+    </view>
+  </view>
+  <view class='items'>
+    <image src='/img/item.png' class='img-bg'></image>
+  </view>
+  <view class='items' wx:if="{{is_diary_submit != ''}}">
+    <image src='/img/item.png' class='img-bg'></image>
+  </view>
+</view>
+<navigator url='{{applicantInfoUrl}}'>
+  <view class='step1' style='display: flex;flex-direction: row;'>
+    <view class='tag flex-item'>step</view>
+    <view class='number flex-item'>1</view>
+    <view class='title flex-item'>申请人信息</view>
+    <view class='complete flex-item'>
+      <image src="{{listStatus[1].checked?'/img/complete.png':'/img/required.png'}}"></image>
+    </view>
+    <view class='next flex-item'>
+      <image  src='/img/next.png'></image>
+    </view>
+  </view>
+</navigator>
+<navigator url='{{respondentUrl}}' wx:if="{{is_order}}">
+  <view class='step2' style='display: flex;flex-direction: row;'>
+    <view class='tag flex-item'>step</view>
+    <view class='number flex-item'>2</view>
+    <view class='title flex-item'>被申请人信息</view>
+    <view class='complete flex-item'>
+      <image src="{{listStatus[2].checked?'/img/complete.png':'/img/required.png'}}"></image>
+    </view>
+    <view class='next flex-item'>
+      <image  src='/img/next.png'></image>
+    </view>
+  </view>
+</navigator>
+<navigator url='{{respondentUrl}}' wx:else="{{is_order}}">
+  <view class='step2' style='display: flex;flex-direction: row;'>
+    <view class='tag flex-item'>step</view>
+    <view class='number flex-item'>2</view>
+    <view class='title flex-item'>被申请人信息</view>
+    <view class='complete flex-item'>
+      <image src="{{listStatus[2].checked?'/img/complete.png':'/img/optional.png'}}"></image>
+    </view>
+    <view class='next flex-item'>
+      <image  src='/img/next.png'></image>
+    </view>
+  </view>
+</navigator>
+<navigator url='{{description_url}}' wx:if="{{type != '心理咨询' && is_order}}">
+  <view class='step3' style='display: flex;flex-direction: row;'>
+    <view class='tag flex-item'>step</view>
+    <view class='number flex-item'>3</view>
+    <view class='title flex-item'>事件描述</view>
+    <view  class='complete  flex-item'>
+      <image src="{{listStatus[3].checked?'/img/complete.png':'/img/required.png'}}"></image>
+    </view>
+    <view class='next flex-item'>
+      <image  src='/img/next.png'></image>
+    </view>
+  </view>
+</navigator>
+
+<navigator url='{{description_url}}' wx:if="{{type != '心理咨询' && !is_order}}">
+  <view class='step3' style='display: flex;flex-direction: row;'>
+    <view class='tag flex-item'>step</view>
+    <view class='number flex-item'>3</view>
+    <view class='title flex-item'>事件描述</view>
+    <view  class='complete  flex-item'>
+      <image src="{{listStatus[3].checked?'/img/complete.png':'/img/optional.png'}}"></image>
+    </view>
+    <view class='next flex-item'>
+      <image  src='/img/next.png'></image>
+    </view>
+  </view>
+</navigator>
+<view wx:for='{{services}}' wx:key='index'>
+    <view class="step{{type=='心理咨询'?index+3:index+4}}" bindtap='order' data-url="{{item.serviceUrl}}" data-name='{{item.service_name}}' style='display: flex;flex-direction: row;'>
+      <view class='tag flex-item'>step</view>
+      <view class='number flex-item'>{{type=='心理咨询'?index+3:index+4}}</view>
+      <view class='title flex-item'>{{item.service_name}}服务申请</view>
+      <view  class='complete  flex-item'>
+        <image src='{{item.status? "/img/complete.png" : "/img/required.png"}}'></image>
+      </view>
+      <view class='next flex-item'>
+        <image  src='/img/next.png'></image>
+      </view>
+    </view>
+</view>
+
+<navigator url='{{uploadRecordUrl}}' wx:if="{{type != '心理咨询'}}">
+  <view class='step{{services.length + 4}}' style='display: flex;flex-direction: row;'>
+    <view class='tag flex-item'>step</view>
+    <view class='number flex-item'>{{services.length + 4}}</view>
+    <view class='title flex-item'>证据上传</view>
+    <view class='complete  flex-item'>
+      <image src="{{listStatus[8].checked?'/img/complete.png':'/img/optional.png'}}"></image>
+    </view>
+    <view class='next flex-item'>
+      <image  src='/img/next.png'></image>
+    </view>
+  </view>
+</navigator>
+
+<navigator url='{{uploadRecordUrl}}' wx:if="{{type == '心理咨询'}}">
+  <view class='step{{services.length + 3}}' style='display: flex;flex-direction: row;'>
+    <view class='tag flex-item'>step</view>
+    <view class='number flex-item'>{{services.length + 3}}</view>
+    <view class='title flex-item'>证据上传</view>
+    <view class='complete  flex-item'>
+      <image src="{{listStatus[8].checked?'/img/complete.png':'/img/optional.png'}}"></image>
+    </view>
+    <view class='next flex-item'>
+      <image  src='/img/next.png'></image>
+    </view>
+  </view>
+</navigator>
+
+<view class='step{{services.length + 4}}' style='display: flex;flex-direction: row;' wx:if="{{is_diary_submit != '' && type == '心理咨询'}}">
+  <view class='tag flex-item'>step</view>
+  <view class='number flex-item'>{{services.length + 4}}</view>
+  <view class='title flex-item'>橙色日记</view>
+  <view class='complete flex-item'>
+    <image src="/img/complete.png"></image>
+  </view>
+  <view class='next flex-item'>
+    <image  src='/img/next.png'></image>
+  </view>
+</view>
+
+<view class='step{{services.length + 5}}' style='display: flex;flex-direction: row;' wx:if="{{is_diary_submit != '' && type != '心理咨询'}}">
+  <view class='tag flex-item'>step</view>
+  <view class='number flex-item'>{{services.length + 5}}</view>
+  <view class='title flex-item'>橙色日记</view>
+  <view class='complete flex-item'>
+    <image src="/img/complete.png"></image>
+  </view>
+  <view class='next flex-item'>
+    <image  src='/img/next.png'></image>
+  </view>
+</view>
+ 
+<view class='tail'>
+   <view class='tailCheck'><checkbox></checkbox></view>
+   <view class='tailAsk'>
+      <view>申请</view>
+      <view class='tailAskBtn' bindtap='shadow'>紧急服务</view>
+   </view>
+   <view class='tailText'>
+      <view><image src="/img/tip.png"></image></view>
+      <view class='tailTip'>您所填写的信息均已做隐私保护，任何单位、个人未经允许，均不得下载转发，引用或公开相关信息</view>
+   </view>
+</view>
+
+<view class="modal-mask" wx:if="{{shadow}}"  bindtap='unShadow'>
+  <view class="modalDialog2">
+    <view class='modalContent'>
+      请在申请完成后补全资料，资料越详细，识别度越高，处理越快
+    </view>
+    <view class='triangle'></view>
+  </view>
+</view>
+
+<button bindtap='submit' type="success">提交</button>
+
+<view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}">
+  <view class="modalDialog"> 
+    <view class='closeImg'>
+      <image src='/img/modal_back.png' bindtap='hideModal'></image>
+    </view>
+    <view class='sourceImg'>
+      <image src='/img/shelter_icon.png'></image>
+    </view>
+    <view class='sourceTextone'>{{shelter_name}}</view>
+    <view class='sourceTexttow'>{{shelter_phone}}</view>
+    <view class='theBtn'>
+    <view class='fillBtn' bindtap='onConfirm'>呼叫</view>
+    <view class='restBtn' bindtap='onCancel'>取消</view>
+    </view>
+  </view>
+</view>

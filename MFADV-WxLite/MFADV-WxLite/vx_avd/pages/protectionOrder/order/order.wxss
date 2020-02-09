@@ -1,0 +1,89 @@
+/* pages/protectionOrder/order/order.wxss */
+page{
+  width: 100%;
+  background: #f7f6f6;
+  padding-bottom: 18rpx;
+}
+.order{
+  width: 94%;
+  margin: 12rpx auto;
+  border: 3rpx solid #f4f4f4;
+  border-radius: 6rpx;
+  background: #fff;
+  padding: 16rpx 50rpx;
+  box-sizing: border-box;
+}
+.head{
+  font-size: 27rpx;
+  color: #333;
+  text-align: center;
+}
+.main{
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+.tit{
+  color: #666;
+}
+.con{
+  color: #999;
+}
+.regards{
+  width: 22%;
+  text-align: center;
+}
+.radio-group image{
+  float: left;
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle;
+  margin-right: 24rpx;
+  margin-top:6rpx;
+}
+/*  重写 checkbox 样式  */
+checkbox .wx-checkbox-input{
+   /* border-radius: 50%; */
+   width: 26rpx;
+   height: 26rpx;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+    border-color: #f7f6f6;  
+   background: transparent;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   width: 26rpx;
+   height: 26rpx;
+   line-height: 26rpx;
+   text-align: center;
+   font-size:26rpx;
+   color:#fa822b;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+/*  重写 checkbox 样式  end*/
+.con-margin{
+  margin-right:10rpx;
+}
+.subBtn{
+  margin: 18rpx auto;
+}
+.checkbox{
+  display:block;
+}
+checkbox.checkColor .wx-checkbox-input.wx-checkbox-input-checked::before{
+   color:#333;
+}
+.confirm{
+  width:93%;
+  margin:20rpx auto;
+  font-size:26rpx;
+  line-height:50rpx;
+}
+.clr{
+  color: #fa822b;
+  width: 24%;
+  height: 48rpx;
+  border-bottom: 1rpx solid #fa822b;
+  text-indent: 10rpx;
+}

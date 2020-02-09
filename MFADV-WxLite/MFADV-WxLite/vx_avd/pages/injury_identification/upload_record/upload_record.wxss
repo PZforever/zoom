@@ -1,0 +1,77 @@
+/* pages/injury_identification/upload_record/upload_record.wxss */
+page{
+  height: 100%;
+  background-color: #f7f6f6;
+}
+.aplt-ifn{
+  margin-top: 20rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f4f4f4;
+  background: #fff;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 80%;
+} 
+.ifn-item{
+  padding-left: 8%;
+  padding-right: 6%;
+  border-top: 3rpx solid #f7f6f6;
+}
+picker{
+  display: inline-block;
+  width: 70%;
+}
+input{
+  width: 70%;
+  vertical-align:middle;
+  display: inline-block;
+  height:100rpx;
+  line-height:100rpx;
+}
+.ifn-item .item-text{
+  width: 26%;
+  color: #333;
+  display:inline-block;
+}
+.ifn-item image{
+  width: 30rpx;
+  height: 30rpx;
+  display:inline-block;
+} 
+.ifn-item .item-title{
+  color: #999;
+  width: 66%;
+  display:inline-block;
+}
+.upload{
+  padding-left: 40%;
+  height: 60rpx;
+  width: 100%;
+  font-size: 80%;
+  color: #F9812B;
+  background-color: white;
+  border-top: 3rpx solid #f7f6f6;
+  border-bottom: 3rpx solid #f7f6f6;
+}
+.upload text{
+  align-content: center;
+  margin-top: 10rpx;
+}
+.remark{
+  color: #999;
+  margin-left: 8%;
+  margin-top: 10rpx;
+  margin-bottom: 50rpx;
+  font-size: 60%;
+}
+.submit{
+  height: 100rpx;
+  padding-bottom: 10rpx;
+  padding-top: 20rpx;
+  background-color: white;
+}
+button{
+  width: 80%;
+  color: white;
+  background-color: #F9812B;
+}

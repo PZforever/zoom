@@ -1,0 +1,26 @@
+<page>
+  <view class="mainView">
+    <form bindsubmit="formSubmit">
+      <view class="flex-row line inputLine" style="">
+        <text>手机号</text>
+        <input name="phone" type="tel" class="" value="{{phone}}" bindinput="phoneInput" />
+        <button bindtap="getVerificationCode" class="miniBtn" disabled="{{counter}}">{{validationBtnText}}</button>
+      </view>
+      <view class="line inputLine">
+        <text>验证码</text>
+        <input name="verificationCode" type="tel" class="" value='' />
+      </view>
+      <view class="line inputLine">
+        <text>新密码</text>
+        <input name="pwd1" type="password" class="" value='123456' />
+      </view>
+      <view class="line inputLine">
+        <text>重复密码</text>
+        <input name="pwd2" type="password" class="" value='123456' />
+      </view>
+      <view class="line submitLine">
+        <button formType="submit" class="submit">保存</button>
+      </view>
+    </form>
+    </view>
+</page>

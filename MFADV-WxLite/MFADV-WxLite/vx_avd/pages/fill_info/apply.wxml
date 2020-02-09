@@ -1,0 +1,28 @@
+<!--pages/form/apply.wxml-->
+<radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio" wx:for="{{radioItems}}" wx:key="value">
+    <radio hidden='true' value="{{item.value}}" checked="{{item.checked}}"/>  
+    <view class='options'>
+      <view class='checked' wx:if="{{item.checked}}">
+        <view class='circle'>
+          <image src='/img/checked.png'></image>
+        </view>
+        <view class='self'>
+          {{item.name}}
+        </view>
+      </view>
+      <view wx:else="{{item.checked}}">
+        <view class='circle'>
+          <image src='/img/unchecked.png'></image>
+        </view>
+        <view class='others'>
+          {{item.name}}
+        </view>
+      </view>
+    </view> 
+  </label>
+</radio-group>
+<navigator url="{{url}}">
+  <button>进入</button>
+</navigator> 
+

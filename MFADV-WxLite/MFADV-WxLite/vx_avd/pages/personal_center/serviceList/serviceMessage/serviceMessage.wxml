@@ -1,0 +1,57 @@
+<!-- 庇护所详情 -->
+<view wx:if="{{codeId==1}}">
+   <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="18" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width:100%; height:737rpx;"></map>
+   <view class='shelter-detail'>
+    <view class="detail_title">
+      <text>服务编号：{{serviceNo}}</text>
+    </view>
+      <view class='detail'>
+        <view class='shelter'>{{address.name}}</view>
+        <view class='location'>
+          <image src='/img/location.png'></image>
+          {{address.address}}
+        </view>
+        <view class='contacts'><image src='/img/contacts.png'></image>{{address.leader}}</view>
+        <view class='phone'><image src='/img/phone.png'></image>{{address.phoneNumber}}</view>
+        <view class='car'><image src='/img/car.png'></image>{{address.modeOfTransportation}}</view>
+      </view>
+    </view>
+</view>
+<!-- 人身保护令详情 -->
+<view wx:if="{{codeId==4}}">
+    <block wx:key='' wx:for="{{list}}">
+        <view class="header">
+            <view>
+                <image src="../../../../img/career_time.png"></image>
+                {{item.createTime}}
+            </view>
+            <view class="status_title">{{item.statusName}}</view>
+        </view>
+        <view class="content">
+            {{item.describes}}
+        </view>
+    </block>
+</view>
+<!-- 心里咨询详情 -->
+<view wx:if="{{codeId==2}}">
+    <block wx:key='' wx:for="{{message}}">
+        <view class="xl_box">
+          <view class="xl_title" style="color:{{item.status!='03'?'#f9812b':''}}">•{{item.statusName}}</view>
+          <view wx:if="{{item.status=='03'}}"><image class="xl_img1" src="../../../../img/success.png"></image></view>
+          <view wx:if="{{item.status=='00'||item.status=='01'}}"><image class="xl_img2" src="../../../../img/wait.png"></image></view>         
+          <view wx:if="{{item.status=='01'}}" class="open_meet" bindtap=""> 
+            <navigator url='/pages/onlineRoom/room?userId={{item.violentPersonnelId}}&meetingId={{item.id}}'> 进入会议<image src="../../../../img/arrow.png"></image></navigator>
+          </view>
+          <view class="time_title" wx:if="{{item.status=='00'}}" style="color:#f9812b">倒计时：{{item.meetingDay}}天{{item.meetingHour}}小时{{item.meetingMin}}分{{item.meetingSec}}秒</view>
+          <view class="time_title" wx:if="{{item.status=='03'}}">会议时长：{{item.meetingHour}}小时{{item.meetingMin}}分</view>
+          <view class="meet_status_line">线上视频会议</view>
+          <view>预约时间：{{item.orderTime}}</view>
+          <view>参会者  ：{{item.seeMeetingName}}</view>
+        </view>
+    </block>
+    
+</view>
+
+
+<!-- 暂无数据的显示 -->
+<view class="null_content" wx:if="{{!noContent}}">暂无数据</view>

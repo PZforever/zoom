@@ -1,0 +1,19 @@
+<scroll-view scroll-y class="myModifyPhone">
+   <view class="myModifyBody">
+     <view class="myModifyItem">
+        <view class="myModifyContant clearfix">
+          <text class="myModifyItemDepict">手机号</text>
+          <input type="number" placeholder="请输入手机号" maxlength="11" class="myModifyInput" bindinput ="bindKeyPhone" value="{{phoneNumber}}" auto-focus/>
+        </view>
+        <view class="myModifyContant clearfix">
+          <text class="myModifyItemDepict">验证码</text>
+          <input type="number" placeholder="请输入验证码" class="myModifyInput" maxlength="4" value="{{verificationCode}}" bindinput ="bindKeyCode" auto-focus/>
+          <button class="sendCode {{buttonDisable == false? 'sendCodeAct':' sendCodeDisable'}}" bindtap="verifyCodeEvent" disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
+        </view>
+     </view>
+     <view class="myModifyBtn">
+      <button bindtap="changePhone" >更改</button>
+     </view>
+
+   </view>
+</scroll-view>

@@ -1,0 +1,13 @@
+/**index.wxss**/
+page{background:white}
+.tab_header{width:750rpx;height:100rpx;display:flex;justify-content:space-between;align-items:center;border:1rpx solid #e5e5e5;}
+.tab_header view{width:50%;height:100rpx;line-height:100rpx;text-align:center;font-size:26rpx;color:#666666;letter-spacing:1rpx;position:relative;top:0;left:0;}
+.tab_active{color:#fa822b !important;}
+.tab_active::before{content:'';width:120rpx;height:2rpx;background:#fa822b;position:absolute;bottom:0;left:50%;margin-left:-60rpx;}
+.list_bg{margin-top:40rpx;}
+.list_box{width:690rpx;padding-left:60rpx;display:flex;justify-content:flex-start;align-items:flex-start;height:120rpx;}
+.list_box .item_name{width:140rpx;font-size:28rpx;color: #333333;}
+.list_box .item_content{width:500rpx;padding-right:50rpx;color: #999999;font-size:28rpx;line-height:48rpx;}
+.address_img{width:auto;padding:0 35rpx;height:100rpx;font-size:28rpx;color:#333333;display:flex;justify-content:flex-start;align-items:center;}
+.address_img image{width:18rpx;height:28rpx;margin-right:24rpx;}
+.address_content{width:auto;padding:0 76rpx;color: #999999;font-size:28rpx;height:120rpx;line-height:48rpx;}

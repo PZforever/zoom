@@ -1,0 +1,97 @@
+<!--index.wxml-->
+<view class='tab_header'>
+  <view class="{{select==1?'tab_active':''}}" bindtap='selectBtn' id="1">申请人信息</view>
+  <view class="{{select==2?'tab_active':''}}" bindtap='selectBtn' id="2">被申请人信息</view>
+  <view class="{{select==3?'tab_active':''}}" bindtap='selectBtn' id="3">事件描述</view>
+  <view class="{{select==4?'tab_active':''}}" bindtap='selectBtn' id="4">证据上传</view>
+</view>
+<view class='list_bg' wx:if="{{select==1}}">
+<view class='list_box'>
+  <view class='item_name'>姓名</view>
+  <view class="item_content">{{personal1.actualName}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>性别</view>
+  <view class="item_content">{{personal1.sex}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>手机号</view>
+  <view class="item_content">{{personal1.phone}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>身份证号</view>
+  <view class="item_content">{{personal1.idCard}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>现居住地</view>
+  <view class="item_content">{{personal1.residenceAreaName}}{{personal1.residenceDetail}}</view>
+</view>
+</view>
+<view  class='list_bg' wx:if="{{select==2}}">
+ <view class='list_box'>
+  <view class='item_name'>姓名</view>
+  <view class="item_content">{{personal2.actualName}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>性别</view>
+  <view class="item_content">{{personal2.sex}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>手机号</view>
+  <view class="item_content">{{personal2.phone}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>身份证号</view>
+  <view class="item_content">{{personal2.idCard}}</view>
+</view>
+<view  class='list_box'>
+  <view class='item_name'>现居住地</view>
+  <view class="item_content">{{personal2.residenceAreaName}}{{personal2.residenceDetail}}</view>
+</view>
+</view>
+<view wx:if="{{select==3}}">
+  <view class='message_list_box'>
+    <view class='address_img'>
+      <image src='/img/edit.png'></image>事件类型
+    </view>
+    <view class='address_content'>{{msg.violentType=='V00001'?"精神侵害":"身体侵害"}}</view>
+  </view>
+  <view class='message_list_box'>
+    <view class='address_img'>
+      <image src='/img/edit.png'></image>发生地址
+    </view>
+    <view class='address_content'>{{msg.areas.lname}}{{msg.address}}</view>
+  </view>
+  <view class='message_list_box'>
+    <view class='address_img'>
+      <image src='/img/edit.png'></image>事件描述
+    </view>
+    <view class='address_content'>{{msg.remarks}}</view>
+  </view>
+  <view class='message_list_box'>
+    <view class='address_img'>
+      <image src='/img/edit.png'></image>申请事项
+    </view>
+    <view class='address_content'>
+      <view wx:for="{{msg.personalSafetyProtectionOrder.protectiveMeasures}}" wx:key="">{{index+1}}:{{item.code!='PM0999'? item.name: item.content}}</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{select==4}}">
+<view wx:for="{{evidence.attachments}}" wx:key="" wx:if="{{item.children[0]}}">
+  <view class="download_btn">
+     <view>{{item.name}}</view>
+     <view class='download_btn_img'  id="{{item.id}}" bindtap='openBtn'>
+     <image src="{{item.checked?'/img/arrowUp.png':'/img/arrowDown.png'}}"></image>
+     </view>
+      
+  </view> 
+  <!--显示列表  -->
+  <view  wx:if="{{item.checked}}">
+    <view class='download_content' wx:for="{{item.children}}" wx:for-item="childItem" wx:key="">
+      <view class="download_content_name">{{childItem.name}}</view>
+      <view  class='download_content_btn' bindtap="downLoadFiles" data-param="{{childItem.url}}">下载</view>
+    </view>
+  </view>
+</view> 
+</view>

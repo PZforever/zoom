@@ -1,0 +1,34 @@
+<!--pages/shelter/registrarIfn/registrarIfn.wxml-->
+<view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>登记人信息
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>姓名</text>
+    <input value='{{name}}' placeholder='请输入姓名' placeholder-style='color:#999;'></input>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>性别</text>
+    <picker mode="selector" range="{{gender}}" value="{{index}}" bindchange="genderPickerSelected">
+      <text>{{gender[index]}}</text>
+    </picker>
+    <image class='arrow' src='/img/arrow.png'></image>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>手机号</text>
+    <input value='{{phone}}' placeholder='请输入手机号' placeholder-style='color:#999;'></input>
+  </view>
+  <view class='ifn-item idNum'>
+    <text class='star'>*</text>
+    <text class='item-title'>身份证号</text>
+    <input value='{{id_num}}' placeholder='请输入手机号' placeholder-style='color:#999;'></input>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>关系</text>
+    <input value='{{relationship}}' placeholder='请输入与申请人关系'             placeholder-style='color:#999;'></input>
+  </view>
+</view>
+<view class='hint'>提示：标有 * 为选填项</view>
+  <button class='subBtn' bindtap="nextBtn">下一步</button>
+
+

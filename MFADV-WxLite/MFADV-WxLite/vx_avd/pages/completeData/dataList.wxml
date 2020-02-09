@@ -1,0 +1,67 @@
+<!--pages/completeData/dataList.wxml-->
+<view class='items-bg'>
+  <view class='items'>
+    <image src='/img/item.png'>
+    </image>
+  </view>
+  <view class='items'>
+    <image src='/img/item.png'></image>
+  </view>
+  <view class='items'>
+    <image src='/img/item.png'></image>
+  </view>
+  <view class='items'>
+    <image src='/img/item.png'></image>
+  </view>
+  <view class='items'>
+    <image src='/img/item.png'></image>
+  </view>
+</view>
+<!-- <view class='tip'>
+  <image src='/img/tip.png' style='width: 10px; height: 15px;'></image>
+  <text class='tip-text'>提示： 情况描述未填写，请填写并提交.</text>
+</view> -->
+
+<navigator url='/pages/completeData/applicantIfn/applicantIfn?caseId={{caseId}}'>
+  <view class='step1 clearfix'>
+    <view class='tag fl'>step</view>
+    <view class='number fl'>1</view>
+    <view class='title fl'>申请人信息</view>
+    <image class='next fr' src='/img/next.png'></image>
+  </view>
+</navigator>
+<navigator url='/pages/completeData/applicantPrivacy/applicantPrivacy?caseId={{caseId}}'>
+  <view class='step2 clearfix'>
+    <view class='tag fl'>step</view>
+    <view class='number fl'>2</view>
+    <view class='title fl'>申请人隐私</view>
+    <image class='next fr' src='/img/next.png'></image>
+  </view>
+</navigator>
+<navigator url='/pages/completeData/respondentIfn/respondentIfn?caseId={{caseId}}'>
+  <view class='step3 clearfix'>
+    <view class='tag fl'>step</view>
+    <view class='number fl'>3</view>
+    <view class='title fl'>被申请人信息</view>
+    <image class='next fr' src='/img/next.png'></image>
+  </view>
+</navigator>
+<navigator url='/pages/completeData/description/description?caseId={{caseId}}'>
+  <view class='step4 clearfix'>
+    <view class='tag fl'>step</view>
+    <view class='number fl'>4</view>
+    <view class='title fl'>事件描述</view>
+    <image class='next fr' src='/img/next.png'></image>
+  </view>
+</navigator>
+<navigator url='/pages/completeData/evidenceUpload/evidenceUpload?caseId={{caseId}}'>
+  <view class='step5 clearfix'>
+    <view class='tag fl'>step</view>
+    <view class='number fl'>5</view>
+    <view class='title fl'>证据上传</view>
+    <image class='next fr' src='/img/next.png'></image>
+  </view>
+</navigator>
+
+
+

@@ -1,0 +1,55 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #fafafa;
+  font-size: 30rpx;
+}
+
+.mainView {
+  margin-top: 15rpx;
+  color: #a7a7a7;
+  border-top: 1rpx solid #ecedee;
+  border-bottom: 1rpx solid #ecedee;
+}
+
+.line {
+  background-color: #fff;
+}
+
+.inputLine {
+  display: flex;
+  padding: 35rpx 35rpx 35rpx 45rpx;
+  border-bottom: 1rpx solid #fafafa;
+}
+
+input {
+  color: #333;
+}
+
+.submitLine {
+  padding: 22rpx 77rpx 22rpx 77rpx;
+  border-top: 50rpx solid #fafafa;
+}
+
+.submit {
+  background-color: #fa822b;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+text {
+  width: 140rpx;
+}
+
+.miniBtn {
+  font-size: 24rpx;
+  color: #fa822b;
+  background-color: #fff;
+  padding: 0rpx 16rpx 0rpx 16rpx;
+  border: 1px solid #fa822b;
+  border-radius: 0rpx;
+}
+
+.miniBtn::after {
+  border: none;
+}

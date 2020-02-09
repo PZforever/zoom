@@ -1,0 +1,133 @@
+
+<view class="header">
+	<view class="header_box">
+		<view class="{{selectBol?'select_bol':''}}" bindtap="selectTime">{{keyword}} 
+			<image src="../../../img/d_arrow.png"></image>
+		</view>
+	</view>
+  <view class='headRight'>
+    <input placeholder='请输入您要搜索的服务编号' bindinput='searchName'></input>
+    <image src='/img/search.png' bindtap='searchBtn'></image>
+  </view>
+</view> 
+<!-- 页面滚动框区域 -->
+<scroll-view class="scroll-view_H" scroll-y bindscrolltolower="low"> 
+    <block wx:for="{{list}}" wx:key=''>
+      <view class="service_box" wx:if="{{item.personalSafetyProtectionOrder}}">
+        <view class="service_id">
+    			<view class="service_id_left"><view class='idLeft'></view>
+          服务编号：{{item.personalSafetyProtectionOrder.serviceNo}}</view>
+    			<!-- <image src="../../../img/arrow.png" class='deTails_img'></image> -->
+    		</view>
+    		<view class="service_message">
+    			<view class="scroll_view_dis" id='4'  data-content="{{item.personalSafetyProtectionOrder}}" data-item="{{item}}" bindtap="openBtn">
+    				<view class="service_title">人身保护令</view>
+            <view class="service_footer">
+              <view>事件类型：{{item.violentTypeName}}</view>
+              <view class='staTe staTeLeft'>
+                <image src='../../../img/state1.png' wx:if="{{item.personalSafetyProtectionOrder.status == 10}}"></image>
+                <image src='../../../img/state2.png' wx:elif="{{item.personalSafetyProtectionOrder.status == 20}}"></image>
+                <image src='../../../img/state5.png' wx:else></image>
+                <!-- <text class="{{item.personalSafetyProtectionOrder.status == 10 ? 'state_color':''}}">{{item.personalSafetyProtectionOrder.statusName}}</text>  -->
+                <text class="state_color" wx:if="{{item.personalSafetyProtectionOrder.status == 10 }}">{{item.personalSafetyProtectionOrder.statusName}}</text>
+                <text class="state_color2" wx:elif="{{item.personalSafetyProtectionOrder.status == 99 }}">{{item.personalSafetyProtectionOrder.statusName}}</text>
+                <text wx:else>{{item.personalSafetyProtectionOrder.statusName}}</text>
+             </view>
+              <view>申请时间：{{item.createTime}}</view>
+            </view>
+    			</view>
+           <view class='serviceNav'  wx:if="{{item.showAdditionalButton}}">
+                <view class="service_open" bindtap="openMessage" data-content="{{item}}" data-messageid="{{item.id}}" id="1">查看详情</view>
+          </view> 
+    		</view>
+    	</view> 
+
+      <view class="service_box" wx:if="{{item.psychologicalCounseling}}">
+    		<view class="service_id">
+    			<view class="service_id_left"><view class='idLeft'></view>
+          服务编号：{{item.psychologicalCounseling.serviceNo}}</view>
+    			<!-- <image src="../../../img/arrow.png" class='deTails_img'></image> -->
+    		</view>
+    		<view class="service_message">
+    			<view class="scroll_view_dis" id='2'  data-content="{{item.psychologicalCounseling}}" data-item="{{item}}" bindtap="openBtn">
+    				<view class="service_title"> 心理咨询</view>
+            <view class="service_footer" style="height:{{!item.violentTypeName?'50rpx':''}}">
+               <view wx:if="{{item.violentTypeName}}">事件类型：{{item.violentTypeName}}</view> 
+              <view class='staTe staTeLeft'>
+                <image src='../../../img/state1.png' wx:if="{{item.psychologicalCounseling.status == 00}}"></image>
+                <image src='../../../img/state2.png' wx:elif="{{item.psychologicalCounseling.status == 20}}"></image>
+                <image src='../../../img/state5.png' wx:else></image>
+                <!-- <text class="{{item.psychologicalCounseling.status == 00 ? 'state_color':''}}">{{item.psychologicalCounseling.statusName}}</text> -->
+                <text class="state_color" wx:if="{{item.psychologicalCounseling.status == 00 }}">{{item.psychologicalCounseling.statusName}}</text>
+                <text class="state_color2" wx:elif="{{item.psychologicalCounseling.status == 99 }}">{{item.psychologicalCounseling.statusName}}</text>
+                <text wx:else>{{item.psychologicalCounseling.statusName}}</text>
+             </view>
+              <view>申请时间：{{item.createTime}}</view>
+            </view>
+            <view class='appointmentTime'>
+              <text wx:if="{{item.psychologicalCounseling.appointmentTime}}" class='textSile'>预约时间：{{item.psychologicalCounseling.appointmentTime}}</text>
+            </view>
+    			</view>
+          <view class='serviceNav' wx:if="{{item.showAdditionalButton}}">
+            <navigator url='/pages/completeData/dataList?id={{item.id}}'>
+                <view class="service_open">补全资料</view>
+            </navigator>
+          </view>
+    		</view>
+    	</view>
+      
+    	<view class="service_box" wx:if="{{item.sanctuaryApplication}}">
+        <view class="service_id">
+    			<view class="service_id_left"><view class='idLeft'></view>
+          服务编号：{{item.sanctuaryApplication.serviceNo}}</view>
+    			<!-- <image src="../../../img/arrow.png" class='deTails_img'></image> -->
+    		</view>
+    		<view class="service_message">
+    			<view class="scroll_view_dis" id='1'  data-content="{{item.sanctuaryApplication}}" data-item="{{item}}" bindtap="openBtn">
+    				<view class="service_title">庇护申请</view>
+            <view class="service_footer">
+              <view>事件类型：{{item.violentTypeName}}</view>
+              <view class='staTe staTeLeft'>
+                <image src='../../../img/state1.png' wx:if="{{item.sanctuaryApplication.status == 01}}"></image>
+                <image src='../../../img/state4.png' wx:elif="{{item.sanctuaryApplication.status == 02}}"></image>
+                <image src='../../../img/state3.png' wx:else></image>
+                <!-- <text class="{{item.sanctuaryApplication.status == 01 ? 'state_color':''}}">{{item.sanctuaryApplication.statusName}}</text> -->
+                <text class="state_color" wx:if="{{item.sanctuaryApplication.status == 01 }}">{{item.sanctuaryApplication.statusName}}</text>
+                <text class="state_color2" wx:elif="{{item.sanctuaryApplication.status == 03 }}">{{item.sanctuaryApplication.statusName}}</text>
+                <text wx:else>{{item.sanctuaryApplication.statusName}}</text>
+             </view>
+              <view>申请时间：{{item.createTime}}</view>
+            </view>
+    			</view>
+           <view class='serviceNav'  wx:if="{{item.showAdditionalButton}}">
+              <view class="service_open" bindtap="openMessage" data-content="{{item}}" data-messageid="{{item.id}}" id="2">查看详情</view>
+          </view> 
+    		</view>
+       
+    		<!-- <view class="scroll_view_dis service_id">
+    			<view class="service_id_left">服务编号：{{item.sanctuaryApplication.serviceNo}}</view>
+    			<navigator url='/pages/completeData/dataList?id={{item.id}}' wx:if="{{item.showAdditionalButton}}">
+            <view class="service_open">补全资料</view>
+          </navigator>
+    		</view>
+    		<view class="service_message">
+    			<view class="scroll_view_dis" id='1' data-content="{{item.sanctuaryApplication}}" bindtap="openBtn">
+    				<view class="service_title">庇护申请</view>
+    				<view class='staTe staTeLeft'> 
+              <image src='../../../img/state1.png' wx:if="{{item.sanctuaryApplication.status == 01}}"></image>
+              <image src='../../../img/state4.png' wx:elif="{{item.sanctuaryApplication.status == 02}}"></image>
+              <image src='../../../img/state5.png' wx:else></image>
+              <text class="{{item.sanctuaryApplication.status == 01 ? 'state_color':''}}">{{item.sanctuaryApplication.statusName}}</text>
+            </view>
+    				<view class='staTe'>详情 <image src="../../../img/arrow.png" class='staTe_img'></image></view>
+    			</view>
+    		</view>
+    		<view class="scroll_view_dis service_footer">
+    			<view>类型：{{item.violentTypeName}}</view>
+    			<view>申请时间：{{item.createTime}}</view>
+    		</view>-->
+    	</view> 
+    </block>
+
+    <view class="nullContent" wx:if="{{!list[0]}}">暂无数据</view>
+ </scroll-view>

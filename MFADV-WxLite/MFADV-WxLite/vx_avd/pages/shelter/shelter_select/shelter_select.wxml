@@ -1,0 +1,16 @@
+<!--pages/shelter/shelter_select/shelter_select.wxml-->
+<view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>庇护所选择
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>已选择庇护所</text>
+    <text class='shelter-name'>{{shelter_selected}}</text>
+  </view>
+  <navigator url='{{url}}'>
+    <view class='ifn-item'>
+      <text class='item-title'>重新选择</text>
+      <text class='last-text'>点击进入庇护所列表</text>
+    </view>
+  </navigator>
+</view>

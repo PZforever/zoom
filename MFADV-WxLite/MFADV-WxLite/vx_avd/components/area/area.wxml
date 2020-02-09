@@ -1,0 +1,19 @@
+<!--components/ares/area.wxml-->
+<!-- 自定义地图插件用于使用第三方地图数据包 by张涛20180307 -->
+<view class="area-box" wx:if="{{isShow}}" data-address="{{address}}">
+	<view class="area-btn">
+		<view class="area-btn-off" catchtap='_cancelEvent' >取消</view>
+		<view class="area-btn-on" catchtap='_confirmEvent'>确认</view>
+	</view>
+  <picker-view indicator-style="height:50px;" style="width:750rpx; height:200px;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{area.province}}" wx:key='' style="line-height: 50px;text-align:center;">{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{area.city}}" wx:key='' style="line-height: 50px;text-align:center">{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{area.area}}" wx:key='' style="line-height: 50px;text-align:center">{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

@@ -1,0 +1,39 @@
+<!--pages/completeData/applicantPrivacy/applicantPrivacy.wxml-->
+<view class='aplt-privacy'>
+  <form  bindsubmit="formSubmit">
+    <view class='priv-item priv-slt clearfix'>
+      <text class='item-title fl'>隐私</text>
+      <switch checked='{{privacy}}' class='fr' bindchange="switchChange" color='#f9812b'/>
+    </view>
+    <view class='priv-item'>
+      <text class='item-title spe'>疾病史</text>
+      <picker mode="selector" range="{{disease_history}}" value="{{index1}}" bindchange="diseasePickerSelected">
+        <text>{{disease_history[index1]}}</text>
+      </picker>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view class='priv-item disease-detail'>
+      <text class='item-title'>具体病情</text>
+      <textarea name='illnessDetail' value='{{illnessDetail}}' placeholder='请描述详细病情' placeholder-class='placeh'></textarea>
+    </view>
+    <view class='priv-item'>
+      <text class='item-title spe'>犯罪史</text>
+      <picker mode="selector" range="{{crime_history}}" value="{{index2}}" bindchange="crimePickerSelected">
+        <text>{{crime_history[index2]}}</text>
+      </picker>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view class='priv-item'>
+      <text class='item-title spe'>家暴史</text>
+      <picker mode="selector" range="{{violent_history}}" value="{{index3}}" bindchange="dvPickerSelected">
+        <text>{{violent_history[index3]}}</text>
+      </picker>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view>
+      <button formType='submit' class='subBtn'>保存</button>
+    </view>
+  </form>
+</view>
+
+

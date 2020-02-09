@@ -1,0 +1,28 @@
+<form bindsubmit="formSubmit">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}" wx:key="value">
+      <radio hidden='true' value="{{item.value}}" checked="{{item.checked}}" />
+      <view class='options'>
+        <view class='checked' wx:if="{{item.checked}}">
+          <view class='circle'>
+            <image src='/img/checked.png'></image>
+          </view>
+          <view class='checked_name'>
+            {{item.name}}
+          </view>
+        </view>
+        <view wx:else="{{item.checked}}">
+          <view class='circle'>
+            <image src='/img/unchecked.png'></image>
+          </view>
+          <view class='unchecked_name'>
+            {{item.name}}
+          </view>
+        </view>
+      </view>
+    </label>
+  </radio-group>
+  <view class="line submitLine">
+    <button formType="submit" class="submit">进入</button>
+  </view>
+</form>

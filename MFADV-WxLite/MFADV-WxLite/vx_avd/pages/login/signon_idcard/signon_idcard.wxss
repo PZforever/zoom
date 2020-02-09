@@ -1,0 +1,106 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #f7f6f6;
+  font-size: 30rpx;
+}
+
+.mainView {
+  color: #a7a7a7;
+  border-top: 1rpx solid #ecedee;
+}
+.inputLine image{width:20rpx;height:30rpx;}
+.inputLine {
+  width:750rpx;
+  display: flex;
+  height:100rpx;
+  justify-content:flex-start;
+  align-items:center;
+  border-bottom:2rpx solid #ecedee;
+  background-color: #ffffff;
+}
+
+input {
+  width:480rpx;
+  color: #333;
+}
+
+.submitLine {
+  padding: 22rpx 77rpx 22rpx 77rpx;
+  border-top: 50rpx solid #fafafa;
+}
+
+.submit {
+  background-color: #fa822b;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+text {
+  width: 180rpx;
+  text-align: right;
+  padding-right:40rpx;
+}
+
+.left-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 55rpx;
+  margin-right: 55rpx;
+  color: #ccc;
+}
+
+.id-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0;
+  padding: 50rpx 30rpx;
+  background-color: #fff;
+  color: #ccc;
+}
+
+.id-card-side {
+  flex: 1;
+  text-align: center;
+}
+
+.id-card-side + .id-card-side {
+  margin-left: 30rpx;
+}
+
+.id-card-side view {
+  position: relative;
+}
+
+.id-card-side image {
+  width: 100%;
+}
+
+.id-card-btn {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.camera-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.camera {
+  height: 400rpx;
+}
+
+button.doCamera {
+  color: #fff;
+  background-color: #fa822b;
+}

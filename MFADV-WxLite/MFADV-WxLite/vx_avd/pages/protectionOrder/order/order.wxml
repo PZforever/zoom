@@ -1,0 +1,72 @@
+<!--pages/protectionOrder/order/order.wxml-->
+<view class='order'>
+  <view class='head'>人身安全保护令申请书</view>
+  <view class='main'>
+    <view>
+      <text class='tit'>申请人</text>
+      <text class='con'>（{{applyName}}）</text>
+      <text class='tit'>性别</text>
+      <text class='con'>（{{applyGender}}）</text>
+      <text class='tit'>民族</text> 
+      <text class='con'>（{{applyNation}}）</text>
+    </view>
+    <view>
+      <text class='con'>{{applyBirth}}出生</text>
+    </view>
+    <view>
+      <text class='tit'>住址</text>
+      <text class='con'>（{{applyAddress}}）</text>
+    </view>
+    <view>
+      <text class='tit'>被申请人</text>
+      <text class='con'>（{{claimantName}}）</text>
+      <text class='tit'>性别</text>
+      <text class='con'>（{{claimantGender}}）</text>
+      <text class='tit'>民族</text>
+      <text class='con'>（{{claimantNation}}）</text>
+    </view>
+    <view>
+      <text class='con'>{{claimantBirth}}出生</text>
+    </view>
+    <view>
+      <text class='tit'>住址</text>
+      <text class='con'>（{{claimantAddress}}）</text>
+    </view>
+    <view>
+      <text class='tit'>申请事项：</text>
+      <text class='con'>{{applyMatter}}</text>
+    </view>
+    <view>
+      <checkbox-group>
+        <label class="checkbox" wx:for="{{ProtectiveMeasure}}" wx:key='code' wx:for-item='item'>
+          <checkbox class='checkColor' value="{{index}}" disabled='true' checked="{{item.checked}}"/>{{item.name}}
+        </label>
+      </checkbox-group>  
+    </view>
+    <view>
+      <text class='tit'>事实和理由：</text>
+      <text class='con'>{{matterReason}}</text>
+    </view>
+    <view>
+      <text class='con'>综上，申请人依法向贵院申请人身安全保护令。 敬请依法审查批准！</text>
+    </view>
+    <view class='regards'>
+      <text class='con'>此致</text>
+    </view>
+    <view>
+      <text class='con'>{{Court}}</text>
+    </view>
+  </view>
+</view>
+<view class='clearfix confirm'>   
+  <checkbox-group class='fl' bindchange="checkboxChange">
+    <label class="checkbox">
+      <text class='tit'>申请人</text>
+      <text class='con-margin clr'>{{applyName}}</text>
+      <text class='tit con-margin'>确认</text>
+      <checkbox checked="{{applyConfirm}}" value="{{applyName}}"/>
+    </label>
+  </checkbox-group>
+</view>
+<button class='subBtn' bindtap='submit' type="{{applyConfirm?'':'default'}}">确认</button>
+

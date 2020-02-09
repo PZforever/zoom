@@ -1,0 +1,40 @@
+<!--pages/call_police/call_police.wxml-->
+<view class='title'>
+  <view class='title_bar'></view>
+  <view class='title_word'>申请人</view>
+</view>
+<view class='input'>
+  <view class='input_title'>姓名</view>
+  <view class='section'>
+    <input/>
+  </view>
+</view>
+<view class='input'>
+  <view class='input_title'>性别</view>
+  <view class='section'>
+    <input/>
+  </view>
+</view>
+<view class='input'>
+  <view class='input_title'>手机号</view>
+  <view class='section'>
+    <input/>
+  </view>
+</view>
+<view class='input'>
+  <view class='input_title'>类型</view>
+  <view class='section'>
+      <picker bindchange="bindTypeChange" value="{{typeIndex}}" range="{{types}}">
+          <view class="type_index">{{types[typeIndex]}}</view>
+      </picker>
+  </view>
+</view>
+<view class='input'>
+  <view class='input_title'>地址</view>
+  <view class="section">
+    <input/>
+  </view>
+</view>
+<view class='submit'>
+  <button>提交</button>
+</view>

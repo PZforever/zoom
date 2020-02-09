@@ -1,0 +1,54 @@
+<!--pages/online_counselling/counselor_list/counselor_list.wxml-->
+<!-- <text>pages/online_counselling/counselor_list/counselor_list.wxml</text> -->
+<view>
+  <text>{{util.test()}}</text> 
+  <view class="psy" wx:for="{{disputesList}}" wx:key wx:for-item="disputes" bindtap='selectDisputes' data-disputes="{{disputes}}">
+    <view class='psy-head'>
+      <image class='case_no' src='/img/case_no.png'></image>
+      <text class="case_no_text">咨询编号 {{disputes.caseNo}}</text>
+      <!-- 状态 -->
+      <view class='headState' wx:if="{{disputes.status==1}}">
+         <image src='/img/state2.png'></image>
+         <text>进行中</text>
+      </view>
+      <view class='headState' wx:else>
+         <image src='/img/state5.png'></image>
+         <text>咨询结束</text>
+      </view>
+
+    </view>
+    <view class="psy-info">
+      <view class="psy-info__avatar">
+        <image mode="aspectFill" src="{{disputes.imgPhoto}}" binderror='imgPhotoBinderror' data-err-img="{{index}}"></image>
+      </view>
+      <view class="psy-info__detail">
+        <view class='title-row'>
+          <text class="name">{{disputes.counselorName}}</text>
+          <text class="psy-info__date">{{disputes.formattedTime}}</text>
+        </view>
+        <view class="psy-info__exp-detail">
+          <text class="content">{{disputes.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 蒙层？ -->
+<view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{shadeOff}}">
+  <view class="modalDialog"> 
+    <view class='closeImg'>
+      <image src='/img/modal_back.png' bindtap='shadeBtn'></image>
+    </view>
+    <view class='sourceImg'>
+      <image src='/img/source.png'></image>
+    </view>
+    <view class='sourceTextone'>咨询已结束</view>
+    <view class='sourceTexttow'>如需再次咨询请重新提交资料。</view>
+    <view class='theBtn'>
+       <view class='fillBtn' bindtap='fillBtn'>填写资料</view>
+       <view class='restBtn' bindtap='restBtn' data-disputes="{{}}">查看记录</view>
+    </view>
+  </view>
+</view>
+

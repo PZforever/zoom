@@ -1,0 +1,130 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.91",
+	"appid": "touristappid",
+	"projectname": "mfadomv",
+	"svr": "",
+	"client": "",
+	"qcloudRoot": "",
+	"miniprogramRoot": "",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": 0,
+					"name": "单页调试",
+					"pathName": "pages/diary_article/diary_article",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "日记",
+					"pathName": "pages/diary_edit/diary_edit",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "补全资料：事件描述",
+					"pathName": "pages/consult/disputes_list/disputes_list",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "补全资料：证据上传",
+					"pathName": "pages/completeData/evidenceUpload/evidenceUpload",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "上传页面",
+					"pathName": "pages/completeData/evidenceUpload/uploadDetail/uploadDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "补全资料：列表",
+					"pathName": "pages/completeData/dataList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "补全资料：申请人资料",
+					"pathName": "pages/completeData/applicantIfn/applicantIfn",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "聊天室",
+					"pathName": "pages/onlineRoom/room",
+					"query": "q=https%3A%2F%2Fyundr.gov.cn%2Froomtest%2Froom%3Fid%3D0%26meeting%3D36%26userid%3D748"
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "聊天室",
+					"pathName": "pages/onlineRoom/room",
+					"query": "userId=36&&meetingId=12"
+				},
+				{
+					"id": -1,
+					"name": "保护令申请",
+					"pathName": "pages/protectionOrder/orderApply/orderApply",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "被申请人",
+					"pathName": "pages/completeData/respondentIfn/respondentIfn",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "up",
+					"pathName": "pages/aaaa/scroll",
+					"query": ""
+				},
+				{
+					"id": 14,
+					"name": "资料库",
+					"pathName": "pages/completeData/evidenceUpload/uploadDatabaseSelect/uploadDatabaseSelect",
+					"query": ""
+				}
+			]
+		}
+	}
+}

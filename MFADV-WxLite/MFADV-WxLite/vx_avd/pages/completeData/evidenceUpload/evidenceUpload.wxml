@@ -1,0 +1,63 @@
+<view class='upLoadHint' fixed="true">仅支持图片、视频格式，其他格式请登录fanjiabao.net上传</view>
+<scroll-view scroll-y class="myProfileContainer" style="height: {{clientHeight+'px'}};">
+  <view class="uploadContainer">
+    <!-- 身份证明 -->
+    <view class="uploadItem" wx:for="{{attachments}}" wx:for-item="typeItem" wx:for-index="attachmentIndex" wx:key="attachmentIndex">
+      <view class="head {{typeItem.selected ? 'head-selected' : ''}}" bindtap="headClick" data-type-item="{{typeItem}}">
+        <picker class="head_left_picker" mode="selector" bindtap="selectorTap" bindchange="uploadTypePickerSelected" range="{{uploadType}}" wx:if='{{!allFiles}}' data-type-item="{{typeItem}}">
+          <view class="head_left">
+            <text class="head_block"> </text>
+            <view class="uploadIcon" wx:if="{{typeItem.children.length>0}}">
+              <icon type="success" size="16" color="orange" />
+            </view>
+            <view class="uploadTitleView">
+              <text class="uploadTitle {{typeItem.selected ? 'uploadTitle-selected' : ''}}">{{typeItem.name}}</text>
+            </view>
+          </view>
+        </picker>
+
+         <view class="head_left" bindtap="upload2Database" wx:if='{{allFiles}}'              data-type-item="{{typeItem}}">
+          <text class="head_block"> </text>
+          <view class="uploadIcon" wx:if="{{typeItem.children.length>0}}">
+            <icon type="success" size="16" color="orange" />
+          </view>
+          <text class="uploadTitle {{typeItem.selected ? 'uploadTitle-selected' : ''}}">{{typeItem.name}}</text>
+        </view> 
+
+        <view class='uploadArrow' wx:if="{{typeItem.children.length>0}}" bindtap="flodFn" data-index="{{attachmentIndex}}">
+          <image wx:if='{{typeItem.isFold}}' src="../../../img/arrowDown.png"></image>
+          <image wx:else src="../../../img/arrowUp.png"></image>
+        </view>
+      </view>
+      <view class="uploadChild clearfix {{typeItem.isFold ? 'fold' : 'expand'}} " wx:for="{{typeItem.children}}" wx:for-item="childItem" wx:for-index="childIndex" wx:key="childIndex">
+        <view class="uploadChildTitle fl" wx:if='{{typeItem.code != "ET0011"}}'>{{childItem.name}}</view>
+        <view class="uploadChildTitle fl" wx:if='{{typeItem.code  == "ET0011"}}'>{{childItem.name}}.mp3</view>
+        <!--非资料库删除  -->
+        <view wx:if='{{!allFiles}}' class='uploadDelete fr' bindtap='deleteUploadHistory' data-param="{{childItem.id}}" data-attachmentIndex="{{attachmentIndex}}" data-childIndex="{{childIndex}}">
+          <image src="../../../img/deleteIcon.png"></image>
+        </view>
+        <!--资料库删除  -->
+        <view wx:if='{{allFiles}}' class='uploadDelete fr' bindtap='deleteUploadHistory1' data-param="{{childItem.id}}" data-attachmentIndex="{{attachmentIndex}}" data-childIndex="{{childIndex}}">
+          <image src="../../../img/deleteIcon.png"></image>
+        </view>
+
+        <view class='download fr' wx:if="{{serviceId != '' || allFiles}}" bindtap="downLoadFiles" data-param="{{childItem.url}}">下载</view>
+      </view>
+    </view>
+    <!-- 验伤单 伤情鉴定 人身安全保护令 调解协议 告诫书 处罚决定书 病例诊断 -->
+    <!--录音弹框  -->
+  </view>
+</scroll-view>
+<view class='mask_bg' wx:if="{{maskShow}}">
+      <view class='mask_header'>
+        <view class='mask_header_off' bindtap='btnHide'>取消</view>
+        <view class='mask_header_on' bindtap='btnShow'>确认</view>
+      </view>
+      <view class='mask_box'>
+        <checkbox-group bindchange="checkboxChange">
+          <label class="checkbox" wx:for="{{list}}" wx:key="">
+            <checkbox value="{{item.tempFilePath}}" checked="{{item.checked}}"/>{{item.audioName}}
+          </label>
+        </checkbox-group>
+      </view>
+</view>

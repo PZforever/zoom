@@ -1,0 +1,16 @@
+<!--pages/injury_identification/upload_record/upload_record.wxml-->
+<view class='aplt-ifn'>
+  <view class='ifn-item'>
+    <text class='item-title'>证据分类</text>
+    <text class='item-text'>身份证明</text>
+    <image src='/img/arrow.png'></image>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>证据名称</text>
+  </view>
+</view>
+<view class='upload' bindtap='openFile'><text>上传文件</text></view>
+<view class='remark'>备注： 文件格式为pdf、jpg、bmg、png、doc、docx。</view>
+<view class='submit'>
+  <button>提交</button>
+</view>

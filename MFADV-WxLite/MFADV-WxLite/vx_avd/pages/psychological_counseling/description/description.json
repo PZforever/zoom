@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "backgroundColor": "#F7F6F6",
+  "navigationBarTitleText": "填写资料",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "area-select": "/components/area-select/area-select"
+  }
+}

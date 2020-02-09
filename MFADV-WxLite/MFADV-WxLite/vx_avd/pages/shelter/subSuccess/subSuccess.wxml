@@ -1,0 +1,4 @@
+<!--pages/shelter/subSuccess/subSuccess.wxml-->
+
+<image src='/img/sub_success.png'></image>
+<view>提交成功</view>

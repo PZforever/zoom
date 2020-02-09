@@ -1,0 +1,35 @@
+<view class='head'>
+    <view class='headLeft'>
+      <picker bindchange="bindPickerChange" value="{{indexAry}}" range="{{sortAry}}">筛选</picker>
+      <image class='leftImg' src='/img/arrowDown.png'></image>
+    </view>
+    <view class='headRight'>
+     <input placeholder='请输入您要搜索的咨询师姓名' bindinput='searchName'></input>
+     <image src='/img/search.png' bindtap='searchBtn'></image>
+    </view>
+</view>
+
+<view class="psy" wx:for="{{counselors}}" wx:key wx:for-item="counselor">
+  <view class="psy-info">
+    <view class="psy-info__avatar">
+      <image class='head-default' src='/img/head_default.png'></image>
+      <image mode="aspectFill" src="{{counselor.imgPhoto}}" binderror='imgPhotoBinderror' data-counselor-index='{{index}}'></image>
+    </view>
+    <view class="psy-info__detail">
+      <view class="title-row">
+        <view>
+          <text class="name">{{counselor.actualName}}</text>
+          <text class="jobstart">{{counselor.jobstart}}年</text>
+        </view>
+        <button class="select" bindtap='selectCounselor' data-counselor="{{counselor}}">咨询</button>
+      </view>
+      <view class="psy-info__exp">
+        <text class="job">{{counselor.job}}</text>
+      </view>
+      <view class="psy-intro">
+        <text class="label">擅长领域：{{counselor.ability}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>

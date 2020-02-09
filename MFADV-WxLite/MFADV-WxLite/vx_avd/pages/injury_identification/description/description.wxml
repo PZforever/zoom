@@ -1,0 +1,14 @@
+<!--pages/injury_identification/description/description .wxml-->
+<view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>情况描述
+  </view>
+  <view class='content'>
+    <view class='text_body'>
+      <textarea class='content_text' placeholder='请描述详细内容' maxlength='-1'></textarea>
+    </view>
+  </view>
+</view>
+<navigator url='{{url}}'>
+  <button>下一步</button>
+</navigator>

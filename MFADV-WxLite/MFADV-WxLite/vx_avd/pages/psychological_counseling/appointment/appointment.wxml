@@ -1,0 +1,20 @@
+<!--pages/psychological_counseling/appointment/appointment.wxml-->
+<view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>预约会谈
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>预约机构</text>
+    <picker mode='selector' range='{{orgs}}' value='orgs_index' bindchange='organizationAddressPickerSelected'>
+      <text>{{orgs[orgs_index]}}</text>
+    </picker>
+    <image src='/img/arrow.png'></image> 
+  </view>
+  <navigator url='{{url}}'>
+    <view class='ifn-item'>
+      <text class='item-title'>咨询师</text>
+      <text class='last-text' wx:if="{{psychologist == '点击选择咨询师'}}">{{psychologist}}</text>
+      <text class='psychologist-name' wx:else="{{psychologist == '点击选择咨询师'}}">{{psychologist}}</text>
+    </view>
+  </navigator>
+</view>

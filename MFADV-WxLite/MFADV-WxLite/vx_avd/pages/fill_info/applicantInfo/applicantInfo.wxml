@@ -1,0 +1,57 @@
+<!--pages/form/applicantInfo/applicantInfo.wxml-->
+<view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>申请人信息
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>姓名</text>
+    <input value='{{name}}' placeholder='请输入姓名' placeholder-style='color:#999;' bindblur='getName' disabled="{{applyType=='ONESELF' ? true : false}}"></input> 
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>民族</text>
+    <picker mode="selector" range="{{nation}}" value="{{nationIndex}}" bindchange="nationPickerSelected">
+       <text>{{nation[nationIndex]}}</text> 
+    </picker>
+    <image src='/img/arrow.png'></image> 
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>性别</text>
+
+     <picker wx:if='{{applyType=="OTHER"}}' bindchange="genderPickerSelected" value="{{index}}" range="{{gender}}">
+      <view class="picker">
+         {{gender[index]}}
+      </view>
+    </picker>
+    <image wx:if='{{applyType=="OTHER"}}' src='/img/arrow.png'></image> 
+
+    <input wx:if='{{applyType=="ONESELF"}}' value='{{gender[index]}}' placeholder-style='color:#999;' bindblur='getSex' disabled></input> 
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>手机号</text>
+    <input value='{{phone}}' placeholder='请输入手机号' placeholder-style='color:#999;' bindblur='getPhone'  disabled="{{applyType=='ONESELF' ? true : false}}"></input>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>身份证号</text>
+    <input value='{{idNum}}' placeholder='请输入身份证号' placeholder-style='color:#999;' bindblur='getIdCard' disabled="{{applyType=='ONESELF' ? true : false}}"></input> 
+  </view>
+  <view class='ifn-item' bindtap="openAddress">
+    <text class='item-title'>现居住地</text>
+    <input value='{{region}}' disabled placeholder='点击选择地址'></input>
+    <image src='/img/arrow.png' class='allow'></image> 
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>具体地址</text>
+    <input value='{{residenceDetail}}' placeholder='请输入具体地址' placeholder-style='color:#999;' bindblur='getSpecificAddress'></input>
+    <!-- <image src='/img/arrow.png' class='allow'></image>  -->
+  </view>
+  <view class='ifn-item' wx:if="{{is_shelter}}" bindtap="openRegistrationAddress">
+    <text class='item-title'>户籍地址</text>
+    <input value='{{registration}}' disabled placeholder='点击选择户籍地址'></input>
+    <image src='/img/arrow.png' class='allow'></image> 
+  </view>
+</view>
+<!-- 引入自定义地址组件 -->
+<area-select id="areaSelect" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent" ></area-select>
+<!-- 引入户籍地址组件 -->
+<!-- <registration-area-select id="registrationAreaSelect" bind:registrationCancelEvent="registrationCancelEvent" bind:registrationCancelEvent="registrationConfirmEvent"></registration-area-select> -->
+<button bindtap='submit'>下一步</button>

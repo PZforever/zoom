@@ -1,0 +1,43 @@
+/* pages/main/main.wxss */
+.mainUI {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://mc.qcloudimg.com/static/img/fae52dbeb369a1f6a6b91e80a60485cf/bg.png);
+  background-color: #1F2531;
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+.tips {
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  padding: 22rpx 0 22rpx;
+}
+.guide-box {
+  text-align: center;
+}
+.guide {
+  display: inline-block;
+  top: 10px;
+  width: 30vw;
+  height: 30vw;
+  background-color: rgba(0, 0, 0, 0.55);
+  text-align: center;
+  margin: 1.5px;
+  vertical-align: top;
+  color: white
+}
+.select-show{ 
+  position: absolute;
+  top: 35vw;
+  height: 100vw; 
+  overflow: scroll;
+} 
+
+ .logo-box {
+  position: absolute;
+  width: 100vw;
+  bottom: 10rpx;
+  text-align: left;
+}

@@ -1,0 +1,45 @@
+/* pages/shelter/shelterDetail/shelterDetail.wxss */
+page{
+  background: #F7F6F6;
+  box-sizing: border-box;
+}
+.detail{
+  width: 100%;
+  padding:10rpx 50rpx 10rpx;
+  background: #fff;
+  margin: 20rpx auto 30rpx;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+}
+.detail .shelter{
+  font-size: 22rpx;
+  color: #333;
+  line-height: 50rpx;
+}
+.detail view{
+  font-size: 22rpx;
+  color: #999;
+  line-height: 50rpx;
+}
+image{
+  margin-right: 10rpx;
+}
+.location{
+  margin-top: 16rpx;
+}
+.location image{
+  width: 16rpx;
+  height: 24rpx;
+}
+.contacts image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.phone image{
+  width: 19rpx;
+  height: 17rpx;
+}
+.car image{
+  width: 28rpx;
+  height: 14rpx;
+}

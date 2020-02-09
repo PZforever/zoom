@@ -1,0 +1,151 @@
+/* pages/psychological_counseling/counselor_list/counselor_list.wxss */
+
+page {
+  background-color: #f7f6f6;
+}
+
+.myProfileContainer {
+  height: 1000rpx;
+}
+
+.aplt-ifn {
+  margin-top: 20rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f4f4f4;
+  background: #fff;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 26rpx;
+}
+
+.counselor-item {
+  width: 100%;
+  height: 250rpx;
+}
+
+.counselor-item .avatar {
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-bottom: 50rpx;
+  display: inline-block;
+}
+
+.counselor-item .avatar image {
+  width: 125rpx;
+  height: 125rpx;
+}
+
+.counselor-item .content {
+  height: 180rpx;
+  display: inline-block;
+}
+
+.counselor-item .counselor-info {
+  width: 500rpx;
+  height: 180rpx;
+  flex-direction: column;
+}
+
+.counselor-item .counselor-info .title {
+  margin: 20rpx;
+  height: 30rpx;
+  width: 500rpx;
+}
+
+.counselor-item .counselor-info .title .name {
+  width: 100rpx;
+  display: inline-block;
+}
+
+.counselor-item .counselor-info .title .name text {
+  display: block;
+  color: #333;
+  font-size: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.counselor-item .counselor-info .role {
+  margin: 20rpx;
+  color: #666;
+  height: 30rpx;
+  width: 500rpx;
+}
+
+.counselor-item .counselor-info .title .jobstart {
+  text-align: center;
+  font-size: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  width: 250rpx;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.counselor-item .counselor-info .title .order {
+  height: 30rpx;
+  width: 120rpx;
+  display: inline-block;
+}
+
+.counselor-item .counselor-info .order .select {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: #f9812b;
+  border: 2rpx solid #f9812b;
+}
+
+.counselor-item .counselor-info .order .checked {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: white;
+  background-color: #f9812b;
+  border: 2rpx solid #f9812b;
+}
+
+.counselor-item .introduction {
+  margin: 20rpx;
+  height: 30rpx;
+  color: #999;
+  font-size: 25rpx;
+}
+
+.counselor-item .introduction text {
+  display: block;
+  overflow: hidden;
+  height: 70rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.counselor-item .counselor-info .applicant .order .busy {
+}
+
+.tips {
+  padding-top: 100rpx;
+  text-align: center;
+  color: #f9812b;
+}
+
+button {
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: white;
+  background-color: #f9812b;
+}
+
+.submitBtn {
+  position: fixed;
+  bottom: 10rpx;
+  left: 50%;
+  margin-left: -40%;
+  height: 80rpx;
+}

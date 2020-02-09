@@ -1,0 +1,241 @@
+/* pages/online_counselling/counselor_list/counselor_list.wxss */
+/* 门窗蒙层 */
+.modal-mask {
+  width: 100%; 
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background:rgba(0, 0, 0, .6);
+  overflow: hidden;
+  z-index: 9000;
+  display:flex;
+  display:-webkit-flex;
+  justify-content:center;
+  -webkit-justify-content:center;
+  align-items:center;
+  -webkit-align-items:center;
+}
+.modalDialog {
+  width: 640rpx;
+  height: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  z-index: 9999;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.closeImg{
+  height: 30rpx;
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+.closeImg>image{
+  width: 30rpx;
+  height: 30rpx;
+   float: right; 
+  margin-right: 37rpx;
+}
+.sourceImg{
+  height: 65rpx;
+  margin-top: 30rpx;
+  text-align: center 
+}
+.sourceImg>image{
+  height: 65rpx;
+  width: 60rpx;
+}
+.sourceTextone{
+  color: #333;
+  font-size: 35rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.sourceTexttow{
+  color: #999;
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 10rpx;
+}
+.theBtn{
+  margin-top: 70rpx;
+  overflow: hidden
+}
+.theBtn>view{
+  float: left;
+  width: 235rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  color: #fa822b;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 5rpx;
+}
+.theBtn>.fillBtn{
+  color: #fff;
+  background: #fa822b;
+  margin-left: 85rpx;
+}
+.restBtn{
+  margin-left: 35rpx;
+  border: 1px solid #fa822b;
+}
+
+
+.psy {
+  margin: 10rpx 0;
+  padding-top: 15rpx;
+  /* padding: 20rpx 30rpx; */
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.psy-head, .psy-info {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  position: relative;
+}
+
+/* 进行状态 */
+.psy-head>.headState{
+  position: absolute;
+  right: 30rpx;
+  top: 0rpx;
+}
+.headState>image{
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 15rpx;
+}
+.headState>text{
+  color: #f5a623;
+}
+
+
+.psy-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.psy-info__avatar {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+
+.psy-info__avatar  .head-default {
+  position: absolute;
+  height: 120rpx;
+  width: 120rpx;
+  z-index: -1;
+}
+
+.case_no {
+  height: 24rpx;
+  width: 19rpx;
+  margin-right: 1em;
+}
+
+.case_no_text {
+  color: #666;
+}
+
+.psy-info__detail {
+  flex: 1;
+  margin-left: 55rpx;
+}
+
+.psy-info__date {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  color: #999;
+}
+
+.psy-info__exp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.psy-info__avatar image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.name {
+  color: #000;
+  font-size: 28rpx;
+}
+
+.psy-info__exp-detail {
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+  color: #999;
+}
+
+.content {
+  max-width: 10em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.psy-info__exp-detail .item {
+  display: inline-flex;
+  align-items: center;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.psy-info__exp-detail .item + .item {
+  margin-left: 30rpx;
+}
+
+.psy-info__exp-detail .item text {
+  display: inline-block;
+  max-width: 50px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.title-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 10rpx;
+}
+
+.psy-info__exp-detail image {
+  width: 30rpx;
+  margin-right: 10rpx;
+}
+
+.psy-intro {
+  display: flex;
+  color: #999;
+}
+
+.psy-intro text {
+  display: inline-block;
+  line-height: 30rpx;
+}
+
+.psy-intro text:not(.label) {
+  flex: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+

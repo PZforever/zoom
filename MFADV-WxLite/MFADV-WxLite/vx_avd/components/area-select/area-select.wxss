@@ -1,0 +1,26 @@
+/* components/area-select.wxssby:张涛20180308 */
+.area-select-bg{width:750rpx;height:100%;position:fixed;top:0;left:0;background:rgba(0,0,0,.5);z-index:9999;}
+.area-select-box{width:750rpx;height:800rpx;background:white;position:absolute;bottom:0;left:0;}
+.area-select-box .area-select-title{width:100%;line-height:80rpx;font-size:30rpx;color:#999999;text-align:center;display:flex;justify-content:space-between;align-items:center;}
+.area-select-box .area-select-title .select-off{width:100rpx;line-height:80rpx;}
+.area-select-box .area-select-title .select-on{width:100rpx;line-height:80rpx;color:#ea8842;}
+.area-select-box .area-select-btn{height:60rpx;display:flex;justify-content:flex-start;align-items:center;position:relative;top:0;left:0;}
+.area-select-box .area-select-btn .area-select-btn-item{height:56rpx;border-bottom:4rpx solid white;font-size:28rpx;line-height:56rpx;color:#666666;margin:0 10rpx;overflow:hidden;}
+.area-select-box .area-select-btn .area-select-btn-active{border-bottom:4rpx solid #ea8842;color:#ea8842;}
+.area-select-box .area-select-btn:after{content:'';width:100%;height:1rpx;background:#e5e5e5;position:absolute;bottom:0;left:0;}
+.area-select-box .area-select-show{width:750rpx;height:660rpx;}
+.area-select-box .area-select-show .area-select-show-item{width:auto;padding:0 26rpx;font-size:28rpx;color:#666666;line-height:76rpx;display:flex;justify-content:flex-start;align-items:center;}
+.area-select-box .area-select-show .area-select-show-item image{width:28rpx;height:20rpx;margin-left:20rpx;}
+
+.registration-area-select-bg{width:750rpx;height:100%;position:fixed;top:0;left:0;background:rgba(0,0,0,.5);z-index:9999;}
+.registration-area-select-box{width:750rpx;height:800rpx;background:white;position:absolute;bottom:0;left:0;}
+.registration-area-select-box .registration-area-select-title{width:100%;line-height:80rpx;font-size:30rpx;color:#999999;text-align:center;display:flex;justify-content:space-between;align-items:center;}
+.registration-area-select-box .registration-area-select-title .select-off{width:100rpx;line-height:80rpx;}
+.registration-area-select-box .registration-area-select-title .select-on{width:100rpx;line-height:80rpx;color:#ea8842;}
+.registration-area-select-box .registration-area-select-btn{height:60rpx;display:flex;justify-content:flex-start;align-items:center;position:relative;top:0;left:0;}
+.registration-area-select-box .registration-area-select-btn .registration-area-select-btn-item{height:56rpx;border-bottom:4rpx solid white;font-size:28rpx;line-height:56rpx;color:#666666;margin:0 10rpx;overflow:hidden;}
+.registration-area-select-box .registration-area-select-btn .registration-area-select-btn-active{border-bottom:4rpx solid #ea8842;color:#ea8842;}
+.registration-area-select-box .registration-area-select-btn:after{content:'';width:100%;height:1rpx;background:#e5e5e5;position:absolute;bottom:0;left:0;}
+.registration-area-select-box .registration-area-select-show{width:750rpx;height:660rpx;}
+.registration-area-select-box .registration-area-select-show .registration-area-select-show-item{width:auto;padding:0 26rpx;font-size:28rpx;color:#666666;line-height:76rpx;display:flex;justify-content:flex-start;align-items:center;}
+.registration-area-select-box .registration-area-select-show .registration-area-select-show-item image{width:28rpx;height:20rpx;margin-left:20rpx;}

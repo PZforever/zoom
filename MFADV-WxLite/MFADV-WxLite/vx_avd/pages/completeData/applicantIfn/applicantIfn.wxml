@@ -1,0 +1,128 @@
+<!--pages/completeData/applicantIfn/applicantIfn.wxml-->
+<view class='aplt-ifn'> 
+  <form  bindsubmit="formSubmit">
+    <view class='ifn-item'>
+      <text class='item-title'>姓名</text> 
+      <input name='actualName' disabled bindblur='checkName' value='{{actualName}}' placeholder='请输入姓名' placeholder-style='color:#999;'></input>
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title'>年龄</text>
+      <input type='number' disabled name='age' value='{{age}}'  placeholder='请输入年龄' placeholder-style='color:#999;'></input> 
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title'>民族</text>
+      <picker  mode="selector" range="{{nationList}}" value="{{index7}}" bindchange="nationPickerSelected">
+        <input name='nation'type='text' disabled value='{{nationList[index7]}}'></input>
+      </picker>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title'>性别</text>
+      <picker mode="selector" disabled range="{{gender}}" value="{{index6}}" bindchange="genderPickerSelected">
+        <input name='sex' type='text' disabled value='{{sex}}'></input>
+      </picker>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title'>手机号</text>
+      <input name='phone' disabled value='{{phone}}' placeholder='请输入手机号' placeholder-style='color:#999;'></input>
+    </view> 
+    <view class='ifn-item'>
+      <text class='item-title'>身份证号</text>
+      <input name='idCard' disabled value='{{idCard}}' placeholder='请输入身份证号' placeholder-style='color:#999;'></input>
+    </view>
+    <view class='ifn-item' bindtap="openAddress">
+      <text class='item-title'>现居住地</text>
+      <view wx:if='{{getArea}}' class='area'>{{fullName}}</view> 
+      <view wx:if='{{!getArea}}' class='area'>{{residenceAreaName}}</view> 
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title'>具体地址</text>
+      <input name='residenceDetail' value='{{residenceDetail}}' placeholder='请输入具体地址' placeholder-style='color:#999;'></input>
+    </view>
+    <view class='ifn-item' wx:if="{{registration != ''}}" bindtap="openRegistrationAddress">
+      <text class='item-title'>户籍地址</text>
+      <view class='area'>{{registration}}</view>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view> 
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title'>关系</text>
+      <picker  mode="selector" range="{{relationList}}" value="{{index14}}" bindchange="relationPickerSelected">
+        <input name='relationToRespondent'type='text' disabled value='{{relationList[index14]}}'></input>
+      </picker>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view> 
+    <view class='ifn-item'>
+      <text class='item-title spe'>紧急联系人手机号</text>
+      <input name='emergencyPhone' value='{{emergencyPhone}}' placeholder='请输入紧急联系人手机号' placeholder-style='color:#999;'></input>
+    </view>
+    <view class='ifn-item' bindtap='showModal'>
+      <text class='item-title spe'>共同生活成员</text> 
+      <view class='rsn'>
+        <text wx:for='{{liveMembers}}' wx:for-item='member' wx:key='code'>{{member.name}} </text>
+      </view>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title'>职业</text>
+      <picker  mode="selector" range="{{occupation_type}}" value="{{index2}}" bindchange="jobPickerSelected">
+        <input name='occupation'type='text' value='{{occupation_type[index2]}}' disabled></input>
+      </picker>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title'>教育程度</text>
+      <picker mode="selector" range="{{educational_level}}" value="{{index3}}" bindchange="educationPickerSelected">
+        <text></text>
+        <input name='education' type='text' value='{{educational_level[index3]}}' disabled></input>
+      </picker>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title'>税后收入</text>
+      <picker mode="selector" range="{{income_list}}" value="{{index4}}" bindchange="incomePickerSelected">
+        <input name='income' type='text' value='{{income_list[index4]}}' disabled></input>
+      </picker>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title'>婚姻状况</text>
+      <picker mode="selector" range="{{marital_status}}" value="{{index5}}" bindchange="marriagePickerSelected">
+        <input name='maritalStatus' type='text' value='{{marital_status[index5]}}' disabled></input>
+      </picker>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view class='ifn-item' wx:if='{{hasMarriage}}'>
+      <text class='item-title'>婚龄</text>
+      <input name='marriageAge' value='{{marriageAge}}' placeholder='请输入婚龄' placeholder-style='color:#999;'></input>
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title spe'>是否有\n子女</text>
+      <picker mode="selector" range="{{hasChildrenList}}" value="{{index}}" bindchange="childrenPickerSelected">
+        <input name='hasChildren' type='text' value='{{hasChildrenList[index]}}' disabled></input>
+      </picker>
+      <view class="weui-cell__ft_in-access personalArrowRight"></view>
+    </view>
+    <view>
+      <button  formType='submit' class='subBtn'>保存</button>
+    </view>
+  </form>
+</view>
+<!-- 引入自定义地址组件 -->
+<area-select id="areaSelect" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent"></area-select>
+<!--共同生活成员  -->
+<view class='maskLayer' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view class='chooseReason' animation="{{animationData}}" wx:if="{{showModalStatus}}">
+  <view class='tit'>
+    <view bindtap='cancelMember'>取消</view>
+    <view>共同生活成员（多选）</view>
+    <view bindtap='confirmMember'>确定</view>
+  </view>
+  <view class="radio-group" wx:for="{{live_members}}" wx:for-item='itemMember' wx:key="id">
+    <view class="checkbox reasons {{itemMember.isChecked?'labelId':''}}" data-param="{{index}}" bindtap="chooseMember">
+      {{itemMember.name}}
+    </view>
+  </view>
+</view>
+  

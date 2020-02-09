@@ -1,0 +1,107 @@
+<!--pages/psychological_counseling/description/description.wxml-->
+<view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>事件类型
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>类型</text>
+    <picker mode="selector" range="{{FamilyViolenceType}}" value="{{index}}" bindchange="FamilyViolenceTypePickerSelected">
+      <text>{{FamilyViolenceType[index]}}</text>
+    </picker>
+    <image src='/img/arrow.png'></image> 
+  </view>
+</view>
+<view class='aplt-ifn'> 
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>事件描述
+  </view>
+  <view class='ifn-item'>
+    <view class='content'>
+      <view class='text_body'> 
+        <view class='content_text' bindtap="setShow"><text wx:for="{{remarks}}" wx:key="" wx:if="{{item.index != remarks.length - 1}}">{{item.name}},</text><text wx:for="{{remarks}}" wx:key="" wx:if="{{item.index == remarks.length - 1}}">{{item.name}}</text>{{inputContent}}</view>
+        <view class='con case'>   
+          <view>{{against_type}}：</view>
+          <text wx:for="{{recommendCase}}" wx:for-item="cs" wx:key='cs' class="chose-txt {{cs.checked==true ? 'active' : ''}}" id="{{cs.id}}" bindtap="choseTxtColor">{{cs.name}}</text>
+        </view>
+        <view class="dateTimePicker">
+          <text class='title'>家暴发生时间</text>
+          <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+            <text>
+              {{dateTimeArray[0][dateTime[0]]}}年{{dateTimeArray[1][dateTime[1]]}}月{{dateTimeArray[2][dateTime[2]]}}日 {{dateTimeArray[3][dateTime[3]]}}时
+            </text>
+          </picker>
+          <image src='/img/arrow.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>申请人诉求
+  </view>
+  <view class='ifn-item'>
+    <view>
+      <view class='text_body'>
+        <textarea class='content_text' wx:if="{{textareaShow}}" placeholder='请输入申请诉求或点击按钮进行选择' maxlength='-1' bindblur='getAppeal' value='{{appeal}}'></textarea>
+        <view class='con case'>   
+          <view>推荐案例：</view>
+          <text wx:for="{{recommendCase}}" wx:for-item="cs" wx:key='cs' class="chose-txt {{cs.checked==true ? 'active' : ''}}"  data-id="{{index}}" data-checked="{{cs.checked}}" bindtap="choseTxtColor">{{cs.name}}</text>
+        </view>
+      </view> 
+    </view> 
+  </view>
+</view> -->
+<view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>发生地址
+  </view>
+  <view class='ifn-item' bindtap="openAddress">
+    <input class='input' value='{{region}}' placeholder='点击选择地址' disabled></input>
+    <image src='/img/arrow.png' class='allow'></image> 
+  </view>
+</view>
+
+<view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>详细地址
+  </view>
+  <view class='ifn-item'>
+    <input class='input' placeholder='请输入详细地址' bindblur='getAddress' value='{{address}}'></input>
+  </view>
+</view>
+<view class='aplt-ifn' wx:if='{{order}}'>
+    <view class='aplt-title'>
+      <image class='edit' src='/img/edit.png'></image>申请事项
+    </view>
+    <view class='con'>
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox" wx:for="{{ProtectiveMeasure}}" wx:key='code' wx:for-item='item'>
+          <checkbox value="{{index}}" checked="{{item.checked}}"/>
+          {{item.name}}
+        </label>
+      </checkbox-group>
+    </view>
+    <view class='ifn-item' wx:if='{{self_desc}}'>
+      <input class='input' placeholder='请描述要申请内容' bindinput='getSlefDesc' value='{{selfDesc}}'></input>
+    </view>
+  </view>
+  <view class='aplt-ifn' wx:if='{{order}}'>
+    <view class='aplt-title'>
+      <image class='edit' src='/img/edit.png'></image>法院
+    </view>
+    <view class='ifn-item'>
+      <text class='item-title' style='width:30%;'>选择管辖法院</text>
+      <picker style='width:64%;overflow:hidden;' mode="selector" range="{{courtChoose}}" value="{{index1}}" bindchange="courtChoosePickerSelected">
+        <text>{{courtChoose[index1]}}</text> 
+      </picker>
+      <image src='/img/arrow.png'></image> 
+    </view>
+  </view>
+  <view class="inputBg" wx:if="{{inputShow}}">
+    <input class="inputBox" type="text" placeholder="请输入内容" value="{{inputContent}}" bindinput="setInput" focus="{{inputFocus}}" bindblur="setHide"/>
+    <view class="inputBtn" bindtap="setHide">确认</view>
+  </view>
+
+<area-select id="areaSelect" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent"></area-select>
+<button bindtap='submit'>下一步</button> 

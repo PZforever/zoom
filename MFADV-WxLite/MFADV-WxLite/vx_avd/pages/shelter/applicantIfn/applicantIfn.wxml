@@ -1,0 +1,40 @@
+<!--pages/shelter/applicantIfn/applicantIfn.wxml-->
+<view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>申请人信息
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>姓名</text>
+    <text>{{name}}</text>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>性别</text>
+    <picker mode="selector" range="{{gender}}" value="{{index}}" bindchange="genderPickerSelected">
+      <text>{{gender[index]}}</text>
+    </picker>
+    <image class='arrow' src='/img/arrow.png'></image>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>手机号</text>
+    <input value='{{phone}}' placeholder='请输入手机号' placeholder-style='color:#999;'></input>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>身份证号</text>
+    <text>{{idNum}}</text>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>现住地址</text>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{region[0]}}，{{region[1]}}，{{region[2]}}
+      </view>
+    </picker>
+    <image class='arrow' src='/img/arrow.png'></image>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>具体地址</text>
+    <input value='{{addressDetail}}' placeholder='请输入具体地址' placeholder-style='color:#999;'></input>
+  </view>
+</view>
+  <button class='subBtn' bindtap="nextBtn">下一步</button>
+

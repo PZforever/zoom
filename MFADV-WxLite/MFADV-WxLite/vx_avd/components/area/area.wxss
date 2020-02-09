@@ -1,0 +1,5 @@
+/*自定义地图插件用于使用第三方地图数据包 by张涛20180307*/
+.area-box{position:fixed;bottom:0;left:0;background:white;box-shadow:0 0 10px 10px #f2f2f2;}
+.area-btn{width:100%;height:80rpx;font-size:28rpx;display:flex;justify-content:space-between;align-items:center;border-bottom:2rpx solid #ff9f09;}
+.area-btn .area-btn-off{width:140rpx;line-height:80rpx;text-align:center;}
+.area-btn .area-btn-on{width:140rpx;line-height:80rpx;color:#ff9f09;text-align:center;}

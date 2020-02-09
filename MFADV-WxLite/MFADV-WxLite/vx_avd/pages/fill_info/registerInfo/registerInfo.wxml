@@ -1,0 +1,35 @@
+<!--pages/form/registerInfo/registerInfo.wxml-->
+<view class='aplt-ifn'>
+  <view class='aplt-title'>
+    <image class='edit' src='/img/edit.png'></image>登记人信息
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>姓名</text>
+    <input value='{{name}}' placeholder='请输入姓名' placeholder-style='color:#999;' bindblur='getName' disabled></input> 
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>性别</text>
+    <!-- <picker mode="selector" range="{{gender}}" value="{{index}}" bindchange="genderPickerSelected">
+      <text>{{gender[index]}}</text>
+    </picker>
+    <image src='/img/arrow.png'></image> -->
+    <input value='{{gender[index]}}' placeholder-style='color:#999;' bindblur='getSex' disabled></input>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>手机号</text>
+    <input value='{{phone}}' placeholder='请输入手机号' placeholder-style='color:#999;' bindblur='getPhone' disabled></input>
+  </view>
+  <view class='ifn-item'>
+    <text class='item-title'>身份证号</text>
+    <input value='{{id_num}}' placeholder='请输入身份证号' placeholder-style='color:#999;' bindblur='getIdCard' disabled></input> 
+  </view>
+  <!-- <view class='ifn-item'>
+    <text class='item-title'>关系</text>
+     <picker mode="selector" range="{{RelationType}}" value="{{relation_index}}" bindchange="relationTypePickerSelected">
+      <text>{{RelationType[relation_index]}}</text>
+    </picker> 
+     <image src='/img/arrow.png'></image>  
+  </view> -->
+</view>
+<button bindtap='submit'>下一步</button>
+

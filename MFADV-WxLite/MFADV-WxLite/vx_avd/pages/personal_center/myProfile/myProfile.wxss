@@ -1,0 +1,82 @@
+view,image,text,scroll-view,navigator,input{
+  margin: 0;
+  padding: 0;
+}
+page{
+  background-color: #F7F6F6;
+}
+.clearfix:after, .clearfix:before {
+    content: " ";
+    display: table;
+}
+.clearfix:after{
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+.myProfileContainer,.personalCenterScroll{
+  width: 100%;
+  background-color: #F7F6F6;
+}
+.myProfileBody{
+  width: 100%;
+  background:#fafafa;
+}
+.myProfileItem{
+  margin-top:10rpx;
+  background-color: #fff;
+}
+.myProfileHeadImg{
+  padding: 25rpx 20rpx 25rpx 40rpx;
+  border-top: 1px solid #f1f2fd;
+  border-bottom: 1px solid #f1f2fd;
+}
+.myProfileHeadImg .headPortrait{
+  width:130rpx;
+  height:130rpx;
+  float: right;
+  margin-right:40rpx;
+  border-radius: 50%;
+}
+.myProfileContant{
+  border-bottom: 4rpx solid #fafafa;
+  padding: 25rpx 40rpx;
+}
+.myProfileDepict{
+  color:#999999;
+  font-size: 30rpx;
+  line-height:130rpx;
+  float:left;
+}
+.myProfileItemDepict{
+  color:#999999;
+  font-size: 30rpx;
+  line-height:50rpx;
+  float:left;
+}
+.personalArrowRight{
+  margin-top:68rpx;
+}
+.myProfileInput{
+  color: #333333;
+  line-height: 50rpx;
+  width: 70%;
+  float: right;
+  font-size: 30rpx;
+  text-align: right;
+}
+.myProfileBtn{
+  margin-top:65rpx;
+  width:100%;
+  text-align: center;
+  padding-bottom: 40rpx;
+}
+.myProfileBtn button{
+  width:80%;
+  background-color: #f9812b;
+  line-height: 80rpx;
+  color:#fff;
+  font-size: 32rpx;
+}
+

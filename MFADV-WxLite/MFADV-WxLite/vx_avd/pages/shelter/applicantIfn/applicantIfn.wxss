@@ -1,0 +1,59 @@
+/* pages/shelter/applicantIfn/applicantIfn.wxss */
+page{
+  height: 100%;
+  background-color: #F7F6F6;
+}
+.aplt-ifn{
+  margin-top: 20rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #F7F6F6;
+  background: #fff;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 26rpx;
+}
+image.edit{
+  display: inline-block;
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 12rpx;
+}
+.aplt-title{
+  padding-left: 3%;
+}
+.ifn-item{
+  padding-left: 8%;
+  padding-right: 6%;
+  border-top: 3rpx solid #F7F6F6;
+}
+picker{
+  display: inline-block;
+  width: 70%;
+}
+.ifn-item text{
+  color: #333;
+}
+.ifn-item .item-title{
+  color: #999;
+  width:24%;
+  display:inline-block;
+}
+input{
+  width: 70%;
+  vertical-align:middle;
+  display: inline-block;
+  height:100rpx;
+  line-height:100rpx;
+}
+.placeholder{
+  color: #999;
+}
+image.arrow{
+  width: 12rpx;
+  height: 20rpx;
+}
+.subBtn{
+  position: fixed;
+  bottom: 60rpx;
+  left:75rpx;
+}

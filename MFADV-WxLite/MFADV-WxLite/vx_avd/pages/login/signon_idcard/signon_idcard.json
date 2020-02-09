@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "backgroundColor": "#F7F6F6",
+  "navigationBarTitleText": "身份识别",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "area": "/components/area/area"
+  }
+}

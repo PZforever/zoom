@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {},
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#F7F6F6",
+    "navigationBarTitleText": "修改分组名称",
+    "navigationBarTextStyle": "black"
+
+}

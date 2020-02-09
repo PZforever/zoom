@@ -1,0 +1,12 @@
+<!--pages/useinfo/useinfo.wxml-->
+<view class="page">
+    <view class="container">
+         <view class="section">纠纷多元化解平台</view> 
+        
+         <view class="section">手机号：<text> {{inPhone}}</text>  </view> 
+         <view class="section">姓名：<text> {{actualName}}</text>  </view> 
+         <view class="section">身份证：<text> {{idCard}}</text>  </view> 
+        <button type="primary" loading="{{loading}}"    bindtap="enterRoom">开始会议 </button>
+       
+    </view>
+</view>

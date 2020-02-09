@@ -1,0 +1,75 @@
+/* pages/form/registerInfo/registerInfo.wxss */
+page{
+  height: 100%;
+  background-color: #f7f6f6;
+}
+.aplt-ifn{
+  margin-top: 20rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f4f4f4;
+  background: #fff;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+image.edit{
+  display: inline-block;
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 12rpx;
+}
+.aplt-title{
+  padding-left: 3%;
+}
+picker{
+  display: inline-block;
+  width: 70%;
+}
+.ifn-item input{
+  vertical-align:middle;
+  display: inline-block;
+  width: 70%;
+  color: #333;
+}
+.ifn-item{
+  padding-left: 8%;
+  padding-right: 6%;
+  width: 86%;
+  border-top: 3rpx solid #fafafa;
+}
+.ifn-item .item-text{
+  width: 70%;
+  color: #333;
+  display:inline-block;
+}
+.ifn-item image{
+  width: 20rpx;
+  height: 20rpx;
+  display:inline-block;
+} 
+.ifn-item .item-title{
+  color: #999;
+  width: 24%;
+  display:inline-block;
+}
+.sign{
+  position: absolute;
+  top: 450rpx;
+  left: 3%;
+  color: #F9812B;
+}
+.tip_text{
+  margin-top: 10rpx;
+  margin-left: 8%;
+  font-size: 60%;
+  color: #F9812B;
+}
+button{
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: white;
+  background-color: #F9812B;
+}

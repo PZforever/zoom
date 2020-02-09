@@ -1,0 +1,206 @@
+view, image, text, scroll-view, navigator, input {
+  margin: 0;
+  padding: 0;
+}
+
+page {
+  background-color: #f7f6f6;
+}
+.upLoadHint{
+  width: 100%;
+  height:16px;
+  line-height:16px;
+  font-size: 9px;
+  color: #f9812b;
+  text-align: center;
+  background: rgba(250, 205, 137, 0.25);
+  z-index: 1000;
+}
+/* scroll-view {
+  padding-top: 10rpx;
+} */
+
+.head {
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.head-selected {
+  background: orange;
+}
+
+.head_left_picker {
+  flex: 1 0 auto;
+}
+
+.head_left {
+  flex:1;
+  overflow: hidden;
+  padding: 0rpx;
+  margin: 0rpx;
+  display: flex;
+}
+
+.head_block {
+  display: inline-block;
+  width: 50rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.uploadItem {
+  margin-top: 2rpx;
+}
+
+.uploadIcon {
+  margin-top: 16rpx;
+}
+
+.uploadTitleView {
+  flex-grow: 1;
+}
+
+.uploadTitle {
+  width: 100%;
+  line-height: 100rpx;
+  padding-left: 27rpx;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.uploadTitle-selected {
+  color: #fff;
+}
+
+.uploadArrow {
+  margin-right: 0rpx;
+  width: 126rpx;
+  text-align: right;
+  line-height:84rpx;
+}
+
+.uploadArrow image {
+  width: 26rpx;
+  height: 16rpx;
+  margin-right: 50rpx;
+}
+
+.fold {
+  display: none;
+}
+
+.expand {
+  display: block;
+}
+
+.uploadChild {
+  width: 90%;
+  line-height: 100rpx;
+  border-top: 2rpx solid #f6f6f6;
+  padding: 0rpx 5%;
+  background: #fffcf9;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.uploadChildTitle {
+  width: 70%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.uploadDelete {
+  width: 10%;
+  /* padding-top: 36rpx; *//* padding-left: 62rpx; */
+}
+
+.uploadDelete image {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle;
+  margin-left: 14rpx;
+}
+
+.download {
+  color: #f9812b;
+  width: 10%;
+  margin-right: 5%;
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 6%;
+  border-top: 1rpx solid #eee;
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  font-size: 30rpx;
+  background: #fff;
+}
+
+.uploadBtn {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.up {
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f9812b;
+  color: #fff;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 20rpx auto !important;
+}
+
+.uploadBtn2 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 120rpx;
+}
+
+.up2 {
+  width: 305rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f9812b;
+  color: #fff;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+}
+/*录音提示框  */
+.mask_bg{width:750rpx;height:600rpx;position:fixed;bottom:0;left:0;background:white;border-top:2rpx solid #e5e5e5;}
+.mask_bg .mask_header{width:100%;height:80rpx;display:flex;justify-content:space-between;align-items:center;border-bottom:2rpx solid #e5e5e5;}
+.mask_bg .mask_header .mask_header_off{width:200rpx;text-align:center;color:#1a1a1a;font-size:28rpx;line-height:80rpx;}
+.mask_bg .mask_header .mask_header_on{width:200rpx;text-align:center;color:#f9812b;font-size:28rpx;line-height:80rpx;}
+.mask_box{width:auto;padding:0 30rpx;height:520rpx;overflow-y:auto;}
+.mask_box label{width:100%;font-size:28rpx;margin:6rpx auto;display:flex;justify-content:space-between;}
+checkbox .wx-checkbox-input{
+   width: 30rpx; /* 背景的宽 */
+   height: 30rpx; /* 背景的高 */
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   width: 30rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 30rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height:30rpx;
+   text-align: center;
+   font-size:30rpx; /* 对勾大小 30rpx */
+   color:#f9812b; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}

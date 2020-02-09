@@ -1,0 +1,110 @@
+/* pages/shelter/applicantIfn/applicantIfn.wxss */
+
+page {
+  height: 100%;
+  background-color: #f7f6f6;
+}
+
+.panel {
+  margin-top: 20rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f7f6f6;
+  background: #fff;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+
+image.edit {
+  display: inline-block;
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 12rpx;
+}
+
+image.arrow {
+  width: 12rpx;
+  height: 20rpx;
+}
+
+.panel-title {
+  padding-left: 20rpx;
+}
+
+.panel-item {
+  padding-left: 30rpx;
+  padding-right: 20rpx;
+  border-top: 3rpx solid #f7f6f6;
+}
+
+.pickerValue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.picker {
+  right: 20rpx;
+}
+
+picker {
+  display: inline-block;
+  width: 76%;
+}
+
+.panel-item text {
+  color: #333;
+}
+
+.panel-item .item-title {
+  color: #999;
+  width: 24%;
+  display: inline-block;
+}
+
+input {
+  width: 70%;
+  vertical-align: middle;
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.placeholder {
+  color: #999;
+}
+
+button {
+  margin: 60rpx;
+  color: white;
+  background: #f9812b;
+}
+
+.appeals {
+  display: flex;
+  justify-content: space-around;
+}
+
+.appeal checkbox {
+  display: none;
+}
+
+.appeal text {
+  padding: 5rpx 10rpx;
+  color: #ccc;
+  border: 1px solid currentColor;
+  border-radius: 2rpx;
+}
+
+.appeal checkbox[checked] + text {
+  color: #f9812b;
+}
+
+textarea {
+  line-height: 1em;
+  width: 100%;
+}
+
+.region{
+  width: 100%
+}

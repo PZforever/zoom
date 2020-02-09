@@ -1,0 +1,44 @@
+/* pages/shelter/shelter_select/shelter_select.wxss */
+page{
+  height: 100%;
+  background-color: #f7f6f6;
+}
+.aplt-ifn{
+  margin-top: 10rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f4f4f4;
+  background: #fff;
+  line-height: 100rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+image.edit{
+  display: inline-block;
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 12rpx;
+}
+.aplt-title{
+  padding-left: 3%;
+}
+.ifn-item{
+  padding-left: 8%;
+  padding-right: 6%;
+  width: 86%;
+  border-top: 3rpx solid #fafafa;
+}
+.ifn-item .item-text{
+  width: 60%;
+  color: #333;
+  display:inline-block;
+}
+.ifn-item .last-text{
+  width: 60%;
+  color: #999;
+  display:inline-block;
+}
+.ifn-item .item-title{
+  color: #999;
+  width: 30%;
+  display: inline-block;
+}

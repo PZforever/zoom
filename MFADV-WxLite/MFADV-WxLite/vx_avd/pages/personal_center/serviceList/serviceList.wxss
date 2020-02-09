@@ -1,0 +1,118 @@
+/* pages/personal_center/serviceList/serviceList.wxss */
+.header{width:750rpx;height:80rpx;background:#fff;display:flex;justify-content:center;align-items:center;margin:10rpx 0;position: relative}
+.header .header_box{height:100%;width:715rpx;padding:0 30rpx;display:flex;justify-content:flex-start;font-size:28rpx;color:#666666;}
+.header .header_box image{width:16rpx;height:11rpx;}
+.header .header_box view{margin-left:15rpx;line-height:80rpx;position:relative;top:0;left:0;}
+/*滚动区域的页面*/
+.scroll-view_H{width:100%;position:absolute;left:0;top:100rpx;bottom:0;background:white;}
+.service_box{width:auto;border-bottom:10rpx solid #f2f2f2;}
+.service_box image{width:12rpx;height:20rpx;}
+.service_id{width:100%;height:80rpx;font-size:30rpx;color:#333333;border: 1px solid #eee;line-height: 80rpx;position: relative}
+.service_id .service_id_left{padding-left:18rpx;position: relative}
+.service_id_left>.idLeft{
+  display: inline-block;
+  border-left:6rpx solid #f9812b;
+  height: 24rpx;
+  margin-right: 5rpx;
+}
+.service_open{width: 140rpx;height: 50rpx;background-color: #f9812b;border-radius:6rpx;color:white;text-align:center;font-size: 28rpx;line-height: 50rpx;margin-top: 20rpx;}
+.service_message{
+  width:auto;
+  color:#999999;
+  font-size: 30rpx;
+  min-height: 170rpx; 
+  /* max-height: 260rpx; */
+  height: auto;
+  border-bottom: 1px solid #eee;
+}
+.appointmentTime{
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+  margin-bottom: 20rpx;
+  font-size: 26rpx;
+}
+.service_message .service_title{
+  color: #333;
+  font-size: 32rpx;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+.service_message .service_footer{
+  color:#999;
+  font-size:28rpx;
+  height:100rpx;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+  position: relative;
+  line-height: 50rpx;
+}
+.nullContent{margin:100rpx auto;font-size:24rpx;color:#666666;text-align:center;}
+
+.deTails_img{
+  position: absolute;
+  right: 45rpx;
+  top: 30rpx;
+}
+.staTe{
+  float: left;
+  font-size: 26rpx;
+  position: absolute;
+  top: 5rpx;
+  right: 45rpx;
+  color: #7ED321;
+}
+.staTe>text{
+  color:#f9812b; 
+  /* font-size: 20rpx; */
+}
+.appointmentTime>.textSile{
+  font-size: 28rpx;
+}
+.staTe>.state_color{
+  font-size: 26rpx;
+  color: #63B2F4;
+}
+.staTe>.state_color2{
+  color:#80D124;
+}
+.staTe>image{
+  width:22rpx;
+  height: 22rpx;
+  margin-top: 0rpx;
+  margin-right: 8rpx;
+}
+.staTe>.staTe_img{
+  position: relative;
+  top: 5rpx;
+  margin-left: 5rpx;
+}
+.serviceNav{
+  height: 90rpx;
+  border-top: 1px solid #eee;
+  padding-left: 30rpx;
+}
+.serviceNav>navigator{
+  width: 140rpx;
+}
+/* s搜索 */
+.headRight{
+  width: 560rpx;
+  height: 65rpx;
+  border-radius: 3rpx;
+  background: #f6f6f6;
+  position: absolute;
+  right: 26rpx;
+  font-size: 30rpx;
+}
+.headRight input{
+  height: 100%;
+  width: 475rpx;
+  margin-left: 15rpx;
+}
+.headRight image{
+  height: 37rpx;
+  width: 34rpx;
+  position: absolute;
+  top: 18rpx;
+  right: 30rpx;
+}

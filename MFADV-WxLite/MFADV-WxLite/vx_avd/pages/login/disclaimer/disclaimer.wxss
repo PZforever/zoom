@@ -1,0 +1,101 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color:white;
+  font-size: 30rpx;
+}
+
+.mainView {
+  padding-top: 15rpx;
+  color: #a7a7a7;
+}
+
+.inputLine {
+  display: flex;
+  padding: 35rpx 35rpx 35rpx 45rpx;
+  border-bottom: 1rpx solid #fafafa;
+}
+
+.submitLine {
+  padding: 70rpx 75rpx 22rpx 75rpx;
+}
+
+.submit {
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+
+.disagree {
+  color: #fa822b;
+  background-color: #fff;
+  font-size: 32rpx;
+  border: 1px solid #fa822b;
+}
+
+.disagree
+::after {
+  border: none;
+}
+
+.agreement {
+  background-color: #fff;
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 2rpx;
+  border: 1rpx solid #ecedee;
+  display: block;
+}
+
+.agreementContent {
+  font-size: 28rpx;
+  color:#999999;
+  letter-spacing:2rpx;
+  line-height:40rpx;
+}
+
+.agreementTitle {
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 10rpx;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.agreementTitle text {
+  width: 100%;
+  text-align: center;
+}
+
+.read {
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  display: flex;
+}
+
+.read checkbox {
+  transform: scale(0.7);
+}
+
+/*  重写 checkbox 样式  */
+checkbox .wx-checkbox-input{
+   /* border-radius: 50%; */
+   width: 40rpx;
+   height: 40rpx;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   /* border-color: #f7f6f6;  */
+   background: transparent;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   width: 40rpx;
+   height: 40rpx;
+   line-height: 40rpx;
+   text-align: center;
+   font-size:40rpx;
+   color:#fa822b;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+/*  重写 checkbox 样式  end*/

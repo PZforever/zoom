@@ -1,0 +1,51 @@
+<page>
+  <view class="mainView">
+    <form bindsubmit="formSubmit">
+ <!--      <view wx:if="{{cameraVisible}}" class='camera-wrapper'>
+        <camera device-position="back" flash="off" binderror="error" class='camera'></camera>
+        <button class="doCamera" bindtap="takePhoto">拍照</button>
+      </view>
+      <view class="id-card">
+        <view class='id-card-side'>
+          <view bindtap="takePositiveSide">
+            <image mode='widthFix' class="id-card-bg" src="{{positivePhoto}}"></image>
+            <image mode='aspectFit' class='id-card-btn' src="/img/idCard_upload_btn.png"></image>
+          </view>
+          <text>点击拍摄人像面</text>
+        </view>
+        <view class='id-card-side'>
+          <view bindtap="takeOtherSide">
+            <image mode='widthFix' class="id-card-bg" src="{{otherPhoto}}"></image>
+            <image mode='aspectFit' class='id-card-btn' src="/img/idCard_upload_btn.png"></image>
+          </view>
+          <text>点击拍摄国徽面</text>
+        </view>
+      </view> -->
+      <view class="flex-row line inputLine" style="">
+        <text>姓名</text>
+        <input name="actualName" placeholder="请输入姓名" placeholder-style="color:#e5e5e5" type="text" class="" />
+      </view>
+      <!-- <view class="flex-row line inputLine" style="">
+        <text>年龄</text>
+        <input name="age" type="number" placeholder="请输入年龄" placeholder-style="color:#e5e5e5" maxlength="3" class="" />
+      </view> -->
+      <view class="flex-row line inputLine" style="">
+        <text>身份证号</text>
+        <input name="idCard" placeholder="请输入身份证号" placeholder-style="color:#e5e5e5" maxlength="18" type="idCard" class="" />
+      </view>
+       <view class="flex-row line inputLine" style="" bindtap="getArea">
+        <text>户籍地址</text>
+        <input name="" type="text" placeholder="请输入地址" disabled placeholder-style="color:#e5e5e5" class="" value="{{area}}" />
+        <image src="/img/arrow.png"></image>
+      </view> 
+       <view class="flex-row line inputLine" style="">
+        <text>详细地址</text>
+        <input name="address" type="text" placeholder="请输入详细地址" placeholder-style="color:#e5e5e5" class="" />
+      </view> 
+      <view class="line submitLine">
+        <button formType="submit" class="submit">保存</button>
+      </view>
+    </form>
+  </view>
+  <area id="area" bind:cancelEvent="_cancelEvent"  bind:confirmEvent="_confirmEvent"></area>
+</page>

@@ -1,0 +1,12 @@
+<scroll-view scroll-y class="messageDetailContainer">
+  <view class="messageDetailBody">
+    <view class="messageDetailItem">
+      <view class="messageDetailContant">
+        <text class="messageDetailTitle">{{messageDetail.title}}</text>
+        <text class="messageDetailDepict">{{messageDetail.message}}</text>
+        <!-- <text class="messageDepictRight">{{messageDetail.title}}</text> -->
+        <text class="messageDepictRight">{{messageDetail.createTime}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

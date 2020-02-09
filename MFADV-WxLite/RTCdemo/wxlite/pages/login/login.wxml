@@ -1,0 +1,18 @@
+<view class="page">
+    <view class="container">
+            <view class="section__title">纠纷多元化解平台</view>
+        <view class="section">
+            手机号：<input placeholder=""  bindinput="bindKeyInput1" id="inPhone" value="{{inPhone}}"/>
+             </view> 
+        <view class="section">
+            密码： <input placeholder=""  bindinput="bindKeyInput2"  id="inPassword" value="{{inPassword}}"/>
+        </view> 
+         <view class="section">
+        <text>
+            {{rtnStr}}
+        </text>
+        </view> 
+        <button type="primary" loading="{{loading}}"    bindtap="search">登录 </button>
+       
+    </view>
+</view>
